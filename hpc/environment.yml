@@ -1,0 +1,31 @@
+name: akn_rlm_hpc
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pytorch>=2.1
+  - pytorch-cuda=12.1
+  - numpy<2.0
+  - scipy>=1.10
+  - pandas
+  - pyarrow
+  - faiss-gpu>=1.7
+  - rdflib>=7.0
+  - lxml
+  - tqdm
+  - click
+  - python-dotenv
+  - pip:
+    - sentence-transformers>=2.7.0
+    - transformers>=4.40.0
+    - FlagEmbedding>=1.2.10
+    - rank-bm25>=0.2.2
+    - openai>=1.30.0
+    - tiktoken
+    - tenacity
+    - pytest
+    - matplotlib

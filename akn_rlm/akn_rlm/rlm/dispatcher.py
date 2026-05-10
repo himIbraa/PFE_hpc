@@ -54,6 +54,12 @@ from akn_rlm.config import SUB_LLM_MODEL
 from akn_rlm.corpus.article_registry import ArticleRegistry
 from akn_rlm.indexers.bm25 import BM25Index
 from akn_rlm.indexers.dense import DenseIndex
+from akn_rlm.rlm.ceiling_breakers import (
+    is_enabled as _ceiling_enabled,
+    make_concept_amendment_search,
+    make_llm_doc_router_call,
+    make_nli_verifier_fn,
+)
 from akn_rlm.rlm.classifier import classify as _classify_intent
 from akn_rlm.rlm.handlers import (
     LAYMAN_DEFAULT_REWRITE_MODEL,
@@ -207,12 +213,38 @@ class RLMDispatcher:
         # can flip it on with a stronger plan-prompt or a different
         # model.
         plan_supervisor_fn: Optional[PlanSupervisorFn] = None,
+        # Ceiling-breakers: when enable_ceiling_breakers is True, the
+        # dispatcher (a) builds the doc-router with an LLM tie-breaker
+        # callable, (b) injects an NLI verifier_fn into RA / MH / EA,
+        # and (c) hands the conceptual_definitional handler a
+        # concept->amendment SPARQL helper. Defaults to the
+        # AKN_CEILING_BREAKERS env flag so HPC runs flip everything
+        # on with one variable.
+        enable_ceiling_breakers: Optional[bool] = None,
     ) -> None:
         self._bm25 = bm25
         self._dense = dense
         self._registry = registry
         self._llm_pool = llm_pool
-        self._router = router or build_doc_router(registry=registry, bm25=bm25)
+        self._ceiling = (
+            _ceiling_enabled() if enable_ceiling_breakers is None
+            else bool(enable_ceiling_breakers)
+        )
+        # Build (or reuse) the doc-router; turn on the LLM tie-breaker
+        # channel when ceiling-breakers are enabled.
+        if router is None:
+            router_kwargs: dict[str, Any] = {}
+            if self._ceiling:
+                router_kwargs["llm_call"] = make_llm_doc_router_call(llm_pool)
+            self._router = build_doc_router(
+                registry=registry, bm25=bm25, **router_kwargs,
+            )
+        else:
+            self._router = router
+        # Pre-built closures used in handler construction.
+        self._nli_verifier_fn = make_nli_verifier_fn() if self._ceiling else None
+        # Concept-amendment SPARQL is built lazily once the KG loads.
+        self._concept_amendment_search = None
         self._kg = kg
         self._kg_loader = kg_loader
         self._sub_model = sub_model
@@ -378,9 +410,18 @@ class RLMDispatcher:
             router=self._router,
             sub_model=self._sub_model,
         )
+        # Step 3 — per-citation NLI verifier replaces the LLM verifier in
+        # RA / MH / EA when ceiling-breakers are on. The NLI verifier
+        # falls back to ``call_verifier`` if the NLI model can't load,
+        # so HPC nodes without sentence-transformers / mDeBERTa still
+        # work.
+        ceiling_kwargs: dict[str, Any] = {}
+        if self._ceiling and self._nli_verifier_fn is not None:
+            ceiling_kwargs["verifier_fn"] = self._nli_verifier_fn
+
         if key == "rule_application":
             return build_rule_application_handler(
-                **common, supervisor_fn=self._supervisor_fn,
+                **common, supervisor_fn=self._supervisor_fn, **ceiling_kwargs,
             )
         if key == "exact_article":
             # exact_article never uses dense — see HANDOFF §R6.2.
@@ -391,12 +432,14 @@ class RLMDispatcher:
                 router=self._router,
                 sub_model=self._sub_model,
                 supervisor_fn=self._supervisor_fn,
+                **ceiling_kwargs,
             )
         if key == "multi_hop":
             mh_kwargs: dict[str, Any] = dict(common)
             mh_kwargs["supervisor_fn"] = self._supervisor_fn
             if self._plan_supervisor_fn is not None:
                 mh_kwargs["plan_supervisor_fn"] = self._plan_supervisor_fn
+            mh_kwargs.update(ceiling_kwargs)
             return build_multi_hop_handler(**mh_kwargs)
         if key == "long_context":
             timeout_summarizer = _make_timeout_summarizer(

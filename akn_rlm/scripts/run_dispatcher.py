@@ -211,6 +211,12 @@ def main() -> None:
     parser.add_argument("--no-kg", action="store_true",
                         help="Skip KG load. temporal_factual / conceptual_definitional "
                              "queries will then abstain with `dispatch_build_error`.")
+    parser.add_argument("--ceiling-breakers", action="store_true",
+                        help="Enable the 5 HPC-grade ceiling-breaker upgrades: "
+                             "BGE-m3 dense + BGE-reranker-v2-m3 (via env), "
+                             "per-citation NLI verifier, doc-router LLM tie-breaker, "
+                             "and concept->amendment SPARQL helper for CD. "
+                             "Equivalent to AKN_CEILING_BREAKERS=1 env var.")
     args = parser.parse_args()
 
     run_id = args.run_id or time.strftime("rlm_dispatched_%Y%m%d_%H%M%S")
@@ -245,11 +251,18 @@ def main() -> None:
     log.info("Loading dense index …")
     dense = DenseIndex.load(DENSE_FAISS_PATH, DENSE_META_PATH)
 
-    log.info("Building doc-router …")
-    router = build_doc_router(registry=registry, bm25=bm25)
-
     log.info("Connecting to LLM pool …")
     llm_pool = LLMPool.default()
+
+    # When ceiling-breakers are on, the dispatcher builds its own router
+    # with the LLM tie-breaker channel wired in. Pass router=None below
+    # so the dispatcher constructs one internally.
+    if args.ceiling_breakers:
+        log.info("Ceiling-breakers ENABLED — dispatcher will build router with LLM tie-breaker.")
+        router = None
+    else:
+        log.info("Building doc-router (deterministic; pass --ceiling-breakers to enable LLM channel) …")
+        router = build_doc_router(registry=registry, bm25=bm25)
 
     kg_loader = None
     if not args.no_kg:
@@ -267,6 +280,7 @@ def main() -> None:
         sub_model=args.sub_model,
         rewrite_model=args.rewrite_model,
         long_context_timeout_s=args.long_context_timeout,
+        enable_ceiling_breakers=args.ceiling_breakers or None,
     )
 
     results = _run(
