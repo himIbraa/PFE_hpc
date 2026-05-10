@@ -60,6 +60,12 @@ conda activate akn_rlm_hpc
 # would re-install CPU-only wheels on top of the conda CUDA build.
 pip install -e ./akn_rlm --no-deps
 
+# If you cloned an older revision (or upgraded environment.yml after the
+# env was already created), make sure these langgraph/langchain/anthropic
+# deps are present — the legacy pipeline.py code path (and one of its
+# regression tests) imports them.
+pip install --no-cache-dir langchain langgraph anthropic pytest-asyncio pydantic
+
 # Configure LLM API credentials. Either export in your shell rc:
 echo 'export AI_GRID_API_KEY="your_key_here"' >> ~/.bashrc
 echo 'export AI_GRID_BASE_URL="http://app.ai-grid.io:4000/v1"' >> ~/.bashrc
