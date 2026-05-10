@@ -53,8 +53,12 @@ conda env create -f hpc/environment.yml
 # Activate
 conda activate akn_rlm_hpc
 
-# Install the akn_rlm package itself in editable mode
-pip install -e ./akn_rlm
+# Install the akn_rlm package itself in editable mode.
+# IMPORTANT: --no-deps tells pip to skip the dependency list inside
+# pyproject.toml — those deps (torch, faiss, transformers, …) are already
+# installed in the conda env from environment.yml. Without --no-deps pip
+# would re-install CPU-only wheels on top of the conda CUDA build.
+pip install -e ./akn_rlm --no-deps
 
 # Configure LLM API credentials. Either export in your shell rc:
 echo 'export AI_GRID_API_KEY="your_key_here"' >> ~/.bashrc
