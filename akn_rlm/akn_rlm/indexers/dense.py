@@ -148,7 +148,9 @@ class DenseIndex:
         # Record which model built this index so loaders / build scripts can
         # detect a model swap (BGE-m3 has 1024-dim, e5-small 384-dim — the
         # FAISS file alone wouldn't make the source obvious).
-        meta_sidecar = faiss_path.with_suffix(".model.txt")
+        # NOTE: `with_suffix` replaces the existing suffix, so the file lives
+        # next to dense.faiss as dense.faiss.model.txt (and not dense.model.txt).
+        meta_sidecar = faiss_path.parent / (faiss_path.name + ".model.txt")
         meta_sidecar.write_text(self._model_name, encoding="utf-8")
         log.info("Dense index saved -> %s + %s (model=%s)", faiss_path, meta_path, self._model_name)
 
@@ -163,7 +165,9 @@ class DenseIndex:
         index = faiss.read_index(str(faiss_path))
         meta_df = pd.read_parquet(meta_path)
         # Pick up the recorded model name; fall back to current EMBED_MODEL.
-        meta_sidecar = faiss_path.with_suffix(".model.txt")
+        # NOTE: `with_suffix` replaces the existing suffix, so the file lives
+        # next to dense.faiss as dense.faiss.model.txt (and not dense.model.txt).
+        meta_sidecar = faiss_path.parent / (faiss_path.name + ".model.txt")
         if meta_sidecar.exists():
             stored = meta_sidecar.read_text(encoding="utf-8").strip()
         else:
