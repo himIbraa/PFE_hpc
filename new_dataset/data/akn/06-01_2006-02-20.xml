@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="law">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/akn/dz/act/law/2006-02-20/06-01/main"/>
+          <FRBRuri value="/akn/dz/act/law/2006-02-20/06-01"/>
+          <FRBRdate date="2006-02-20" name="enactment"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="dz"/>
+          <FRBRnumber value="06-01"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/dz/act/law/2006-02-20/06-01/ara@/main"/>
+          <FRBRuri value="/akn/dz/act/law/2006-02-20/06-01/ara@"/>
+          <FRBRdate date="2006-02-20" name="publication"/>
+          <FRBRauthor href="#joradp"/>
+          <FRBRlanguage language="ara"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/dz/act/law/2006-02-20/06-01/ara@/main.xml"/>
+          <FRBRuri value="/akn/dz/act/law/2006-02-20/06-01/ara@.xml"/>
+          <FRBRdate date="2026-05-07" name="transform"/>
+          <FRBRauthor href="#converter"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="parliament" href="/ontology/organization/dz/parliament" showAs="البرلمان"/>
+        <TLCOrganization eId="joradp" href="/ontology/organization/dz/joradp" showAs="الجريدة الرسمية"/>
+        <TLCPerson eId="converter" href="/ontology/person/dz/converter" showAs="Markup Specialist"/>
+      </references>
+    </meta>
+    <preface>
+      <docTitle>قانون الوقاية من الفساد ومكافحته</docTitle>
+      <docNumber>06-01</docNumber>
+      <docDate date="2006-02-20">20 فبراير سنة 2006</docDate>
+      <docAuthority>البرلمان</docAuthority>
+    </preface>
+    <preamble>
+      <citations>
+        <citation>
+          <p>إن رئيس الجمهورية،</p>
+        </citation>
+        <citation>
+          <p>وبعد مصادقة البرلمان،</p>
+        </citation>
+      </citations>
+      <formula name="enactingFormula">
+        <p>يصدر القانون الآتي نصه:</p>
+      </formula>
+    </preamble>
+    <body>
+      <article eId="art_4">
+        <num>4</num>
+        <content>
+          <paragraph>
+            <p>قصد ضمان الشفافية في الحياة السياسية والشؤون العمومية، وحماية الممتلكات العمومية، وصون نزاهة الأشخاص المكلفين بخدمة عمومية، يلزم الموظف العمومي بالتصريح بممتلكاته.</p>
+          </paragraph>
+          <paragraph>
+            <p>يقوم الموظف العمومي باكتتاب تصريح بالممتلكات خلال الشهر الذي يعقب تاريخ تنصيبه في وظيفته أو بداية عهدته الانتخابية.</p>
+          </paragraph>
+          <paragraph>
+            <p>يجدد هذا التصريح فور كل زيادة معتبرة في الذمة المالية للموظف العمومي بنفس الكيفية التي تم بها التصريح الأول.</p>
+          </paragraph>
+          <paragraph>
+            <p>كما يجب التصريح بالممتلكات عند نهاية العهدة الانتخابية أو عند انتهاء الخدمة.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_5">
+        <num>5</num>
+        <content>
+          <paragraph>
+            <p>يحتوي التصريح بالممتلكات، المنصوص عليه في المادة 4 أعلاه، جردا للأملاك العقارية والمنقولة التي يحوزها المكتتب أو أولاده القصر، ولو في الشيوع، في الجزائر و/أو في الخارج.</p>
+          </paragraph>
+          <paragraph>
+            <p>يحرر هذا التصريح طبقا لنموذج يحدد عن طريق التنظيم.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_25">
+        <num>25</num>
+        <content>
+          <paragraph>
+            <p>يعاقب بالحبس من سنتين (2) إلى عشر (10) سنوات وبغرامة من 200.000 دج إلى 1.000.000 دج:</p>
+          </paragraph>
+          <paragraph>
+            <p>1- كل من وعد موظفا عموميا بمزية غير مستحقة أو عرضها عليه أو منحه إياها، بشكل مباشر أو غير مباشر، سواء كان ذلك لصالح الموظف نفسه أو لصالح شخص أو كيان آخر لكي يقوم بأداء عمل أو الامتناع عن أداء عمل من واجباته.</p>
+          </paragraph>
+          <paragraph>
+            <p>2- كل موظف عمومي طلب أو قبل، بشكل مباشر أو غير مباشر، مزية غير مستحقة، سواء لنفسه أو لصالح شخص آخر أو كيان آخر، لأداء عمل أو الامتناع عن أداء عمل من واجباته.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_26">
+        <num>26</num>
+        <content>
+          <paragraph>
+            <p>يعاقب بالحبس من سنتين (2) إلى عشر (10) سنوات وبغرامة من 200.000 دج إلى 1.000.000 دج:</p>
+          </paragraph>
+          <paragraph>
+            <p>1- كل موظف عمومي يقوم بإبرام عقد أو يؤشر أو يراجع عقدا أو اتفاقية أو صفقة أو ملحقا مخالفا بذلك الأحكام التشريعية والتنظيمية الجاري بها العمل بغرض إعطاء امتيازات غير مبررة للغير.</p>
+          </paragraph>
+          <paragraph>
+            <p>2- كل تاجر أو صناعي أو حرفي أو مقاول من القطاع الخاص، أو بصفة عامة كل شخص طبيعي أو معنوي يقوم، ولو بصفة عرضية، بإبرام عقد أو صفقة مع الدولة أو الجماعات المحلية أو المؤسسات أو الهيئات العمومية الخاضعة للقانون العام أو المؤسسات العمومية الاقتصادية والمؤسسات العمومية ذات الطابع الصناعي والتجاري، ويستفيد من سلطة أو تأثير أعوان الهيئات المذكورة من أجل الزيادة في الأسعار التي يطبقونها عادة أو من أجل التعديل لصالحهم في نوعية المواد أو الخدمات أو آجال التسليم أو التموين.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_29">
+        <num>29</num>
+        <content>
+          <paragraph>
+            <p>يعاقب بالحبس من سنتين (2) إلى عشر (10) سنوات وبغرامة من 200.000 دج إلى 1.000.000 دج كل موظف عمومي يختلس أو يتلف أو يبدد أو يحتجز عمدا وبدون وجه حق أو يستعمل على نحو غير شرعي لصالحه أو لصالح شخص أو كيان آخر، أية ممتلكات أو أموال أو أوراق مالية عمومية أو خاصة أو أي أشياء أخرى ذات قيمة عهد بها إليه بحكم وظائفه أو بسببها.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_36">
+        <num>36</num>
+        <content>
+          <paragraph>
+            <p>يعاقب بالحبس من ستة (6) أشهر إلى خمس (5) سنوات وبغرامة من 50.000 دج إلى 500.000 دج، كل موظف عمومي خاضع قانونا لواجب التصريح بممتلكاته ولم يقم بذلك عمدا، بعد مضي شهرين (2) من تذكيره بالطرق القانونية، أو قام بتصريح غير كامل أو غير صحيح أو خاطئ، أو أدلى عمدا بملاحظات خاطئة أو خرق عمدا الالتزامات التي يفرضها عليه القانون.</p>
+          </paragraph>
+        </content>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>

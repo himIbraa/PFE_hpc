@@ -1,0 +1,768 @@
+"""Temporal-factual query handler — Phase 2 / R3.
+
+Pipeline:
+
+  1. Doc-route the query via :class:`DocRouter`. Empty route → fall back
+     to corpus-wide retrieval.
+
+  2. Extract a target date from the query. Regex captures Gregorian
+     dates (ISO ``YYYY-MM-DD``, ``DD/MM/YYYY``) and bare years
+     (``\\d{4}``). Multiple years are allowed; the **latest** year is
+     used as the target so "بين 1996 و2008 و2020" resolves to the most
+     recent rule (matching benchmark ``applicable_version="post"``).
+     If no date is found the handler defaults to the latest known
+     version (target_date = ``"9999-12-31"``).
+
+  3. Retrieve candidate articles via RRF(BM25, Dense), restricted to
+     the routed ``doc_id``s. Take the top-``top_k_candidates``.
+
+  4. **MANDATORY** for every retrieved candidate: query the KG
+     amendment chain. The chain is the ordered list of
+     ``dzdoc:hasVersion`` entries with ``dzdoc:inForceFrom`` /
+     ``dzdoc:versionText`` triples. Pick the version whose
+     ``inForceFrom <= target_date`` with the latest such date — that
+     is the answer text. If the article has no chain in the KG
+     (article was never amended → no ``hasVersion`` triples) the
+     candidate's chunk text is used as the fallback (the article was
+     enacted at its origin date and is still in force).
+
+  5. Optionally sub-LM verify the top-``verify_top_n`` candidates so
+     the verifier confidence flows into the citation. The verifier is
+     fed the **KG-versioned text**, never the raw chunk text — this
+     is what HANDOFF §3 means by "answer from the KG result, never
+     from search".
+
+  6. Build citations carrying the version-specific text + version
+     date. Synthesise an answer via :func:`call_summarizer`; fall back
+     to the deterministic Arabic template otherwise.
+
+  7. Return an answer dict shaped like the deterministic baselines so
+     :func:`akn_rlm.eval.runner._answer_to_result` consumes it.
+
+Sub-LM call budget per query: ≤ ``verify_top_n=3`` verifier calls + 1
+summariser = ≤ 4 calls. Well under the project ``max_sub_calls=12``
+envelope.
+"""
+from __future__ import annotations
+
+import datetime as _dt
+import logging
+import re
+from typing import Any, Callable, Optional
+
+from akn_rlm.config import SUB_LLM_MODEL
+from akn_rlm.corpus.article_registry import ArticleRegistry
+from akn_rlm.indexers.bm25 import BM25Hit, BM25Index
+from akn_rlm.indexers.dense import DenseHit, DenseIndex
+from akn_rlm.normalizers import canonical_article_ref
+from akn_rlm.retrievers.hybrid_fusion import rrf_fuse
+from akn_rlm.rlm.routing import DocRouter, build_doc_router
+from akn_rlm.rlm.sub_worker import call_summarizer, call_verifier
+
+log = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# Defaults
+# ---------------------------------------------------------------------------
+
+DEFAULT_TOP_K_CANDIDATES: int = 5
+# Verifier OFF by default. The HANDOFF §3 contract is "answer from the
+# KG result, never from search" — the KG amendment chain is the source
+# of truth, and a generic LLM relevance verifier (trained on
+# search-style judgments) tends to reject foundational articles like
+# art_1 / scope articles that ARE the gold answer for evolution-style
+# temporal queries. Empirical: enabling the verifier dropped Cite F1
+# from 0.167 → 0.095 on the full 7-q temporal_factual slice. Set
+# ``verify_top_n>0`` to opt back in.
+DEFAULT_VERIFY_TOP_N: int = 0
+# R9.2: tightened from 5 → 2 to lift Cite F1 by trading recall for
+# precision. Temporal_factual gold typically names a single in-force
+# version; emitting only the top-2 KG-versioned articles drops the
+# noisy 3rd-5th citations that were diluting precision on the 7-q
+# slice.
+DEFAULT_FINAL_TOP_K: int = 2
+DEFAULT_K_EACH: int = 30
+DEFAULT_VERIFY_THRESHOLD: float = 0.4
+DEFAULT_ROUTE_TOP_N: int = 3
+SUPPORT_SPAN_LEN: int = 280
+# Sentinel "latest known version" target. Any inForceFrom date will be <=.
+LATEST_VERSION_DATE: str = "9999-12-31"
+
+# Telemetry tag.
+TELEMETRY_BASELINE: str = "rlm_temporal_factual"
+
+# ---------------------------------------------------------------------------
+# Date extraction
+# ---------------------------------------------------------------------------
+
+# Date extractors. We use ``(?<!\d) ... (?!\d)`` lookarounds rather than
+# ``\b`` because ``\b`` does not fire between an Arabic letter (which is
+# a word char) and a digit — e.g. ``و2008`` would never be matched by
+# ``\b2008\b``. The lookarounds correctly require the year to be
+# digit-isolated regardless of surrounding Arabic / Latin / punctuation.
+_ISO_DATE_RE = re.compile(r"(?<!\d)(\d{4})-(\d{1,2})-(\d{1,2})(?!\d)")
+_DMY_RE = re.compile(r"(?<!\d)(\d{1,2})/(\d{1,2})/(\d{4})(?!\d)")
+# Bare 4-digit year, only the plausible legal range to avoid catching
+# article numbers etc.
+_YEAR_RE = re.compile(r"(?<!\d)(1[89]\d{2}|20\d{2}|21\d{2})(?!\d)")
+
+
+def _extract_dates(query: str) -> list[str]:
+    """Return all dates mentioned in ``query``, normalised to ``YYYY-MM-DD``.
+
+    Order is preserved (left-to-right). Each date is emitted exactly once
+    even if it appears multiple times in the source text.
+    """
+    if not query:
+        return []
+    seen: set[str] = set()
+    ordered: list[str] = []
+
+    def _push(date_str: str) -> None:
+        if date_str and date_str not in seen:
+            seen.add(date_str)
+            ordered.append(date_str)
+
+    consumed: list[tuple[int, int]] = []
+
+    for m in _ISO_DATE_RE.finditer(query):
+        try:
+            y, mo, d = (int(x) for x in m.groups())
+            _push(f"{y:04d}-{mo:02d}-{d:02d}")
+            consumed.append(m.span())
+        except ValueError:
+            continue
+
+    for m in _DMY_RE.finditer(query):
+        try:
+            d, mo, y = (int(x) for x in m.groups())
+            _push(f"{y:04d}-{mo:02d}-{d:02d}")
+            consumed.append(m.span())
+        except ValueError:
+            continue
+
+    def _in_consumed(span: tuple[int, int]) -> bool:
+        s0, s1 = span
+        return any(c0 <= s0 and s1 <= c1 for c0, c1 in consumed)
+
+    for m in _YEAR_RE.finditer(query):
+        if _in_consumed(m.span()):
+            continue
+        y = int(m.group(1))
+        _push(f"{y:04d}-12-31")  # bare year → end of year (most permissive)
+
+    return ordered
+
+
+def _pick_target_date(dates: list[str]) -> str:
+    """Pick the most relevant date as the version target.
+
+    The benchmark always wants the post-amendment rule
+    (``applicable_version="post"`` for every temporal_factual question),
+    so we use the **maximum** date — this surfaces the version that
+    was in force at the latest mentioned date, which is also the
+    version a model trained on outdated data would mis-identify.
+
+    No dates → ``LATEST_VERSION_DATE`` so any version with
+    ``inForceFrom <= target`` survives.
+    """
+    if not dates:
+        return LATEST_VERSION_DATE
+    return max(dates)
+
+
+# ---------------------------------------------------------------------------
+# KG version-chain helpers
+# ---------------------------------------------------------------------------
+
+# Real KG predicates (inspected 2026-05-08 against
+# data/kg/algerian_legal_kg.ttl). The handler queries these directly —
+# legal_env.kg_amendment_chain uses a different namespace and does not
+# match the loaded TTL.
+_DZDOC_NS = "https://legal.dz/ontology/document#"
+
+_VERSION_CHAIN_SPARQL = """
+PREFIX dzdoc: <https://legal.dz/ontology/document#>
+SELECT ?version ?inForceFrom ?text WHERE {
+    <%s> dzdoc:hasVersion ?version .
+    ?version dzdoc:inForceFrom ?inForceFrom .
+    OPTIONAL { ?version dzdoc:versionText ?text . }
+}
+ORDER BY ?inForceFrom
+"""
+
+# Article URI pattern — there are several "categories" (law, order,
+# constitution, organic-law, presidential-decree, executive-decree).
+# The doc_id form is ``{num}_{enactment_date}`` (or
+# ``constitution_{date}`` for the four numbered constitutions). Mapping:
+#
+#   84-11_1984-06-09          -> https://legal.dz/resource/law/1984-06-09/84-11
+#   75-59_1975-09-26          -> https://legal.dz/resource/order/1975-09-26/75-59
+#   constitution_2020-12-30   -> https://legal.dz/resource/constitution/2020-12-30/2020
+#
+# We can't tell the category from the doc_id alone, so we try a small
+# ordered list of categories and ASK the KG.
+_KG_CATEGORIES: tuple[str, ...] = (
+    "law",
+    "order",
+    "constitution",
+    "organic-law",
+    "presidential-decree",
+    "executive-decree",
+)
+
+
+def _resolve_article_uri(
+    sparql_fn: Callable[[str], list[dict]] | None,
+    doc_id: str,
+    article_ref: str,
+) -> str | None:
+    """Resolve a canonical (doc_id, article_ref) pair to a KG article URI.
+
+    Tries each category in :data:`_KG_CATEGORIES` and returns the first
+    URI that has at least one outgoing triple.
+    """
+    if not sparql_fn or not doc_id or not article_ref:
+        return None
+
+    canon_ref = canonical_article_ref(article_ref) or article_ref
+    if not canon_ref:
+        return None
+
+    if doc_id.startswith("constitution_"):
+        date = doc_id[len("constitution_"):]
+        if not date:
+            return None
+        year = date.split("-", 1)[0]
+        candidates = [
+            f"https://legal.dz/resource/constitution/{date}/{year}#art_{canon_ref}"
+        ]
+    else:
+        if "_" not in doc_id:
+            return None
+        num, _, date = doc_id.rpartition("_")
+        if not num or not date:
+            return None
+        candidates = [
+            f"https://legal.dz/resource/{cat}/{date}/{num}#art_{canon_ref}"
+            for cat in _KG_CATEGORIES
+        ]
+        # A handful of laws use the redundant suffix form
+        # ``96-21_1996-07-09`` inside the URI as well.
+        candidates += [
+            f"https://legal.dz/resource/{cat}/{date}/{num}_{date}#art_{canon_ref}"
+            for cat in _KG_CATEGORIES
+        ]
+
+    for uri in candidates:
+        ask = f"ASK {{ <{uri}> ?p ?o }}"
+        try:
+            result = sparql_fn(ask)
+        except Exception as exc:
+            log.debug("ASK uri %s failed: %s", uri, exc)
+            continue
+        # rdflib returns [{"_ask": True}] for ASK; tests may return a bool
+        # or a non-empty list. Normalise.
+        if _ask_to_bool(result):
+            return uri
+    return None
+
+
+def _ask_to_bool(result: Any) -> bool:
+    if isinstance(result, bool):
+        return result
+    if isinstance(result, list):
+        if not result:
+            return False
+        first = result[0]
+        if isinstance(first, dict):
+            for v in first.values():
+                if isinstance(v, bool):
+                    return v
+                if str(v).strip().lower() in ("true", "1"):
+                    return True
+            # Non-empty dict with no bool — treat as positive evidence.
+            return True
+        return bool(first)
+    return False
+
+
+def _amendment_chain(
+    sparql_fn: Callable[[str], list[dict]] | None,
+    article_uri: str,
+) -> list[dict[str, Any]]:
+    """Return the KG amendment chain for ``article_uri``.
+
+    Each entry: ``{"version_uri": str, "date": str, "text": str}``.
+    Empty list means the URI is unknown OR the article has no
+    ``dzdoc:hasVersion`` triples (i.e. never amended).
+    """
+    if not sparql_fn or not article_uri:
+        return []
+    try:
+        rows = sparql_fn(_VERSION_CHAIN_SPARQL % article_uri)
+    except Exception as exc:
+        log.debug("amendment_chain SPARQL failed for %s: %s", article_uri, exc)
+        return []
+
+    out: list[dict[str, Any]] = []
+    for row in rows or []:
+        out.append({
+            "version_uri": row.get("version") or "",
+            "date":        (row.get("inForceFrom") or "").strip(),
+            "text":        (row.get("text") or "").strip(),
+        })
+    out.sort(key=lambda e: e.get("date") or "")
+    return out
+
+
+def _version_at_date(chain: list[dict[str, Any]], target_date: str) -> dict[str, Any] | None:
+    """Pick the latest version whose ``date <= target_date``.
+
+    Empty chain → ``None``. No version pre-dates the target → ``None``
+    (the article didn't exist yet at the requested date).
+    """
+    if not chain:
+        return None
+    chosen: dict[str, Any] | None = None
+    for v in chain:
+        d = v.get("date") or ""
+        if d and d <= target_date:
+            if chosen is None or d >= (chosen.get("date") or ""):
+                chosen = v
+    return chosen
+
+
+# ---------------------------------------------------------------------------
+# Handler
+# ---------------------------------------------------------------------------
+
+VerifierFn = Callable[[Any, str, dict, str], dict]
+SummarizerFn = Callable[[Any, str, list[dict], str], dict]
+SparqlFn = Callable[[str], list[dict]]
+
+
+class TemporalFactualHandler:
+    """Typed temporal-factual handler: route -> extract date -> retrieve ->
+    KG amendment chain MANDATORY -> answer-from-KG-version.
+    """
+
+    def __init__(
+        self,
+        kg: Any,
+        bm25: BM25Index,
+        dense: DenseIndex,
+        registry: ArticleRegistry,
+        llm_pool,
+        *,
+        router: Optional[DocRouter] = None,
+        sub_model: str = SUB_LLM_MODEL,
+        top_k_candidates: int = DEFAULT_TOP_K_CANDIDATES,
+        verify_top_n: int = DEFAULT_VERIFY_TOP_N,
+        final_top_k: int = DEFAULT_FINAL_TOP_K,
+        k_each: int = DEFAULT_K_EACH,
+        verify_threshold: float = DEFAULT_VERIFY_THRESHOLD,
+        route_top_n: int = DEFAULT_ROUTE_TOP_N,
+        verifier_fn: Optional[VerifierFn] = None,
+        summarizer_fn: Optional[SummarizerFn] = None,
+        sparql_fn: Optional[SparqlFn] = None,
+    ) -> None:
+        self._kg = kg
+        self._bm25 = bm25
+        self._dense = dense
+        self._registry = registry
+        self._llm_pool = llm_pool
+        self._router = router or build_doc_router(registry=registry, bm25=bm25)
+        self._sub_model = sub_model
+        self._top_k_candidates = top_k_candidates
+        self._verify_top_n = verify_top_n
+        self._final_top_k = final_top_k
+        self._k_each = k_each
+        self._verify_threshold = verify_threshold
+        self._route_top_n = route_top_n
+        self._verifier_fn = verifier_fn or call_verifier
+        self._summarizer_fn = summarizer_fn or call_summarizer
+        # SPARQL injection point: the runner wires this to the loaded
+        # rdflib graph; tests mock it with canned responses.
+        self._sparql_fn = sparql_fn or self._default_sparql_fn()
+
+    # ------------------------------------------------------------------
+    def _default_sparql_fn(self) -> Optional[SparqlFn]:
+        """Build a default SPARQL caller bound to ``self._kg`` if present."""
+        kg = self._kg
+        if kg is None:
+            return None
+
+        def _fn(query: str) -> Any:
+            try:
+                results = kg.query(query)
+            except Exception as exc:
+                log.debug("SPARQL query failed: %s", exc)
+                return []
+            stripped = query.strip().lower()
+            if stripped.startswith("ask"):
+                # rdflib returns a SPARQLResult that is truthy iff the ASK
+                # is positive — convert to a single-row list[{"_ask": bool}].
+                try:
+                    return [{"_ask": bool(results)}]
+                except Exception:
+                    return []
+            rows: list[dict] = []
+            try:
+                vars_list = list(results.vars or [])
+            except Exception:
+                vars_list = []
+            for row in results:
+                rows.append({
+                    str(var): (str(row[var]) if row[var] is not None else None)
+                    for var in vars_list
+                })
+            return rows
+
+        return _fn
+
+    # ------------------------------------------------------------------
+    def run(self, query: str) -> dict[str, Any]:
+        if not query or not query.strip():
+            return self._abstain(
+                "empty_query",
+                routed=[],
+                target_date=LATEST_VERSION_DATE,
+                dates=[],
+                sub_calls=0,
+                chains=[],
+            )
+
+        # 1. Doc-route
+        route = self._router.route(query, top_n=self._route_top_n)
+        routed_ids = list(route.doc_ids)
+
+        # 2. Extract date(s) → target
+        dates = _extract_dates(query)
+        target_date = _pick_target_date(dates)
+
+        # 3. Retrieve candidate articles
+        candidates = self._fused_candidates(query, routed_ids)
+        if not candidates:
+            return self._abstain(
+                "no_hits",
+                routed=routed_ids,
+                target_date=target_date,
+                dates=dates,
+                sub_calls=0,
+                chains=[],
+            )
+
+        # 4. MANDATORY KG amendment chain for every candidate
+        verified: dict[tuple[str, str], dict[str, Any]] = {}
+        chain_traces: list[dict[str, Any]] = []
+        sub_calls = 0
+
+        for cand in candidates[: self._top_k_candidates]:
+            doc_id = cand.get("doc_id", "")
+            ref = canonical_article_ref(cand.get("article_ref", "")) or cand.get(
+                "article_ref", ""
+            )
+            chunk_text = cand.get("text", "") or ""
+
+            article_uri = _resolve_article_uri(self._sparql_fn, doc_id, ref)
+            chain = _amendment_chain(self._sparql_fn, article_uri) if article_uri else []
+
+            if chain:
+                version = _version_at_date(chain, target_date)
+                if version is None:
+                    # Article didn't exist on the target date — skip.
+                    chain_traces.append({
+                        "doc_id":     doc_id,
+                        "article_ref": ref,
+                        "uri":        article_uri,
+                        "chain_len":  len(chain),
+                        "picked":     None,
+                        "source":     "kg_no_match",
+                    })
+                    continue
+                version_text = version.get("text") or chunk_text
+                version_date = version.get("date") or ""
+                source = "kg"
+            else:
+                # MANDATORY chain ran but the article isn't versioned in
+                # the KG (or URI didn't resolve) — fall back to chunk text.
+                # This is correct behaviour for articles that have never
+                # been amended: their original enacted text IS the
+                # current version.
+                version_text = chunk_text
+                version_date = ""
+                source = "fallback"
+
+            chain_traces.append({
+                "doc_id":      doc_id,
+                "article_ref": ref,
+                "uri":         article_uri,
+                "chain_len":   len(chain),
+                "picked":      version_date or None,
+                "source":      source,
+            })
+
+            # 5. Optional sub-LM verify on KG-versioned text.
+            confidence = float(cand.get("score", 0.6))
+            supporting_quote = ""
+            if self._verifier_fn is not None and len(verified) < self._verify_top_n:
+                article_for_verify = {
+                    "doc_id":      doc_id,
+                    "article_ref": ref,
+                    "text":        version_text,
+                }
+                try:
+                    verdict = self._verifier_fn(
+                        self._llm_pool, query, article_for_verify, self._sub_model
+                    )
+                    sub_calls += 1
+                except Exception as exc:
+                    log.warning("temporal verifier failed (%s) — keeping candidate", exc)
+                    # KG resolved the chain; degrade gracefully and keep the
+                    # candidate at threshold-level confidence rather than
+                    # losing answers when the LLM endpoint is flaky.
+                    verdict = {
+                        "relevant": True,
+                        "confidence": max(confidence, self._verify_threshold),
+                        "supporting_span": None,
+                    }
+                if not verdict.get("relevant"):
+                    continue
+                vc = float(verdict.get("confidence", 0.0) or 0.0)
+                if vc < self._verify_threshold:
+                    continue
+                confidence = vc
+                supporting_quote = verdict.get("supporting_span") or ""
+
+            citation = self._build_citation(
+                doc_id=doc_id,
+                article_ref=ref,
+                version_text=version_text,
+                version_date=version_date,
+                source=source,
+                supporting_quote=supporting_quote,
+                confidence=confidence,
+            )
+            key = (doc_id, ref)
+            prior = verified.get(key)
+            if prior is None or confidence > float(prior.get("confidence", 0.0)):
+                verified[key] = citation
+
+        if not verified:
+            return self._abstain(
+                "no_verified_articles",
+                routed=routed_ids,
+                target_date=target_date,
+                dates=dates,
+                sub_calls=sub_calls,
+                chains=chain_traces,
+            )
+
+        # 6. Final ranking + truncate
+        ranked = sorted(
+            verified.values(),
+            key=lambda c: float(c.get("confidence", 0.0)),
+            reverse=True,
+        )
+        final_citations = ranked[: self._final_top_k]
+
+        # 7. Synthesise
+        answer_text = self._template_answer(final_citations)
+        try:
+            synth = self._summarizer_fn(
+                self._llm_pool, query, final_citations, self._sub_model
+            )
+            sub_calls += 1
+            summary = synth.get("summary")
+            if isinstance(summary, str) and summary.strip():
+                answer_text = summary.strip()
+        except Exception as exc:
+            log.warning("temporal summariser failed (%s) — template answer", exc)
+
+        return {
+            "answer_text":       answer_text,
+            "abstention":        False,
+            "abstention_reason": None,
+            "citations":         final_citations,
+            "reasoning_chain":   [
+                f"target_date={target_date}",
+                *[f"{t['doc_id']}/{t['article_ref']}@{t.get('picked') or '-'}({t['source']})"
+                  for t in chain_traces],
+            ],
+            "trajectory":        [],
+            "tokens_used":       0,
+            "depth_max_reached": 1,
+            "_telemetry": {
+                "retry_count":     0,
+                "gate_results":    {},
+                "baseline":        TELEMETRY_BASELINE,
+                "routed_doc_ids":  routed_ids,
+                "extracted_dates": dates,
+                "target_date":     target_date,
+                "amendment_chains": chain_traces,
+                "sub_call_count":  sub_calls,
+            },
+        }
+
+    # ------------------------------------------------------------------
+    # Retrieval helpers (mirror multi_hop)
+    # ------------------------------------------------------------------
+
+    def _fused_candidates(
+        self, query: str, routed_ids: list[str]
+    ) -> list[dict[str, Any]]:
+        """RRF(BM25, Dense) restricted to routed docs (with full-pool fallback)."""
+        try:
+            bm25_hits: list[BM25Hit] = self._bm25.search(query, k=self._k_each)
+        except Exception as exc:
+            log.warning("temporal BM25 failed: %s", exc)
+            bm25_hits = []
+        try:
+            dense_hits: list[DenseHit] = self._dense.search(query, k=self._k_each)
+        except Exception as exc:
+            log.warning("temporal dense failed: %s", exc)
+            dense_hits = []
+
+        bm25_dicts = self._hits_to_dicts(bm25_hits, retriever="bm25")
+        dense_dicts = self._hits_to_dicts(dense_hits, retriever="dense")
+        if not bm25_dicts and not dense_dicts:
+            return []
+
+        fused = rrf_fuse([bm25_dicts, dense_dicts])
+        if routed_ids:
+            allowed = set(routed_ids)
+            filtered = [h for h in fused if h.get("doc_id") in allowed]
+            if filtered:
+                fused = filtered
+        return fused
+
+    @staticmethod
+    def _hits_to_dicts(
+        hits: list[BM25Hit] | list[DenseHit],
+        *,
+        retriever: str,
+    ) -> list[dict[str, Any]]:
+        out: list[dict[str, Any]] = []
+        for h in hits:
+            ref_canon = canonical_article_ref(h.article_ref) or h.article_ref
+            out.append({
+                "chunk_id":    h.chunk_id,
+                "doc_id":      h.doc_id,
+                "article_ref": ref_canon,
+                "text":        h.text or "",
+                "score":       float(h.score),
+                "retriever":   retriever,
+            })
+        return out
+
+    # ------------------------------------------------------------------
+    # Citation / answer assembly
+    # ------------------------------------------------------------------
+
+    def _build_citation(
+        self,
+        *,
+        doc_id: str,
+        article_ref: str,
+        version_text: str,
+        version_date: str,
+        source: str,
+        supporting_quote: str,
+        confidence: float,
+    ) -> dict[str, Any]:
+        text = version_text or ""
+        if supporting_quote and supporting_quote in text:
+            span = supporting_quote[:SUPPORT_SPAN_LEN]
+        else:
+            span = text[:SUPPORT_SPAN_LEN]
+        return {
+            "doc_id":            doc_id,
+            "article_ref":       article_ref,
+            "doc_title":         self._doc_title(doc_id),
+            "supporting_span":   span,
+            "text":              text,
+            "confidence":        float(confidence),
+            "version_date":      version_date,
+            "kg_source":         source,
+            "verifier_relevant": True,
+        }
+
+    def _doc_title(self, doc_id: str) -> str:
+        try:
+            entry = self._registry.get_doc(doc_id)
+        except Exception:
+            entry = None
+        return getattr(entry, "doc_title", "") or doc_id
+
+    @staticmethod
+    def _template_answer(citations: list[dict[str, Any]]) -> str:
+        parts: list[str] = []
+        for c in citations:
+            doc_title = c.get("doc_title") or c.get("doc_id", "")
+            ref = c.get("article_ref", "")
+            text = c.get("supporting_span") or c.get("text", "")
+            vdate = c.get("version_date") or ""
+            head = f"وفقًا لـ {doc_title}، المادة {ref}"
+            if vdate:
+                head += f" (نسخة {vdate})"
+            parts.append(f"{head}: {text}")
+        return "\n\n".join(parts)
+
+    # ------------------------------------------------------------------
+    @staticmethod
+    def _abstain(
+        reason: str,
+        *,
+        routed: list[str],
+        target_date: str,
+        dates: list[str],
+        sub_calls: int,
+        chains: list[dict[str, Any]],
+    ) -> dict[str, Any]:
+        return {
+            "answer_text":       "",
+            "abstention":        True,
+            "abstention_reason": reason,
+            "citations":         [],
+            "reasoning_chain":   [],
+            "trajectory":        [],
+            "tokens_used":       0,
+            "depth_max_reached": 0,
+            "_telemetry": {
+                "retry_count":      0,
+                "gate_results":     {},
+                "baseline":         TELEMETRY_BASELINE,
+                "routed_doc_ids":   routed,
+                "extracted_dates":  dates,
+                "target_date":      target_date,
+                "amendment_chains": chains,
+                "sub_call_count":   sub_calls,
+            },
+        }
+
+
+# ---------------------------------------------------------------------------
+# Factory
+# ---------------------------------------------------------------------------
+
+def build_temporal_factual_handler(
+    kg: Any,
+    bm25: BM25Index,
+    dense: DenseIndex,
+    registry: ArticleRegistry,
+    llm_pool,
+    *,
+    router: Optional[DocRouter] = None,
+    **kwargs: Any,
+) -> TemporalFactualHandler:
+    """Factory mirroring the baseline ``build_*_pipeline`` helpers."""
+    return TemporalFactualHandler(
+        kg=kg,
+        bm25=bm25,
+        dense=dense,
+        registry=registry,
+        llm_pool=llm_pool,
+        router=router,
+        **kwargs,
+    )

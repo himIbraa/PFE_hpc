@@ -1,0 +1,70 @@
+========================================================================
+  RLM temporal_factual handler  rlm_tf_r9_2_gate
+========================================================================
+
+Total questions : 7
+Temporal subset : 7
+
+── OVERALL ──────────────────────────────────────────────────────────
+  MRR@K  (doc)             0.7857  (Δ +0.136 vs baseline, ✓ target=0.75)
+  MRR@K  (art)             0.2143  (Δ +0.034 vs baseline, ✗ target=0.40)
+  MAP@K  (doc)             0.7857
+  MAP@K  (art)             0.2143
+  R@K    (doc)             0.8571
+  R@K    (art)             0.2857
+  P@K    (doc)             0.0857
+  P@K    (art)             0.0286
+  NDCG@K (doc)             0.8044
+  NDCG@K (art)             0.2330
+  Cite F1                  0.1905  (Δ -0.020 vs baseline, ✗ target=0.40)
+  Cite P                   0.1429
+  Cite R                   0.2857
+  Doc Cite F1              0.6667
+  Exact Match              0.0000
+  Token F1                 0.0586
+  ROUGE-L                  0.0488
+  HCR ↓                    0.0000  (Δ -0.670 vs baseline, ✗ target=0.15)
+  JIR ↓                    0.0000  (Δ -0.100 vs baseline, ✗ target=0.10)
+  Faithfulness             0.0000
+  Groundedness             0.6429
+  Abst Acc                 1.0000
+  Abst Recall              0.0000
+  Abst Prec                0.0000
+  Abst F1                  0.0000  (✗ target=0.75)
+  Mean Tokens              0.0000
+  Mean Latency (s)         2.8790
+  Retry Rate               0.0000
+
+── BY QUERY TYPE ─────────────────────────────────────────────────────
+
+  [temporal_factual]  (n=7)
+  MRR@K  (doc)=0.786  MRR@K  (art)=0.214  Cite F1=0.190  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+── BY DIFFICULTY ─────────────────────────────────────────────────────
+
+  [hard]  (n=6)
+  MRR@K  (doc)=0.750  MRR@K  (art)=0.250  Cite F1=0.222  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+  [medium]  (n=1)
+  MRR@K  (doc)=1.000  MRR@K  (art)=0.000  Cite F1=0.000  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+── BY LANGUAGE ───────────────────────────────────────────────────────
+
+  [ar]  (n=7)
+  MRR@K  (doc)=0.786  MRR@K  (art)=0.214  Cite F1=0.190  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+── TEMPORAL SUBSET ───────────────────────────────────────────────────
+  MRR@K  (doc)=0.786  MRR@K  (art)=0.214  Cite F1=0.190  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+── BY LEGAL CATEGORY (compact) ───────────────────────────────────────
+  Category                      MRR(art)   R(art)   CiteF1     HCR
+  -----------------------------------------------------------------
+  commercial_law                  0.0000   0.0000   0.0000  0.0000  (n=1)
+  constitutional_law              1.0000   1.0000   0.6667  0.0000  (n=1)
+  criminal_law                    0.0000   0.0000   0.0000  0.0000  (n=1)
+  criminal_procedure              0.0000   0.0000   0.0000  0.0000  (n=1)
+  family_law                      0.5000   1.0000   0.6667  0.0000  (n=1)
+  labor_law                       0.0000   0.0000   0.0000  0.0000  (n=1)
+  tax_law                         0.0000   0.0000   0.0000  0.0000  (n=1)
+
+========================================================================

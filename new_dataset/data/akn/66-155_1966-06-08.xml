@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="order">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/akn/dz/act/order/1966-06-08/66-155/main"/>
+          <FRBRuri value="/akn/dz/act/order/1966-06-08/66-155"/>
+          <FRBRdate date="1966-06-08" name="enactment"/>
+          <FRBRauthor href="#president"/>
+          <FRBRcountry value="dz"/>
+          <FRBRnumber value="66-155"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/dz/act/order/1966-06-08/66-155/ara@/main"/>
+          <FRBRuri value="/akn/dz/act/order/1966-06-08/66-155/ara@"/>
+          <FRBRdate date="1966-06-08" name="publication"/>
+          <FRBRauthor href="#joradp"/>
+          <FRBRlanguage language="ara"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/dz/act/order/1966-06-08/66-155/ara@/main.xml"/>
+          <FRBRuri value="/akn/dz/act/order/1966-06-08/66-155/ara@.xml"/>
+          <FRBRdate date="2026-05-07" name="transform"/>
+          <FRBRauthor href="#converter"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="president" href="/ontology/organization/dz/president" showAs="رئيس الجمهورية"/>
+        <TLCOrganization eId="joradp" href="/ontology/organization/dz/joradp" showAs="الجريدة الرسمية"/>
+        <TLCPerson eId="converter" href="/ontology/person/dz/converter" showAs="Markup Specialist"/>
+      </references>
+    </meta>
+    <preface>
+      <docTitle>الأمر رقم 66-155 المتضمن قانون الإجراءات الجزائية</docTitle>
+      <docNumber>66-155</docNumber>
+      <docDate date="1966-06-08">8 يونيو سنة 1966</docDate>
+      <docAuthority>رئيس الجمهورية</docAuthority>
+    </preface>
+    <preamble>
+      <citations>
+        <citation>
+          <p>إن رئيس الحكومة، رئيس مجلس الوزراء،</p>
+        </citation>
+      </citations>
+      <formula name="enactingFormula">
+        <p>يأمر بما يلي:</p>
+      </formula>
+    </preamble>
+    <body>
+      <article eId="art_9">
+        <num>9</num>
+        <content>
+          <paragraph>
+            <p>يكون التقادم في مواد المخالفات بمضي سنتين كاملتين. ويتبع في شأنه الأحكام الموضحة في المادة 7.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_47">
+        <num>47</num>
+        <content>
+          <paragraph>
+            <p>لا يجوز البدء في تفتيش المساكن أو معاينتها قبل الساعة الخامسة صباحا، ولا بعد الساعة الثامنة مساء، إلا إذا طلب صاحب المنزل أو وجهت نداءات من الداخل أو في الأحوال الاستثنائية المقررة قانونا.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_48">
+        <num>48</num>
+        <content>
+          <paragraph>
+            <p>يجب مراعاة الإجراءات التي استوجبتها المادتان 45 و47 ويترتب على مخالفتها البطلان.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_49">
+        <num>49</num>
+        <content>
+          <paragraph>
+            <p>إذا اقتضى الأمر إجراء معاينات لا يمكن تأخيرها فلضابط الشرطة القضائية أن يستعين بأشخاص مؤهلين لذلك.</p>
+          </paragraph>
+          <paragraph>
+            <p>وعلى هؤلاء الأشخاص الذين يستدعيهم لهذا الإجراء أن يحلفوا اليمين كتابة على إبداء رأيهم بما يمليه عليهم الشرف والضمير.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_50">
+        <num>50</num>
+        <content>
+          <paragraph>
+            <p>يجوز لضابط الشرطة القضائية منع أي شخص من مبارحة مكان الجريمة ريثما ينتهي من إجراء تحرياته.</p>
+          </paragraph>
+          <paragraph>
+            <p>وعلى كل شخص يبدو له ضروريا في مجرى استدلالاته القضائية التعرف على هويته أو التحقق من شخصيته أن يمتثل له في كل ما يطلبه من إجراءات في هذا الخصوص.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_51">
+        <num>51</num>
+        <content>
+          <paragraph>
+            <p>إذا رأى ضابط الشرطة القضائية لمقتضيات التحقيق أن يوقف للنظر شخصا أو أكثر ممن أشير إليهم في المادة 50، فعليه أن يطلع فورا وكيل الجمهورية بذلك ويقدم له تقريرا عن دواعي التوقيف للنظر.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_107">
+        <num>107</num>
+        <content>
+          <paragraph>
+            <p>لا يجوز لمحامي المتهم ولا لمحامي المدعي المدني أن يتناول الكلام فيما عدا توجيه الأسئلة بعد أن يصرح قاضي التحقيق لهما بذلك فإذا رفض قاضي التحقيق تضمن نص الأسئلة بالمحضر أو يرفق به.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_372">
+        <num>372</num>
+        <content>
+          <paragraph>
+            <p>يجوز لكل من المتهم والمدعي المدني والمسؤول عن الحقوق المدنية أن يطلب إلى المحكمة المطروحة أمامها الدعوى رد الأشياء الموضوعة تحت تصرف القضاء.</p>
+          </paragraph>
+          <paragraph>
+            <p>ويجوز للمحكمة أن تأمر بهذا الرد من تلقاء نفسها.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_376">
+        <num>376</num>
+        <content>
+          <paragraph>
+            <p>يكون الحكم برفض طلب الاسترداد قابلا للاستئناف من جانب من تقدم بهذا الطلب.</p>
+          </paragraph>
+          <paragraph>
+            <p>والحكم الصادر بالموافقة على رد الأشياء المستردة قابل الاستئناف من جانب كل من النيابة العامة والمتهم والمسؤول عن الحقوق المدنية والمدعي المدني إذا كان يلحقهم ضرر من هذا الحكم.</p>
+          </paragraph>
+          <paragraph>
+            <p>ولا يرفع الأمر للمجلس القضائي إلا بعد أن تفصل المحكمة في الموضوع.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_377">
+        <num>377</num>
+        <content>
+          <paragraph>
+            <p>تظل المحكمة التي نظرت في القضية مختصة بالأمر برد الأشياء الموضوعة تحت تصرف القضاء إن لم يرفع أي طعن في الحكم الصادر في الموضوع.</p>
+          </paragraph>
+          <paragraph>
+            <p>وتفصل فيه بناء على عريضة تقدم من أي شخص يدعي أن له حقا على الشيء أو بناء على طلب النيابة العامة.</p>
+          </paragraph>
+          <paragraph>
+            <p>ويجوز الطعن في قرارها أمام المجلس القضائي طبقا لأحكام المادة 376.</p>
+          </paragraph>
+        </content>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>

@@ -1,0 +1,17 @@
+# Secrets
+.env
+
+# Built indices (large, reproducible)
+data/indices/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# HuggingFace / model caches
+.cache/

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="law">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/akn/dz/act/law/2003-07-19/03-10/main"/>
+          <FRBRuri value="/akn/dz/act/law/2003-07-19/03-10"/>
+          <FRBRdate date="2003-07-19" name="enactment"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="dz"/>
+          <FRBRnumber value="03-10"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/dz/act/law/2003-07-19/03-10/ara@/main"/>
+          <FRBRuri value="/akn/dz/act/law/2003-07-19/03-10/ara@"/>
+          <FRBRdate date="2003-07-19" name="publication"/>
+          <FRBRauthor href="#joradp"/>
+          <FRBRlanguage language="ara"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/dz/act/law/2003-07-19/03-10/ara@/main.xml"/>
+          <FRBRuri value="/akn/dz/act/law/2003-07-19/03-10/ara@.xml"/>
+          <FRBRdate date="2026-05-07" name="transform"/>
+          <FRBRauthor href="#converter"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="parliament" href="/ontology/organization/dz/parliament" showAs="البرلمان"/>
+        <TLCOrganization eId="joradp" href="/ontology/organization/dz/joradp" showAs="الجريدة الرسمية"/>
+        <TLCPerson eId="converter" href="/ontology/person/dz/converter" showAs="Markup Specialist"/>
+      </references>
+    </meta>
+    <preface>
+      <docTitle>قانون رقم 03-10 يتعلق بحماية البيئة في إطار التنمية المستدامة</docTitle>
+      <docNumber>03-10</docNumber>
+      <docDate date="2003-07-19">19 يوليو سنة 2003</docDate>
+      <docAuthority>البرلمان</docAuthority>
+    </preface>
+    <preamble>
+      <citations>
+        <citation>
+          <p>إن رئيس الجمهورية،</p>
+        </citation>
+      </citations>
+      <formula name="enactingFormula">
+        <p>يصدر القانون الآتي نصه:</p>
+      </formula>
+    </preamble>
+    <body>
+      <article eId="art_15">
+        <num>15</num>
+        <content>
+          <paragraph>
+            <p>تخضع، مسبقا وحسب الحالة، لدراسة التأثير أو لموجز التأثير على البيئة، مشاريع التنمية والهياكل والمنشآت الثابتة والمصانع والأعمال الفنية الأخرى، وكل الأعمال وبرامج البناء والتهيئة، التي تؤثر بصفة مباشرة أو غير مباشرة فورا أو لاحقا، على البيئة، لاسيما على الأنواع والموارد والأوساط والفضاءات الطبيعية والتوازنات الإيكولوجية وكذلك على إطار ونوعية المعيشة.</p>
+          </paragraph>
+          <paragraph>
+            <p>تحدد كيفيات تطبيق هذه المادة عن طريق التنظيم.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_18">
+        <num>18</num>
+        <content>
+          <paragraph>
+            <p>تخضع لأحكام هذا القانون المصانع والورشات والمشاغل ومقالع الحجارة والمناجم، وبصفة عامة المنشآت التي يستغلها أو يملكها كل شخص طبيعي أو معنوي، عمومي أو خاص، والتي قد تتسبب في أخطار على الصحة العمومية والنظافة والأمن والفلاحة والأنظمة البيئية والموارد الطبيعية والمواقع والمعالم والمناطق السياحية، أو قد تتسبب في المساس براحة الجوار.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_19">
+        <num>19</num>
+        <content>
+          <paragraph>
+            <p>تخضع المنشآت المصنفة، حسب أهميتها وحسب الأخطار أو المضار التي تنجر عن استغلالها، لترخيص من الوزير المكلف بالبيئة والوزير المعني عندما تكون هذه الرخصة منصوصا عليها في التشريع المعمول به، ومن الوالي أو رئيس المجلس الشعبي البلدي.</p>
+          </paragraph>
+          <paragraph>
+            <p>وتخضع لتصريح لدى المجلس الشعبي البلدي المعني المنشآت التي لا تتطلب إقامتها دراسة تأثير ولا موجز التأثير.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_21">
+        <num>21</num>
+        <content>
+          <paragraph>
+            <p>يسبق تسليم الرخصة المنصوص عليها في المادة 19 أعلاه، تقديم دراسة التأثير أو موجز التأثير، وتحقيق عمومي ودراسة تتعلق بالأخطار والانعكاسات المحتملة للمشروع على المصالح المذكورة في المادة 18 أعلاه.</p>
+          </paragraph>
+          <paragraph>
+            <p>وعند الاقتضاء، بعد أخذ رأي الوزارات والجماعات المحلية المعنية.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_25">
+        <num>25</num>
+        <content>
+          <paragraph>
+            <p>عندما تنجم عن استغلال منشأة غير واردة في قائمة المنشآت المصنفة، أخطار أو أضرار تمس بالمصالح المذكورة في المادة 18 أعلاه، وبناء على تقرير من مصالح البيئة يعذر الوالي المستغل ويحدد له أجلا لاتخاذ التدابير الضرورية لإزالة الأخطار أو الأضرار المثبتة.</p>
+          </paragraph>
+          <paragraph>
+            <p>إذا لم يمتثل المستغل في الأجل المحدد، يوقف سير المنشأة إلى حين تنفيذ الشروط المفروضة، مع اتخاذ التدابير المؤقتة الضرورية بما فيها التي تضمن دفع مستحقات المستخدمين مهما كان نوعها.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_52">
+        <num>52</num>
+        <content>
+          <paragraph>
+            <p>مع مراعاة الأحكام التشريعية المعمول بها والمتعلقة بحماية البيئة البحرية، يمنع داخل المياه البحرية الخاضعة للقضاء الجزائري، كل صب أو غمر أو ترميد لمواد من شأنها:</p>
+          </paragraph>
+          <paragraph>
+            <p>الإضرار بالصحة العمومية والأنظمة البيئية البحرية.</p>
+          </paragraph>
+          <paragraph>
+            <p>عرقلة الأنشطة البحرية بما في ذلك الملاحة والتربية المائية والصيد البحري.</p>
+          </paragraph>
+          <paragraph>
+            <p>إفساد نوعية المياه البحرية من حيث استعمالها.</p>
+          </paragraph>
+          <paragraph>
+            <p>التقليل من القيمة الترفيهية والجمالية للبحر والمناطق الساحلية، والمساس بقدراتها السياحية.</p>
+          </paragraph>
+          <paragraph>
+            <p>تحدد قائمة المواد المذكورة في هذه المادة عن طريق التنظيم.</p>
+          </paragraph>
+        </content>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>

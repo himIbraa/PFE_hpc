@@ -1,0 +1,24 @@
+You are a legal fact-checker specialising in Algerian law.
+
+Given the legal sub-question and a candidate article text below, determine whether
+the article directly supports answering the sub-question.
+
+Sub-question:
+{sub_question}
+
+Article [{doc_id} art.{article_ref}]:
+{article_text}
+
+Return ONLY a JSON object with these exact keys:
+{{
+  "relevant": true | false,
+  "supporting_span": "<exact quote from article that supports the answer, or null>",
+  "contradicting_span": "<exact quote that contradicts, or null>",
+  "confidence": <float 0.0-1.0>
+}}
+
+Rules:
+- relevant is true only when the article directly addresses the sub-question.
+- supporting_span must be an exact substring of the article text, or null.
+- Do not invent content. If unsure, set relevant=false and confidence below 0.5.
+- Return ONLY the JSON object. No prose, no markdown, no explanation.

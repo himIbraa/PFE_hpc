@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="law">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/akn/dz/act/law/2011-02-17/11-04/main"/>
+          <FRBRuri value="/akn/dz/act/law/2011-02-17/11-04"/>
+          <FRBRdate date="2011-02-17" name="enactment"/>
+          <FRBRauthor href="#parliament"/>
+          <FRBRcountry value="dz"/>
+          <FRBRnumber value="11-04"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/dz/act/law/2011-02-17/11-04/ara@/main"/>
+          <FRBRuri value="/akn/dz/act/law/2011-02-17/11-04/ara@"/>
+          <FRBRdate date="2011-02-17" name="publication"/>
+          <FRBRauthor href="#joradp"/>
+          <FRBRlanguage language="ara"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/dz/act/law/2011-02-17/11-04/ara@/main.xml"/>
+          <FRBRuri value="/akn/dz/act/law/2011-02-17/11-04/ara@.xml"/>
+          <FRBRdate date="2026-05-07" name="transform"/>
+          <FRBRauthor href="#converter"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="parliament" href="/ontology/organization/dz/parliament" showAs="البرلمان"/>
+        <TLCOrganization eId="joradp" href="/ontology/organization/dz/joradp" showAs="الجريدة الرسمية"/>
+        <TLCPerson eId="converter" href="/ontology/person/dz/converter" showAs="Markup Specialist"/>
+      </references>
+    </meta>
+    <preface>
+      <docTitle>قانون رقم 11-04 يحدد القواعد التي تنظم نشاط الترقية العقارية</docTitle>
+      <docNumber>11-04</docNumber>
+      <docDate date="2011-02-17">17 فبراير سنة 2011</docDate>
+      <docAuthority>البرلمان</docAuthority>
+    </preface>
+    <preamble>
+      <citations>
+        <citation>
+          <p>إن رئيس الجمهورية،</p>
+        </citation>
+      </citations>
+      <formula name="enactingFormula">
+        <p>يصدر القانون الآتي نصه:</p>
+      </formula>
+    </preamble>
+    <body>
+      <article eId="art_5">
+        <num>5</num>
+        <content>
+          <paragraph>
+            <p>يخضع نشاط الترقية العقارية في مجال التصميم والتهيئة والبناء إلى القواعد العامة للتهيئة والتعمير والبناء المحددة في التشريع المعمول به وكذا أحكام هذا القانون.</p>
+          </paragraph>
+          <paragraph>
+            <p>لا يمكن تشييد أي مشروع عقاري يتناقض مع مضمون مخططات التهيئة والعمران المصادق عليها قانونا.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_27">
+        <num>27</num>
+        <content>
+          <paragraph>
+            <p>عقد حفظ الحق هو العقد الذي يلتزم بموجبه المرقي العقاري بتسليم العقار المقرر بناؤه أو في طور البناء، لصاحب حفظ الحق، فور إنهائه، مقابل تسبيق يدفعه هذا الأخير.</p>
+          </paragraph>
+          <paragraph>
+            <p>يودع مبلغ التسبيق المدفوع من طرف صاحب حفظ الحق في حساب مفتوح باسم هذا الأخير لدى هيئة ضمان عمليات الترقية العقارية المنصوص عليها في المادة 56 من هذا القانون.</p>
+          </paragraph>
+          <paragraph>
+            <p>يحدد نموذج عقد حفظ الحق عن طريق التنظيم.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_50">
+        <num>50</num>
+        <content>
+          <paragraph>
+            <p>يتعين على المكتتب في مشروع عقاري كما هو منصوص عليه في هذا الفصل، احترام بنود نظام الملكية المشتركة وتسديد كل المساهمات التي تقع على عاتقه بعنوان التسيير والحفاظ على العقار الذي يملكه، وتبقى مسؤوليته كاملة تجاه كل شخص يشغل العقار بمحض إرادته.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_61">
+        <num>61</num>
+        <content>
+          <paragraph>
+            <p>يتعين على كل مرق عقاري إعداد نظام الملكية المشتركة وتوضيح كل البيانات القانونية والتقنية والمالية الخاصة به.</p>
+          </paragraph>
+          <paragraph>
+            <p>ويجب عليه خصوصا توضيح الأعباء والواجبات التي يلتزم بها المقتنون عند الاكتتاب في عقد بيع عقار ما.</p>
+          </paragraph>
+          <paragraph>
+            <p>كما يجب على المرقي العقاري توقع وإنجاز المحلات الضرورية لإدارة الأملاك ومسكن البواب، بعنوان الأجزاء المشتركة.</p>
+          </paragraph>
+          <paragraph>
+            <p>تحدد كيفيات تطبيق هذه المادة، عند الحاجة، عن طريق التنظيم.</p>
+          </paragraph>
+        </content>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>

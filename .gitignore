@@ -1,0 +1,127 @@
+# ============================================================================
+# Claude Code session state
+# ============================================================================
+.claude/
+
+# ============================================================================
+# Secrets — ABSOLUTELY MUST NOT BE PUSHED
+# ============================================================================
+pfe-api-*.json
+*service-account*.json
+*credentials*.json
+.env
+.env.*
+*.pem
+*.key
+
+# ============================================================================
+# Python
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+build/
+dist/
+.tox/
+
+# ============================================================================
+# Virtual envs
+# ============================================================================
+venv/
+.venv/
+env/
+.env/
+
+# ============================================================================
+# Jupyter / IDE
+# ============================================================================
+.ipynb_checkpoints/
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ============================================================================
+# Models / large caches (downloaded on demand by HPC build script)
+# ============================================================================
+.cache/
+hf_cache/
+models/
+*.bin
+*.safetensors
+*.onnx
+
+# ============================================================================
+# Unused indices (regenerable; ColBERT/SPLADE not used by F5 dispatcher)
+# ============================================================================
+akn_rlm/data/indices/colbert/
+akn_rlm/data/indices/splade.npz
+akn_rlm/data/indices/splade.meta.pkl
+
+# ============================================================================
+# Old / legacy code, kept local for reference but not pushed
+# ============================================================================
+code/
+_fetched_sources/
+
+# ============================================================================
+# Debug / scratch files at repo root
+# ============================================================================
+check_langgraph.py
+check_pipeline.py
+check_pipeline2.py
+collision_sample.txt
+non_ascii_lines.txt
+categories.txt
+recap.md
+
+# ============================================================================
+# Per-package debug files
+# ============================================================================
+akn_rlm/_smoke_*.txt
+akn_rlm/_smoke_*.log
+akn_rlm/smoke_*.log
+akn_rlm/_run_tests*.py
+akn_rlm/_run_tests*.bat
+akn_rlm/_check_*.py
+akn_rlm/_check_*.txt
+akn_rlm/_test_*.py
+akn_rlm/_traj_out.txt
+akn_rlm/_bm25_debug.txt
+akn_rlm/_debug_bm25.py
+akn_rlm/eval_results/_check_*.py
+akn_rlm/eval_results/_run_tests*.py
+akn_rlm/eval_results/_smoke_*.txt
+akn_rlm/eval_results/_smoke_*.log
+akn_rlm/eval_results/_test_*.py
+akn_rlm/eval_results/_traj_out.txt
+akn_rlm/eval_results/_bm25_debug.txt
+akn_rlm/eval_results/_debug_bm25.py
+akn_rlm/scripts/_check_*.py
+akn_rlm/scripts/_debug_*.py
+akn_rlm/scripts/_debug_*.txt
+akn_rlm/scripts/_diag.py
+
+# ============================================================================
+# Quarantine (raw dataset junk that didn't make it into v3.0)
+# ============================================================================
+new_dataset/quarantine/
+new_dataset/data/pdf/
+new_dataset/data/txt/
+
+# ============================================================================
+# Per-run telemetry that can grow huge — keep only the F-series final + smokes
+# ============================================================================
+# (No exclusion — eval_results/ is intentionally tracked so HPC can compare
+# against the locked F5 baseline. If size becomes a problem we add globs here.)

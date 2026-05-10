@@ -1,0 +1,80 @@
+========================================================================
+  Hybrid+Rerank baseline  baseline_hybrid_rerank_un_full
+========================================================================
+
+Total questions : 40
+Temporal subset : 0
+
+── OVERALL ──────────────────────────────────────────────────────────
+  MRR@K  (doc)             0.3521  (Δ -0.298 vs baseline, ✗ target=0.75)
+  MRR@K  (art)             0.0063  (Δ -0.174 vs baseline, ✗ target=0.40)
+  MAP@K  (doc)             0.3217
+  MAP@K  (art)             0.0063
+  R@K    (doc)             0.5125
+  R@K    (art)             0.0250
+  P@K    (doc)             0.0575
+  P@K    (art)             0.0025
+  NDCG@K (doc)             0.3982
+  NDCG@K (art)             0.0108
+  Cite F1                  0.0083  (Δ -0.202 vs baseline, ✗ target=0.40)
+  Cite P                   0.0050
+  Cite R                   0.0250
+  Doc Cite F1              0.1292
+  Exact Match              0.0000
+  Token F1                 0.0526
+  ROUGE-L                  0.0323
+  HCR ↓                    0.0000  (Δ -0.670 vs baseline, ✗ target=0.15)
+  JIR ↓                    0.0000  (Δ -0.100 vs baseline, ✗ target=0.10)
+  Faithfulness             0.0000
+  Groundedness             1.0000
+  Abst Acc                 0.0000
+  Abst Recall              0.0000
+  Abst Prec                0.0000
+  Abst F1                  0.0000  (✗ target=0.75)
+  Mean Tokens              0.0000
+  Mean Latency (s)         0.6170
+  Retry Rate               0.0000
+
+── BY QUERY TYPE ─────────────────────────────────────────────────────
+
+  [unanswerable]  (n=40)
+  MRR@K  (doc)=0.352  MRR@K  (art)=0.006  Cite F1=0.008  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+── BY DIFFICULTY ─────────────────────────────────────────────────────
+
+  [hard]  (n=37)
+  MRR@K  (doc)=0.372  MRR@K  (art)=0.007  Cite F1=0.009  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+  [medium]  (n=3)
+  MRR@K  (doc)=0.111  MRR@K  (art)=0.000  Cite F1=0.000  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+── BY LANGUAGE ───────────────────────────────────────────────────────
+
+  [ar]  (n=37)
+  MRR@K  (doc)=0.345  MRR@K  (art)=0.007  Cite F1=0.009  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+  [fr]  (n=3)
+  MRR@K  (doc)=0.444  MRR@K  (art)=0.000  Cite F1=0.000  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+── BY LEGAL CATEGORY (compact) ───────────────────────────────────────
+  Category                      MRR(art)   R(art)   CiteF1     HCR
+  -----------------------------------------------------------------
+  administrative_law              0.0000   0.0000   0.0000  0.0000  (n=3)
+  anti_corruption                 0.0000   0.0000   0.0000  0.0000  (n=1)
+  civil_law                       0.0000   0.0000   0.0000  0.0000  (n=4)
+  civil_procedure                 0.0000   0.0000   0.0000  0.0000  (n=2)
+  commercial_law                  0.0000   0.0000   0.0000  0.0000  (n=5)
+  constitutional_law              0.1250   0.5000   0.1667  0.0000  (n=2)
+  consumer_law                    0.0000   0.0000   0.0000  0.0000  (n=1)
+  criminal_law                    0.0000   0.0000   0.0000  0.0000  (n=4)
+  criminal_procedure              0.0000   0.0000   0.0000  0.0000  (n=2)
+  environmental_law               0.0000   0.0000   0.0000  0.0000  (n=1)
+  family_law                      0.0000   0.0000   0.0000  0.0000  (n=5)
+  housing_law                     0.0000   0.0000   0.0000  0.0000  (n=2)
+  investment_law                  0.0000   0.0000   0.0000  0.0000  (n=1)
+  ip_law                          0.0000   0.0000   0.0000  0.0000  (n=1)
+  labor_law                       0.0000   0.0000   0.0000  0.0000  (n=3)
+  social_security                 0.0000   0.0000   0.0000  0.0000  (n=1)
+  tax_law                         0.0000   0.0000   0.0000  0.0000  (n=2)
+
+========================================================================

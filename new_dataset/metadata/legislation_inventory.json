@@ -1,0 +1,519 @@
+{
+  "documents": [
+    {
+      "stem": "01-14_2001-08-19",
+      "year": "2001",
+      "type": "Law",
+      "title": "قانون يتعلق بتنظيم حركة المرور عبر الطرق وسلامتها وأمنها",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "03-07_2003-07-19",
+      "year": "2003",
+      "type": "Presidential Decree",
+      "title": "أمر رقم 03 - 07 يتعلق ببراءات الاختراع",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "04-18_2004-12-25",
+      "year": "2004",
+      "type": "Law",
+      "title": "قانون يتعلق بالوقاية من المخدرات والمؤثرات العقلية وقمع الاستعمال والاتجار غير المشروعين بها",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "05-01_2005-02-06",
+      "year": "2005",
+      "type": "Law",
+      "title": "القانون المتعلق بالوقاية من تبييض الأموال وتمويل الإرهاب ومكافحتهما المعدل والمتمم",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "05-17_2017-02-16",
+      "year": "2017",
+      "type": "Law",
+      "title": "قانون رقم 05-17 يعدل ويتمم القانون رقم 01-14_2001-08-19 والمتعلق بتنظيم حركة المرور عبر الطرق وسلامتها وأمنها",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "05-2004_2005-02-06",
+      "year": "2005",
+      "type": "Law",
+      "title": "قانون تنظيم السجون وإعادة الإدماج الاجتماعي للمحبوسين",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "06-01_2006-02-20",
+      "year": "2005",
+      "type": "Law",
+      "title": "القانون المتعلق بالوقاية من تبييض الأموال وتمويل الإرهاب ومكافحتهما المعدل والمتمم",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "06-05_2006-01-09",
+      "year": "2006",
+      "type": "Presidential Decree",
+      "title": "المرسوم التنفيذي رقم 06-05 المتضمن شكل الإخطار بالشبهة ونموذجه ومحتواه ووصل استلامه",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "07-12_2012-02-21",
+      "year": "2012",
+      "type": "Organic Law",
+      "title": "قانون رقم 07-12 يتعلق بالولاية",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "08-09_2008-02-25",
+      "year": "2008",
+      "type": "Law",
+      "title": "قانون الإجراءات المدنية والإدارية",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "09-03_2009-02-25",
+      "year": "2009",
+      "type": "Law",
+      "title": "قانون يتعلق بحماية المستهلك وقمع الغش",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "11-05_2005-07-17",
+      "year": "2005",
+      "type": "Organic Law",
+      "title": "قانون عضوي رقم 05-11 يتعلق بالتنظيم القضائي",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "11-10_2011-06-22",
+      "year": "2011",
+      "type": "Law",
+      "title": "قانون يتعلق بالبلدية",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "12-2003_2012-11-28",
+      "year": "2012",
+      "type": "Law",
+      "title": "النظام رقم 03-12 المتعلق بالوقاية من تبييض الأموال وتمويل الإرهاب ومكافحتهما",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "12-2015_2012-01-12",
+      "year": "2012",
+      "type": "Organic Law",
+      "title": "قانون عضوي يتعلق بالإعلام",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "13-12_1971-04-22",
+      "year": "1971",
+      "type": "Order",
+      "title": "الأمر رقم 71-28 المتضمن قانون القضاء العسكري، المعدل والمتمم",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "15-20_2015-12-30__partial_code_commerce_pp_5-6",
+      "year": "2015",
+      "type": "Law",
+      "title": "قانون يعدل ويتمم الأمر رقم 75-59 المؤرخ في 20 رمضان عام 1395 الموافق 26 سبتمبر سنة 1975 والمتضمن القانون التجاري",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "15-247_2015-09-16",
+      "year": "2015",
+      "type": "Law",
+      "title": "يتضمن تنظيم الصفقات العمومية وتفويضات المرفق العام",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "18-05_2018-05-10",
+      "year": "2018",
+      "type": "Law",
+      "title": "قانون يتعلق بالتجارة الإلكترونية",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "18-11_2018-07-02",
+      "year": "2018",
+      "type": "Law",
+      "title": "قانون يتعلق بالصحة",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "22-09_2022-05-05__partial_code_commerce_pp12-13",
+      "year": "2022",
+      "type": "Order",
+      "title": "قانون رقم 22-09 يعدل ويتمم الأمر رقم 75-59 المؤرخ في 20 رمضان عام 1395 الموافق 26 سبتمبر سنة 1975 والمتضمن القانون التجاري",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "22-18_2022-07-24",
+      "year": "2022",
+      "type": "Law",
+      "title": "قانون يتعلق بالاستثمار",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "22-21_2022-07-20",
+      "year": "2022",
+      "type": "Law",
+      "title": "قانون رقم 22-21 يتمم القانون رقم 90-11 المؤرخ في 26 رمضان عام 1410 الموافق 21 أبريل سنة 1990 والمتعلق بعلاقات العمل",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "25-14_2025-08-03",
+      "year": "2025",
+      "type": "Law",
+      "title": "قانون يتضمن قانون الإجراءات الجزائية",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "66-156_1966-06-08",
+      "year": "1966",
+      "type": "Order",
+      "title": "الأمر رقم 66-156 المتضمن قانون العقوبات، المعدل والمتمم",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "70-86_1970-12-15",
+      "year": "1970",
+      "type": "Order",
+      "title": "الأمر رقم 70-86 المؤرخ في 17 شوال عام 1390 الموافق 15 ديسمبر سنة 1970، المتضمن قانون الجنسية الجزائرية المعدل والمتمم",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "75-59_1975-09-26",
+      "year": "1975",
+      "type": "Order",
+      "title": "الأمر الذي يتضمن القانون التجاري، المعدل والمتمم",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "75-8_1975-09-26",
+      "year": "1975",
+      "type": "Order",
+      "title": "الأمر رقم 75-58 المتضمن القانون المدني، المعدل والمتمم",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "83-11_02-07-1983",
+      "year": "",
+      "type": "Unknown",
+      "title": "83-11_02-07-1983",
+      "has_pdf": false,
+      "has_txt": true,
+      "has_xml": false,
+      "has_rdf": false
+    },
+    {
+      "stem": "83-11_1983-07-02",
+      "year": "1983",
+      "type": "Law",
+      "title": "قانون يتعلق بالتأمينات الاجتماعية",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "84-11_1984-06-09",
+      "year": "1984",
+      "type": "Law",
+      "title": "قانون الأسرة، المعدل والمتمم",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "90-11_1990-04-21",
+      "year": "1990",
+      "type": "Law",
+      "title": "قانون رقم 90-11 يتعلق بعلاقات العمل",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "94-03_1994-04-11",
+      "year": "1994",
+      "type": "Law",
+      "title": "مرسوم تشريعي رقم 94-03 يتمم القانون رقم 90-11 والمتعلق بعلاقات العمل",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "96-21_1996-07-09",
+      "year": "1996",
+      "type": "Law",
+      "title": "أمر رقم 96 - 21 يعدل ويتمم القانون رقم 90-11 والمتعلق بعلاقات العمل",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "97-02_1997-01-11",
+      "year": "1997",
+      "type": "Law",
+      "title": "أمر رقم 97-02_1997-01-11 يتمم القانون رقم 90 - 11 المؤرخ في 26 رمضان عام 1410 الموافق 21 أبريل سنة 1990 والمتعلق بعلاقات العمل",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "algerian_legal_kg",
+      "year": "",
+      "type": "Unknown",
+      "title": "algerian_legal_kg",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": false,
+      "has_rdf": true
+    },
+    {
+      "stem": "constitution_1963-12-08",
+      "year": "1963",
+      "type": "Constitution",
+      "title": "دستور الجمهورية الجزائرية الديمقراطية الشعبية",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "constitution_1976-11-19",
+      "year": "1976",
+      "type": "Constitution",
+      "title": "دستور 1976",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "constitution_1979-07-01",
+      "year": "1979",
+      "type": "Law",
+      "title": "قانون رقم 79-06 يتضمن التعديل الدستوري",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "constitution_1980-01-12",
+      "year": "1980",
+      "type": "Law",
+      "title": "قانون رقم 80-01 يتضمن التعديل الدستوري",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "constitution_1988-11-03",
+      "year": "1988",
+      "type": "Law",
+      "title": "التعديل الدستوري المصادق عليه في إستفتاء 3 نوفمبر سنة 1988",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "constitution_1989-02-23",
+      "year": "1989",
+      "type": "Constitution",
+      "title": "التعديل الدستوري المصادق عليه في إستفتاء 23 فبراير سنة 1989",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "constitution_1996-11-28",
+      "year": "1996",
+      "type": "Constitution",
+      "title": "التعديل الدستوري",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "constitution_2002-04-10",
+      "year": "2002",
+      "type": "Law",
+      "title": "قانون رقم 02-03 يتضمن التعديل الدستوري",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "constitution_2008-11-15",
+      "year": "2008",
+      "type": "Law",
+      "title": "قانون رقم 08-19 يتضمن التعديل الدستوري",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "constitution_2016-03-06",
+      "year": "2016",
+      "type": "Law",
+      "title": "القانون رقم 16-01 المتضمن التعديل الدستوري",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "constitution_2020-11-01",
+      "year": "2020",
+      "type": "Constitution",
+      "title": "التعديل الدستوري المصادق عليه في إستفتاء الفاتح من نوفمبر 2020",
+      "has_pdf": false,
+      "has_txt": false,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "constitution_2020-12-30",
+      "year": "2020",
+      "type": "Constitution",
+      "title": "دستور الجمهورية الجزائرية الديمقراطية الشعبية",
+      "has_pdf": true,
+      "has_txt": true,
+      "has_xml": true,
+      "has_rdf": true
+    },
+    {
+      "stem": "قانون-03-10",
+      "year": "",
+      "type": "Unknown",
+      "title": "قانون-03-10",
+      "has_pdf": true,
+      "has_txt": false,
+      "has_xml": false,
+      "has_rdf": false
+    }
+  ],
+  "statistics": {
+    "total_documents": 49,
+    "type_counts": {
+      "Law": 29,
+      "Presidential Decree": 2,
+      "Organic Law": 3,
+      "Order": 6,
+      "Unknown": 3,
+      "Constitution": 6
+    },
+    "type_year_ranges": {
+      "Law": "1979–2025",
+      "Presidential Decree": "2003–2006",
+      "Organic Law": "2005–2012",
+      "Order": "1966–2022",
+      "Constitution": "1963–2020"
+    },
+    "format_coverage": {
+      "all_four_formats": 23,
+      "pdf": 24,
+      "txt": 24,
+      "xml": 46,
+      "rdf": 47
+    }
+  }
+}

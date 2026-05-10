@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="executive-decree">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/akn/dz/act/executive-decree/2006-05-11/06-154/main"/>
+          <FRBRuri value="/akn/dz/act/executive-decree/2006-05-11/06-154"/>
+          <FRBRdate date="2006-05-11" name="enactment"/>
+          <FRBRauthor href="#pm"/>
+          <FRBRcountry value="dz"/>
+          <FRBRnumber value="06-154"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/dz/act/executive-decree/2006-05-11/06-154/ara@/main"/>
+          <FRBRuri value="/akn/dz/act/executive-decree/2006-05-11/06-154/ara@"/>
+          <FRBRdate date="2006-05-11" name="publication"/>
+          <FRBRauthor href="#joradp"/>
+          <FRBRlanguage language="ara"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/dz/act/executive-decree/2006-05-11/06-154/ara@/main.xml"/>
+          <FRBRuri value="/akn/dz/act/executive-decree/2006-05-11/06-154/ara@.xml"/>
+          <FRBRdate date="2026-05-07" name="transform"/>
+          <FRBRauthor href="#converter"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="pm" href="/ontology/organization/dz/prime-minister" showAs="الوزير الأول"/>
+        <TLCOrganization eId="joradp" href="/ontology/organization/dz/joradp" showAs="الجريدة الرسمية"/>
+        <TLCPerson eId="converter" href="/ontology/person/dz/converter" showAs="Markup Specialist"/>
+      </references>
+    </meta>
+    <preface>
+      <docTitle>مرسوم تنفيذي رقم 06-154 يحدد شروط وكيفيات تطبيق أحكام المادة 7 مكرر من قانون الأسرة</docTitle>
+      <docNumber>06-154</docNumber>
+      <docDate date="2006-05-11">11 مايو سنة 2006</docDate>
+      <docAuthority>الوزير الأول</docAuthority>
+    </preface>
+    <preamble>
+      <citations>
+        <citation>
+          <p>إن رئيس الحكومة،</p>
+        </citation>
+      </citations>
+      <formula name="enactingFormula">
+        <p>يرسم ما يأتي:</p>
+      </formula>
+    </preamble>
+    <body>
+      <article eId="art_1">
+        <num>1</num>
+        <content>
+          <paragraph>
+            <p>يهدف هذا المرسوم إلى تحديد شروط وكيفيات تطبيق أحكام المادة 7 مكرر من القانون رقم 84-11 المؤرخ في 9 رمضان عام 1404 الموافق لـ 9 يونيو 1984 والمذكور أعلاه.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_2">
+        <num>2</num>
+        <content>
+          <paragraph>
+            <p>يجب على كل طالب من طالبي الزواج أن يقدم شهادة طبية لا يزيد تاريخها عن ثلاثة (3) أشهر تثبت خضوعه للفحوصات الطبية المنصوص عليها في هذا المرسوم.</p>
+          </paragraph>
+          <paragraph>
+            <p>يسلم الشهادة المنصوص عليها في هذه المادة طبيب حسب النموذج المرفق بهذا المرسوم.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_6">
+        <num>6</num>
+        <content>
+          <paragraph>
+            <p>لا يجوز للموثق أو ضابط الحالة المدنية تحرير عقد الزواج إلا بعد أن يقدم طالبا الزواج الشهادة الطبية المنصوص عليها في هذا المرسوم.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_7">
+        <num>7</num>
+        <content>
+          <paragraph>
+            <p>يجب على الموثق أو ضابط الحالة المدنية التأكد من خلال الاستماع إلى كلا الطرفين في آن واحد من علمهما بنتائج الفحوصات التي خضع لها كل منهما وبالأمراض أو العوامل التي قد تشكل خطرا يتعارض مع الزواج ويؤشر بذلك في عقد الزواج.</p>
+          </paragraph>
+          <paragraph>
+            <p>لا يجوز للموثق أو ضابط الحالة المدنية رفض إبرام عقد الزواج لأسباب طبية خلافا لإرادة المعنيين.</p>
+          </paragraph>
+        </content>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>

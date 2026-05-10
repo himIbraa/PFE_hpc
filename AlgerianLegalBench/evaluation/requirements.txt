@@ -1,0 +1,20 @@
+# AlgerianLegalBench v3.0 — Evaluation Dependencies
+# Install: pip install -r requirements.txt
+
+# === CORE (always needed) ===
+# (none — evaluation script uses only stdlib)
+
+# === BACKENDS (install the ones you'll use) ===
+
+# Option 1: Ollama (local, free, unlimited)
+# Install Ollama itself: curl -fsSL https://ollama.com/install.sh | sh
+ollama>=0.4.0
+
+# Option 2: Groq (free cloud API, 14400 req/day)
+groq>=0.11.0
+
+# Option 3: Google AI Studio (free, 1500 req/day)
+google-genai>=1.0.0
+
+# Option 4: HuggingFace free inference
+huggingface_hub>=0.25.0

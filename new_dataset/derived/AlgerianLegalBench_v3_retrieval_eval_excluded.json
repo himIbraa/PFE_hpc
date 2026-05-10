@@ -1,0 +1,510 @@
+{
+  "metadata": {
+    "name": "AlgerianLegalBench v3.0",
+    "version": "3.0",
+    "description": "Native Algerian legal IR evaluation benchmark. 220 questions across 21 legal categories, 8 query types, 3 languages (MSA, Legal French, Algerian Darja). Evaluates retrieval correctness, citation faithfulness, jurisdictional infection rate, and hallucinated citation rate.",
+    "total_questions": 0,
+    "answerable_questions": 0,
+    "unanswerable_questions": 0,
+    "sources": [
+      "benchmark-1",
+      "benchmark-2",
+      "benchmark-extension",
+      "benchmark-french",
+      "benchmark-layman",
+      "benchmark-longcontext",
+      "benchmark-multihop",
+      "benchmark-v3",
+      "questions-md"
+    ],
+    "statistics": {
+      "by_query_type": {},
+      "by_category": {},
+      "by_difficulty": {},
+      "by_source": {}
+    },
+    "evaluation_metrics": {
+      "retrieval_correctness": [
+        "Precision@K",
+        "Recall@K",
+        "MRR",
+        "MAP",
+        "nDCG@K"
+      ],
+      "citation_faithfulness": [
+        "Citation Precision",
+        "Citation Recall",
+        "Citation F1"
+      ],
+      "answer_quality": [
+        "ROUGE-L",
+        "BERTScore",
+        "Semantic Similarity"
+      ],
+      "algerian_specific": [
+        "Jurisdictional Infection Rate",
+        "Hallucinated Citation Rate"
+      ]
+    },
+    "annotation_protocol": {
+      "inter_annotator_targets": {
+        "kappa_answer": 0.7,
+        "kappa_articles": 0.6,
+        "kappa_chain": 0.55
+      },
+      "split_strategy": "Questions passing Kappa threshold -> test; failing -> dev"
+    },
+    "schema_locked": true,
+    "lock_date": "2026-04-14",
+    "annotation_results": {
+      "average_kappa": 0.829,
+      "full_agreement_rate": 0.742,
+      "questions_resolved": 63,
+      "kappa_threshold_test": 0.6,
+      "annotators": [
+        "Islam Slimi",
+        "Ziad Slimi"
+      ],
+      "resolver": "Senior Expert (Prof.)",
+      "kappa_by_difficulty": {
+        "easy": 0.978,
+        "medium": 0.896,
+        "hard": 0.693
+      },
+      "kappa_by_query_type": {
+        "conceptual_definitional": 0.899,
+        "exact_article": 0.952,
+        "layman": 0.929,
+        "long_context": 0.574,
+        "multi_hop": 0.582,
+        "rule_application": 0.801,
+        "temporal_factual": 0.913,
+        "unanswerable": 0.884
+      },
+      "unanswerable_by_infection_source": {
+        "FR": 13,
+        "US": 10,
+        "EG": 4,
+        "TN": 3,
+        "DZ_ABSENCE": 2,
+        "UK": 2,
+        "GULF": 2,
+        "INTL": 1,
+        "UK/US": 1,
+        "ASIA": 1,
+        "US/UK": 1
+      }
+    },
+    "style_guide": {
+      "exact_article": {
+        "example_id": "com_ea_q01",
+        "template": "Template A — Exact Article",
+        "chain": [
+          "Step 1 — Legal issue: What are the means of proof for commercial contracts under Algerian law?",
+          "Step 2 — Applicable rule: Article 30 of the Commercial Code enumerates six means of proof: official deeds, private deeds, accepted invoices, correspondence, account books, and testimonial evidence at the court's discretion.",
+          "Step 3 — Application: The question asks for a direct article citation. Article 30 is the sole governing provision. No interpretation or fact-matching is needed — pure retrieval.",
+          "Step 4 — Conclusion: Commercial contracts can be proven by any of the six means listed in Article 30, including testimonial evidence, regardless of the contract value — unlike civil contracts which are limited by Articles 333-334 of the Civil Code."
+        ]
+      },
+      "conceptual_definitional": {
+        "example_id": "lab_cd_q01",
+        "template": "Template A — Conceptual/Definitional",
+        "chain": [
+          "Step 1 — Legal issue: What distinguishes a collective bargaining agreement (convention collective) from an enterprise agreement (convention d'entreprise) in Algerian labor law?",
+          "Step 2 — Applicable rule: Law 90-11, Articles 114 et seq. define the collective bargaining framework. A collective agreement covers an entire sector; an enterprise agreement covers a single employer.",
+          "Step 3 — Scope delineation: The collective agreement binds all employers and workers in a given sector of activity and is negotiated by representative unions and employer federations. The enterprise agreement is negotiated at the firm level and may provide more favorable terms than the sectoral agreement but cannot derogate from its minimum standards.",
+          "Step 4 — Conclusion: The key distinction is scope (sector vs. firm) and hierarchy (enterprise agreement ≥ collective agreement ≥ statutory minimum). Both are binding once registered."
+        ]
+      },
+      "rule_application": {
+        "example_id": "fam_ra_q10",
+        "template": "Template A — Rule Application",
+        "chain": [
+          "Step 1 — Legal issue: Whether a wife can obtain khul' (خلع) without her husband's consent under current Algerian family law.",
+          "Step 2 — Applicable rule: Article 54 of the Family Code (as amended by Ordonnance 05-02 of 27 February 2005): 'The wife may, without the husband's consent, redeem herself (خالعت نفسها) in exchange for financial compensation. If the spouses do not agree on the amount, the judge shall fix it at no more than the equivalent dowry (صداق المثل) at the time of the judgment.'",
+          "Step 3 — Subsumption: The scenario involves a wife seeking dissolution. Under the pre-2005 text, the husband's consent was required. Under the current text, the wife has a unilateral right to khul'. The judge's role is limited to fixing the compensation amount if the parties cannot agree. The husband cannot block the khul' — only the financial terms are negotiable.",
+          "Step 4 — Conclusion: Yes. Under Article 54 (post-2005), the wife can obtain khul' without husband's consent. The judge fixes compensation ≤ sadāq al-mithl. Residual judicial discretion is limited to the amount, not the principle."
+        ]
+      },
+      "temporal_factual": {
+        "example_id": "con_tf_q01",
+        "template": "Template B — Temporal/Factual",
+        "chain": [
+          "Step 1 — Version identification: Three constitutional versions govern presidential term limits: Constitution 1996 (original), Constitutional Amendment 2008, and Constitution 2020 (current, Article 88).",
+          "Step 2 — Amendment timeline: (a) 1996 Constitution: two 5-year terms, renewable once. (b) 2008 Amendment (Law 08-19): removed all term limits — unlimited re-election. (c) 2020 Constitution (Article 88): reinstated the limit at two terms, explicitly non-renewable ('غير قابلة للتجديد').",
+          "Step 3 — Correct version applied: The 2020 Constitution is in force. Article 88 limits the president to two five-year terms, period. The 2008 amendment is abrogated on this point.",
+          "Step 4 — Model failure description: A model trained on pre-2020 data would state that there is no term limit (citing the 2008 amendment). A model with 2020 data but trained on French constitutional law might confuse the Algerian two-term limit with the French system. The correct answer must cite Article 88 of the 2020 Constitution specifically."
+        ]
+      },
+      "multi_hop": {
+        "example_id": "xdom_mh_q03",
+        "template": "Template C — Multi-Hop",
+        "chain": [
+          "Step 1 — Name the chain: Commercial Code (company registration) → Investment Law 22-18 (investment declaration + incentives) → Municipal Law 11-10 (building permit) → Tax Code (IBS/TVA exemptions). Four-code traversal.",
+          "Step 2 — Hop 1 (Company registration): Under the Commercial Code, the foreign investor must register a SARL or SPA at the CNRC (Centre National du Registre du Commerce). Post-2022, 100% foreign ownership is permitted outside strategic sectors (Law 22-18, Art. 2).",
+          "Step 3 — Hop 2 (Investment declaration → Building permit): The investor files a declaration with ANDI under Law 22-18 to unlock tax incentives. Simultaneously, a building permit application is filed with the APC (commune) under Law 11-10. The building permit requires an environmental impact study if the project is classified (Law 03-10, Art. 15).",
+          "Step 4 — Synthesis + failure point: A single-code retrieval system would find the Commercial Code provisions for company formation but miss the investment incentives (Law 22-18), the building permit requirement (Law 11-10), and the environmental study (Law 03-10). The chain requires four sequential retrievals. Failure mode: answering only with company registration steps and omitting the fiscal incentives and administrative permits."
+        ]
+      },
+      "long_context": {
+        "example_id": "fam_lc_q05",
+        "template": "Template A — Long Context (4+ articles synthesized)",
+        "chain": [
+          "Step 1 — Legal issue: A husband took a loan without his wife's knowledge; the creditor claims against the wife; the wife seeks divorce, custody, and maintenance; the creditor attempts to execute on household property. Four distinct sub-issues requiring synthesis of civil law, family law, and civil procedure.",
+          "Step 2 — Applicable rules: (a) Art. 54 Civil Code: a contract only binds its parties. (b) Art. 37 Family Code: spouses have separate patrimonies (ذمة مالية مستقلة). (c) Art. 64 Family Code: custody priority to the mother. (d) Art. 75 Family Code: child maintenance obligatory on the father. (e) Art. 600 CPCA: execution requires an enforceable title. (f) Art. 48 Family Code: divorce modalities.",
+          "Step 3 — Synthesis: The wife is not liable for the husband's debt (Art. 54 CC + Art. 37 FC — separate patrimony). The creditor cannot execute on her property even if it is in the marital home. The wife may obtain divorce under Art. 48, custody under Art. 64, and maintenance under Art. 75. The creditor may only execute against property proven to belong to the husband (Art. 600 CPCA).",
+          "Step 4 — Conclusion: Four codes, six articles synthesized. The wife has no debt liability, retains custody priority, and is entitled to maintenance. The creditor's execution is limited to the husband's assets only. A system that retrieves only the Civil Code would miss the family law protections."
+        ]
+      },
+      "unanswerable_infection": {
+        "example_id": "civ_un_q01",
+        "template": "Template D — Unanswerable (Jurisdictional Infection)",
+        "chain": [
+          "Step 1 — Failure mode: (A) Jurisdictional infection — US common law. The concept of 'punitive damages' (تعويضات عقابية) is a US/common-law doctrine that allows courts to award damages exceeding the actual harm to punish the defendant and deter others.",
+          "Step 2 — Demonstrate the absence: Article 124 of the Algerian Civil Code states: 'Any act by a person that causes damage to another obliges the person by whose fault it occurred to make reparation.' The word 'reparation' (تعويض) is defined in Articles 182-187 as compensatory only — restoring the victim to the status quo ante. There is no provision for punitive, exemplary, or multiplied damages anywhere in the Civil Code, the Commercial Code, or any special statute.",
+          "Step 3 — Incorrect model answer: A jurisdictionally infected model would say: 'Yes, Algerian courts can award punitive damages in cases of gross negligence or intentional harm, based on the principle of full reparation under Article 124.' This is wrong — Article 124 establishes liability, not a punitive damages regime.",
+          "Step 4 — Correct response: 'The concept of punitive damages does not exist in Algerian law. Article 124 of the Civil Code limits compensation to actual damage suffered (الضرر الفعلي). The judge cannot award damages exceeding the proven harm. This concept is imported from US tort law and has no basis in the Algerian civil code system.'"
+        ]
+      },
+      "unanswerable_absence": {
+        "example_id": "con_un_q01",
+        "template": "Template D — Unanswerable (Genuine Absence in Algerian Law)",
+        "chain": [
+          "Step 1 — Failure mode: (C) Genuine institutional absence. The question asks whether the Constitutional Court can exercise ex officio posterior review of laws without being seized by any authority.",
+          "Step 2 — Demonstrate the absence: Article 190 of the 2020 Constitution exhaustively lists who may seize the Constitutional Court: the President, the President of the Council of the Nation, the President of the APN, and the Prime Minister. Article 188 adds the incidental review mechanism (DIC) triggered by litigants. No article grants the Court auto-saisine (self-referral) power.",
+          "Step 3 — Incorrect model answer: A model might say: 'The Constitutional Court has inherent jurisdiction to review any law it considers unconstitutional.' This confuses the Algerian system with the German Federal Constitutional Court (which has some auto-referral powers) or with activist judicial review doctrines.",
+          "Step 4 — Correct response: 'The Algerian Constitutional Court cannot act ex officio. It can only review constitutionality when seized by one of the authorities listed in Article 190 or through the DIC mechanism of Article 188. There is no self-referral power in the 2020 Constitution.'"
+        ]
+      },
+      "layman": {
+        "example_id": "lab_lm_q01",
+        "template": "Template A — Layman/Darja",
+        "chain": [
+          "Step 1 — Legal issue: A worker without a written contract was fired and told he has no rights. Does an unwritten employment relationship confer legal protection?",
+          "Step 2 — Applicable rule: Article 8 of Law 90-11 on labor relations: the employment relationship exists regardless of whether a written contract was signed. The relationship is proven by any means (work records, payslips, witnesses, CNAS declarations).",
+          "Step 3 — Application: The absence of a written contract does not deprive the worker of protection. The employer is at fault for not formalizing the contract (Art. 8). The worker may file a complaint with the Labor Inspectorate (مفتشية العمل), which will attempt conciliation. If conciliation fails, the worker may bring a claim before the Social Section of the court (القسم الاجتماعي).",
+          "Step 4 — Conclusion: The worker has full legal rights. No written contract ≠ no rights. The employer is liable for unfair dismissal and for failure to declare the worker with CNAS. Note: the answer must be accessible to a non-specialist — avoid jargon, explain procedure step by step."
+        ]
+      },
+      "unanswerable_french": {
+        "example_id": "hous_un_q02",
+        "template": "Template D — Unanswerable (French Law Infection)",
+        "chain": [
+          "Step 1 — Failure mode: (A) Jurisdictional infection — French law. The concept of 'contrôle des loyers' (rent control with government-set maximum rents) is a French policy under the ALUR law of 2014 and the older Law 48-1360.",
+          "Step 2 — Demonstrate the absence: The Algerian Civil Code (Arts. 467-537 on lease contracts) establishes freedom of contract for rent amounts. There is no price cap, no government-set reference rent, no encadrement des loyers provision. Decree-based social housing programs (AADL, LPP, LPA) set rents administratively, but this is a public housing allocation system, not a private-market rent control regime.",
+          "Step 3 — Incorrect model answer: A jurisdictionally infected model trained on French legal data would say: 'In Algeria, rent is regulated by government-set reference rates, and landlords cannot exceed the plafond de loyer.' This imports the French ALUR law framework into Algerian law.",
+          "Step 4 — Correct response: 'Algeria does not have a private-market rent control system (encadrement des loyers) comparable to French law. Residential leases are governed by the Civil Code with freedom of contract on rent. Only public social housing programs (AADL, LPP) have administratively set rents, which is a different mechanism entirely.'"
+        ]
+      }
+    }
+  },
+  "document_registry": {
+    "75-8_1975-09-26": {
+      "title": "أمر يتضمن القانون المدني، المعدل والمتمم",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "84-11_1984-06-09": {
+      "title": "قانون يتضمن قانون الأسرة، المعدل والمتمم",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "75-59_1975-09-26": {
+      "title": "أمر يتضمن القانون التجاري، المعدل والمتمم",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "08-09_2008-02-25": {
+      "title": "قانون يتضمن قانون الإجراءات المدنية والإدارية",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "25-14_2025-08-03": {
+      "title": "قانون يتضمن قانون الإجراءات الجزائية",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "22-18_2022-07-24": {
+      "title": "قانون يتعلق بالاستثمار",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "constitution_2020-12-30": {
+      "title": "دستور الجمهورية الجزائرية الديمقراطية الشعبية",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "70-86_1970-12-15": {
+      "title": "أمر يتضمن قانون الجنسية الجزائرية",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "13-12_1971-04-22": {
+      "title": "أمر المتضمن قانون القضاء العسكري",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "05-2004_2005-02-06": {
+      "title": "قانون تنظيم السجون وإعادة الإدماج الاجتماعي للمحبوسين",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "05-01_2005-02-06": {
+      "title": "قانون الوقاية من تبييض الأموال وتمويل الإرهاب ومكافحتهما",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      },
+      "note": "قانون 2005 الأصلي — حُدِّث بقانون 12-2003 (2012)",
+      "benchmark_identity_note": "Benchmark keeps 05-01_2005-02-06 as a distinct canonical document ID despite upstream FRBR/filename collision signals involving 06-01_2006-02-20."
+    },
+    "12-2003_2012-11-28": {
+      "title": "قانون الوقاية من تبييض الأموال وتمويل الإرهاب ومكافحتهما",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      },
+      "note": "القانون المعدل 2012 — يحل محل 05-01 في أحكام معينة",
+      "benchmark_identity_note": "Benchmark keeps the on-disk/document-registry ID 12-2003_2012-11-28 as canonical for consistency, despite internal FRBR metadata using 03-12_2012-11-28."
+    },
+    "06-01_2006-02-20": {
+      "title": "قانون الوقاية من الفساد ومكافحته",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      },
+      "benchmark_identity_note": "Benchmark keeps 06-01_2006-02-20 as a distinct canonical document ID despite upstream FRBR/filename collision signals involving 05-01_2005-02-06; no automatic merge is applied at benchmark level."
+    },
+    "09-03_2009-02-25": {
+      "title": "قانون حماية المستهلك وقمع الغش",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "11-10_2011-06-22": {
+      "title": "قانون يتعلق بالبلدية",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "12-2015_2012-01-12": {
+      "title": "قانون عضوي يتعلق بالإعلام",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "15-247_2015-09-16": {
+      "title": "مرسوم رئاسي يتضمن تنظيم الصفقات العمومية",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      },
+      "benchmark_identity_note": "Benchmark treats 15-247_2015-09-16 as the canonical document ID for the presidential decree on public procurement; upstream AKN act-type mismatch is normalized at benchmark level."
+    },
+    "18-05_2018-05-10": {
+      "title": "قانون يتعلق بالتجارة الإلكترونية",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "18-11_2018-07-02": {
+      "title": "قانون يتعلق بالصحة",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "04-18_2004-12-25": {
+      "title": "قانون الوقاية من المخدرات والمؤثرات العقلية",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "11-05_2005-07-17": {
+      "title": "دستور يتعلق بالتنظيم القضائي",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "06-05_2006-01-09": {
+      "title": "شكل الإخطار بالشبهة",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "06-15_2006-05-11": {
+      "title": "شروط وكيفيات تطبيق أحكام المادة 7 مكرر من قانون الأسرة",
+      "formats_available": {
+        "akn": false,
+        "txt": false,
+        "rdf": false,
+        "pdf": false
+      },
+      "availability_status": "unavailable",
+      "benchmark_note": "Referenced in dataset metadata scope, but source document is not shipped in the local corpus/benchmark release."
+    },
+    "90-11_1990-04-21": {
+      "title": "قانون علاقات العمل",
+      "formats_available": {
+        "akn": true,
+        "txt": false,
+        "rdf": true,
+        "pdf": false
+      }
+    },
+    "03-10_2003-07-19": {
+      "title": "قانون حماية البيئة في إطار التنمية المستدامة",
+      "formats_available": {
+        "akn": false,
+        "txt": false,
+        "rdf": false,
+        "pdf": false
+      },
+      "availability_status": "unavailable",
+      "benchmark_note": "Required by benchmark questions, but source document is not shipped in the local corpus/benchmark release."
+    },
+    "03-05_2003-07-19": {
+      "title": "أمر يتعلق بحقوق المؤلف والحقوق المجاورة",
+      "formats_available": {
+        "akn": false,
+        "txt": false,
+        "rdf": false,
+        "pdf": false
+      },
+      "availability_status": "unavailable",
+      "benchmark_note": "Required by benchmark questions, but source document is not shipped in the local corpus/benchmark release."
+    },
+    "11-04_2011-02-17": {
+      "title": "قانون يحدد القواعد المتعلقة بنشاط الترقية العقارية",
+      "formats_available": {
+        "akn": false,
+        "txt": false,
+        "rdf": false,
+        "pdf": false
+      },
+      "availability_status": "unavailable",
+      "benchmark_note": "Required by benchmark questions, but source document is not shipped in the local corpus/benchmark release."
+    },
+    "83-11_1983-07-02": {
+      "title": "قانون التأمينات الاجتماعية",
+      "formats_available": {
+        "akn": true,
+        "txt": false,
+        "rdf": true,
+        "pdf": false
+      }
+    },
+    "01-14_2001-08-19": {
+      "title": "قانون يتعلق بتنظيم حركة المرور عبر الطرق وسلامتها وأمنها",
+      "formats_available": {
+        "akn": true,
+        "txt": false,
+        "rdf": true,
+        "pdf": false
+      }
+    },
+    "05-17_2017-02-16": {
+      "title": "قانون يعدل ويتمم القانون 01-14 المتعلق بتنظيم حركة المرور عبر الطرق وسلامتها وأمنها",
+      "formats_available": {
+        "akn": true,
+        "txt": false,
+        "rdf": true,
+        "pdf": false
+      }
+    },
+    "66-156_1966-06-08": {
+      "title": "أمر يتضمن قانون العقوبات، المعدل والمتمم",
+      "formats_available": {
+        "akn": true,
+        "txt": true,
+        "rdf": true,
+        "pdf": true
+      }
+    },
+    "66-155_1966-06-08": {
+      "title": "أمر يتضمن قانون الإجراءات الجزائية (القديم - ملغى بقانون 25-14)",
+      "formats_available": {
+        "akn": false,
+        "txt": false,
+        "rdf": false,
+        "pdf": false
+      },
+      "deprecated": true,
+      "replaced_by": "25-14_2025-08-03",
+      "benchmark_status": "deprecated_replaced",
+      "benchmark_note": "Deprecated historical document ID kept only for traceability. Live benchmark references were migrated to 25-14_2025-08-03 or 66-156_1966-06-08 as appropriate."
+    }
+  },
+  "questions": []
+}

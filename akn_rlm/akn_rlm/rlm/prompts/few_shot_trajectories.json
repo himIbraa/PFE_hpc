@@ -1,0 +1,111 @@
+[
+  {
+    "id": "ex1_rule_application",
+    "query_type": "rule_application",
+    "query": "ما هي شروط الخلع في قانون الأسرة الجزائري؟",
+    "messages": [
+      {
+        "role": "user",
+        "content": "[TYPE: rule_application]\nما هي شروط الخلع في قانون الأسرة الجزائري؟"
+      },
+      {
+        "role": "assistant",
+        "content": "```python\nprint(env.list_documents())\n```"
+      },
+      {
+        "role": "user",
+        "content": "Tool output:\n[{'doc_id': '84-11_1984-06-09', 'doc_title': 'قانون الأسرة', 'doc_date': '1984-06-09', 'article_count': 222}, {'doc_id': '75-58_1975-09-26', 'doc_title': 'القانون المدني', 'doc_date': '1975-09-26', 'article_count': 1024}, ...]"
+      },
+      {
+        "role": "assistant",
+        "content": "```python\nresults = env.search_hybrid('شروط الخلع قانون الأسرة', k=8)\nfor r in results[:5]:\n    print(r['doc_id'], r['article_ref'], round(r['score'], 3))\n```"
+      },
+      {
+        "role": "user",
+        "content": "Tool output:\n84-11_1984-06-09 54 0.812\n84-11_1984-06-09 52 0.701\n84-11_1984-06-09 53 0.688\n84-11_1984-06-09 55 0.612\n84-11_1984-06-09 56 0.589"
+      },
+      {
+        "role": "assistant",
+        "content": "```python\nart = env.get_article('84-11_1984-06-09', '54')\nif art:\n    print(art['text'])\n    ok_c = env.verify_in_corpus({'doc_id': '84-11_1984-06-09', 'article_ref': '54'})\n    ok_r = env.verify_article('شروط الخلع', art)\n    print('in_corpus:', ok_c, 'relevant:', ok_r)\n```"
+      },
+      {
+        "role": "user",
+        "content": "Tool output:\nيجوز للزوجة دون موافقة الزوج أن تخالع نفسها بمقابل مالي. إذا لم يتفق الزوجان على المقابل المالي للخلع، يحكم القاضي بما لا يتجاوز قيمة صداق المثل وقت صدور الحكم.\nin_corpus: True relevant: {'relevant': True, 'supporting_span': 'يجوز للزوجة دون موافقة الزوج أن تخالع نفسها بمقابل مالي', 'confidence': 0.95}"
+      },
+      {
+        "role": "assistant",
+        "content": "```answer\n{\"answer_text\": \"يجوز للزوجة الخلع دون موافقة الزوج مقابل تعويض مالي لا يتجاوز صداق المثل. المادة 54 من قانون الأسرة.\", \"abstention\": false, \"abstention_reason\": null, \"citations\": [{\"doc_id\": \"84-11_1984-06-09\", \"article_ref\": \"54\", \"supporting_span\": \"يجوز للزوجة دون موافقة الزوج أن تخالع نفسها بمقابل مالي\", \"confidence\": 0.95}], \"reasoning_chain\": [\"1. Legal issue: right of wife to obtain khul' divorce without husband's consent.\", \"2. Applicable rule: Art.54 Family Code — wife may unilaterally obtain khul' with financial compensation not exceeding equivalent mahr.\", \"3. Application: the law explicitly grants the wife this right; judge fixes compensation if spouses disagree.\", \"4. Conclusion: khul' available without husband consent; compensation capped at mahr al-mithl.\"]}\n```"
+      }
+    ]
+  },
+  {
+    "id": "ex2_unanswerable",
+    "query_type": "unanswerable",
+    "query": "هل يخضع المواطن الجزائري لضريبة الثروة ISF على ممتلكاته العقارية في الجزائر؟",
+    "messages": [
+      {
+        "role": "user",
+        "content": "[TYPE: unanswerable]\nهل يخضع المواطن الجزائري لضريبة الثروة ISF على ممتلكاته العقارية في الجزائر؟"
+      },
+      {
+        "role": "assistant",
+        "content": "```python\nsignals = env.detect_infection_signals('ISF ضريبة الثروة')\nprint('Infection signals:', signals)\n```"
+      },
+      {
+        "role": "user",
+        "content": "Tool output:\nInfection signals: ['fr:isf']"
+      },
+      {
+        "role": "assistant",
+        "content": "```python\nhits = env.search_hybrid('ضريبة الثروة ISF', k=5)\nfor h in hits[:3]:\n    print(h['doc_id'], h['article_ref'], round(h['score'], 3))\n```"
+      },
+      {
+        "role": "user",
+        "content": "Tool output:\n2020_2020-12-30 72 0.621\n18-11_2018-07-02 14 0.534\n90-11_1990-04-21 3 0.501"
+      },
+      {
+        "role": "assistant",
+        "content": "```python\nart = env.get_article('2020_2020-12-30', '72')\nif art:\n    print(art['text'][:200])\nprint('None of these are about ISF. ISF is a French tax concept.')\nprint('No equivalent wealth tax exists in Algerian law.')\n```"
+      },
+      {
+        "role": "user",
+        "content": "Tool output:\nأحكام المالية... (unrelated tax provision)\nNone of these are about ISF. ISF is a French tax concept.\nNo equivalent wealth tax exists in Algerian law."
+      },
+      {
+        "role": "assistant",
+        "content": "```answer\n{\"answer_text\": \"لا توجد ضريبة ثروة من نوع ISF في التشريع الجزائري. هذه الضريبة مفهوم فرنسي خالص لا أساس له في القانون الجزائري.\", \"abstention\": true, \"abstention_reason\": \"foreign_jurisdiction\", \"citations\": [], \"reasoning_chain\": [\"1. Failure mode: ISF (Impot de Solidarite sur la Fortune) is a French tax instrument; a model infected by French law would hallucinate an Algerian equivalent.\", \"2. Absence demonstration: corpus search returns no article establishing a wealth tax; infection signal 'fr:isf' was detected.\", \"3. What an infected model would say: it would invent an Algerian IFI or ISF-equivalent and cite non-existent articles.\", \"4. Correct response: abstain — no such tax exists in Algerian law.\"]}\n```"
+      }
+    ]
+  },
+  {
+    "id": "ex3_exact_article",
+    "query_type": "exact_article",
+    "query": "ما هو نص المادة 54 من قانون الأسرة الجزائري؟",
+    "messages": [
+      {
+        "role": "user",
+        "content": "[TYPE: exact_article]\nما هو نص المادة 54 من قانون الأسرة الجزائري؟"
+      },
+      {
+        "role": "assistant",
+        "content": "```python\nprint(env.list_documents())\n```"
+      },
+      {
+        "role": "user",
+        "content": "Tool output:\n[{'doc_id': '84-11_1984-06-09', 'doc_title': 'قانون الأسرة', ...}, ...]"
+      },
+      {
+        "role": "assistant",
+        "content": "```python\nart = env.get_article('84-11_1984-06-09', '54')\nif art:\n    print(art['text'])\n    ok = env.verify_in_corpus({'doc_id': '84-11_1984-06-09', 'article_ref': '54'})\n    rel = env.verify_article('نص المادة 54 قانون الأسرة', art)\n    print('in_corpus:', ok, 'relevant:', rel)\nelse:\n    print('Article not found')\n```"
+      },
+      {
+        "role": "user",
+        "content": "Tool output:\nيجوز للزوجة دون موافقة الزوج أن تخالع نفسها بمقابل مالي. إذا لم يتفق الزوجان على المقابل المالي للخلع، يحكم القاضي بما لا يتجاوز قيمة صداق المثل وقت صدور الحكم.\nin_corpus: True relevant: {'relevant': True, 'supporting_span': 'يجوز للزوجة دون موافقة الزوج', 'confidence': 0.98}"
+      },
+      {
+        "role": "assistant",
+        "content": "```answer\n{\"answer_text\": \"نص المادة 54 من قانون الأسرة الجزائري (الأمر رقم 84-11): يجوز للزوجة دون موافقة الزوج أن تخالع نفسها بمقابل مالي. إذا لم يتفق الزوجان على المقابل المالي للخلع، يحكم القاضي بما لا يتجاوز قيمة صداق المثل وقت صدور الحكم.\", \"abstention\": false, \"abstention_reason\": null, \"citations\": [{\"doc_id\": \"84-11_1984-06-09\", \"article_ref\": \"54\", \"supporting_span\": \"يجوز للزوجة دون موافقة الزوج أن تخالع نفسها بمقابل مالي\", \"confidence\": 0.98}], \"reasoning_chain\": [\"1. Legal issue: retrieve and quote the exact text of Art.54 Family Code.\", \"2. Applicable rule: Art.54 Family Code (84-11_1984-06-09) — wife's right to khul' without husband consent.\", \"3. Application: article retrieved directly from corpus, verified in corpus and relevance confirmed.\", \"4. Conclusion: text quoted verbatim from corpus; no interpretation needed for exact-article query.\"]}\n```"
+      }
+    ]
+  }
+]

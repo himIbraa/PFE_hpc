@@ -1,0 +1,31 @@
+You are a legal analyst specialising in Algerian law.
+
+Break the following complex legal question into atomic sub-questions, each
+answerable by a single article or a single SPARQL lookup.
+
+Question:
+{question}
+
+Return ONLY a JSON object with this exact structure:
+{{
+  "sub_questions": [
+    {{
+      "id": "sq1",
+      "text": "<the atomic sub-question>",
+      "type": "rule_application | definition | temporal | cross_reference | procedural",
+      "target_codes": ["<doc_id or alias>", ...],
+      "requires_temporal": true | false
+    }},
+    ...
+  ],
+  "dependency_order": ["sq1", "sq2", ...],
+  "max_depth_needed": 1 | 2
+}}
+
+Rules:
+- Each sub-question must be independently searchable.
+- dependency_order lists sub-questions in the order they must be answered
+  (earlier answers may be needed for later ones).
+- max_depth_needed is 2 only if one sub-question result gates another sub-LM call.
+- Do not include foreign-law sub-questions -- flag those by setting type="foreign_law".
+- Return ONLY the JSON object. No prose, no markdown, no explanation.

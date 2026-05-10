@@ -1,0 +1,58 @@
+========================================================================
+  RLM layman handler  rlm_layman_canary
+========================================================================
+
+Total questions : 1
+Temporal subset : 0
+
+── OVERALL ──────────────────────────────────────────────────────────
+  MRR@K  (doc)             1.0000  (Δ +0.350 vs baseline, ✓ target=0.75)
+  MRR@K  (art)             1.0000  (Δ +0.820 vs baseline, ✓ target=0.40)
+  MAP@K  (doc)             1.0000
+  MAP@K  (art)             1.0000
+  R@K    (doc)             1.0000
+  R@K    (art)             1.0000
+  P@K    (doc)             0.1000
+  P@K    (art)             0.1000
+  NDCG@K (doc)             1.0000
+  NDCG@K (art)             1.0000
+  Cite F1                  1.0000  (Δ +0.790 vs baseline, ✓ target=0.40)
+  Cite P                   1.0000
+  Cite R                   1.0000
+  Doc Cite F1              1.0000
+  Exact Match              0.0000
+  Token F1                 0.3390
+  ROUGE-L                  0.2222
+  HCR ↓                    0.0000  (Δ -0.670 vs baseline, ✗ target=0.15)
+  JIR ↓                    0.0000  (Δ -0.100 vs baseline, ✗ target=0.10)
+  Faithfulness             0.0000
+  Groundedness             1.0000
+  Abst Acc                 1.0000
+  Abst Recall              0.0000
+  Abst Prec                0.0000
+  Abst F1                  0.0000  (✗ target=0.75)
+  Mean Tokens              0.0000
+  Mean Latency (s)         17.5886
+  Retry Rate               0.0000
+
+── BY QUERY TYPE ─────────────────────────────────────────────────────
+
+  [layman]  (n=1)
+  MRR@K  (doc)=1.000  MRR@K  (art)=1.000  Cite F1=1.000  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+── BY DIFFICULTY ─────────────────────────────────────────────────────
+
+  [easy]  (n=1)
+  MRR@K  (doc)=1.000  MRR@K  (art)=1.000  Cite F1=1.000  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+── BY LANGUAGE ───────────────────────────────────────────────────────
+
+  [ar]  (n=1)
+  MRR@K  (doc)=1.000  MRR@K  (art)=1.000  Cite F1=1.000  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+── BY LEGAL CATEGORY (compact) ───────────────────────────────────────
+  Category                      MRR(art)   R(art)   CiteF1     HCR
+  -----------------------------------------------------------------
+  family_law                      1.0000   1.0000   1.0000  0.0000  (n=1)
+
+========================================================================

@@ -1,0 +1,66 @@
+========================================================================
+  AKN-RLM Evaluation
+========================================================================
+
+Total questions : 10
+Temporal subset : 0
+
+── OVERALL ──────────────────────────────────────────────────────────
+  MRR@K  (doc)             0.2000  (Δ -0.450 vs baseline, ✗ target=0.75)
+  MRR@K  (art)             0.1000  (Δ -0.080 vs baseline, ✗ target=0.40)
+  MAP@K  (doc)             0.2000
+  MAP@K  (art)             0.0500
+  R@K    (doc)             0.2000
+  R@K    (art)             0.0500
+  P@K    (doc)             0.0200
+  P@K    (art)             0.0100
+  NDCG@K (doc)             0.2000
+  NDCG@K (art)             0.1000
+  Cite F1                  0.0667  (Δ -0.143 vs baseline, ✗ target=0.40)
+  Cite P                   0.1000
+  Cite R                   0.0500
+  Doc Cite F1              0.2000
+  Exact Match              0.0000
+  Token F1                 0.1039
+  ROUGE-L                  0.0883
+  HCR ↓                    0.5000  (Δ -0.170 vs baseline, ✓ target=0.15)
+  JIR ↓                    0.0000  (Δ -0.100 vs baseline, ✗ target=0.10)
+  Faithfulness             1.0000
+  Groundedness             0.2000
+  Abst Acc                 0.4000
+  Abst Recall              0.6667
+  Abst Prec                0.2857
+  Abst F1                  0.4000  (✗ target=0.75)
+  Mean Tokens              20942.8000
+  Mean Latency (s)         37.7424
+  Retry Rate               2.0000
+
+── BY QUERY TYPE ─────────────────────────────────────────────────────
+
+  [exact_article]  (n=3)
+  MRR@K  (doc)=0.333  MRR@K  (art)=0.333  Cite F1=0.222  HCR ↓=0.333  JIR ↓=0.000  Abst Recall=0.500  Abst F1=0.500
+
+  [rule_application]  (n=7)
+  MRR@K  (doc)=0.143  MRR@K  (art)=0.000  Cite F1=0.000  HCR ↓=0.571  JIR ↓=0.000  Abst Recall=1.000  Abst F1=0.333
+
+── BY DIFFICULTY ─────────────────────────────────────────────────────
+
+  [easy]  (n=4)
+  MRR@K  (doc)=0.250  MRR@K  (art)=0.250  Cite F1=0.167  HCR ↓=0.500  JIR ↓=0.000  Abst Recall=0.500  Abst F1=0.500
+
+  [medium]  (n=6)
+  MRR@K  (doc)=0.167  MRR@K  (art)=0.000  Cite F1=0.000  HCR ↓=0.500  JIR ↓=0.000  Abst Recall=1.000  Abst F1=0.333
+
+── BY LANGUAGE ───────────────────────────────────────────────────────
+
+  [ar]  (n=10)
+  MRR@K  (doc)=0.200  MRR@K  (art)=0.100  Cite F1=0.067  HCR ↓=0.500  JIR ↓=0.000  Abst Recall=0.667  Abst F1=0.400
+
+── BY LEGAL CATEGORY (compact) ───────────────────────────────────────
+  Category                      MRR(art)   R(art)   CiteF1     HCR
+  -----------------------------------------------------------------
+  civil_law                       0.0000   0.0000   0.0000  0.7500  (n=4)
+  criminal_law                    0.0000   0.0000   0.0000  0.0000  (n=1)
+  family_law                      0.2000   0.1000   0.1333  0.4000  (n=5)
+
+========================================================================

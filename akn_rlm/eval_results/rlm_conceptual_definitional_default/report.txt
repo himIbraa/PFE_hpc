@@ -1,0 +1,68 @@
+========================================================================
+  RLM conceptual_definitional handler  rlm_conceptual_definitional_default
+========================================================================
+
+Total questions : 12
+Temporal subset : 0
+
+── OVERALL ──────────────────────────────────────────────────────────
+  MRR@K  (doc)             0.3750  (Δ -0.275 vs baseline, ✗ target=0.75)
+  MRR@K  (art)             0.0167  (Δ -0.163 vs baseline, ✗ target=0.40)
+  MAP@K  (doc)             0.3750
+  MAP@K  (art)             0.0167
+  R@K    (doc)             0.4167
+  R@K    (art)             0.0833
+  P@K    (doc)             0.0417
+  P@K    (art)             0.0083
+  NDCG@K (doc)             0.3859
+  NDCG@K (art)             0.0322
+  Cite F1                  0.0278  (Δ -0.182 vs baseline, ✗ target=0.40)
+  Cite P                   0.0167
+  Cite R                   0.0833
+  Doc Cite F1              0.3194
+  Exact Match              0.0000
+  Token F1                 0.0411
+  ROUGE-L                  0.0382
+  HCR ↓                    0.0000  (Δ -0.670 vs baseline, ✗ target=0.15)
+  JIR ↓                    0.0000  (Δ -0.100 vs baseline, ✗ target=0.10)
+  Faithfulness             0.0000
+  Groundedness             0.7750
+  Abst Acc                 0.7500
+  Abst Recall              0.0000
+  Abst Prec                0.0000
+  Abst F1                  0.0000  (✗ target=0.75)
+  Mean Tokens              0.0000
+  Mean Latency (s)         10.1810
+  Retry Rate               0.0000
+
+── BY QUERY TYPE ─────────────────────────────────────────────────────
+
+  [conceptual_definitional]  (n=12)
+  MRR@K  (doc)=0.375  MRR@K  (art)=0.017  Cite F1=0.028  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+── BY DIFFICULTY ─────────────────────────────────────────────────────
+
+  [medium]  (n=12)
+  MRR@K  (doc)=0.375  MRR@K  (art)=0.017  Cite F1=0.028  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+── BY LANGUAGE ───────────────────────────────────────────────────────
+
+  [ar]  (n=12)
+  MRR@K  (doc)=0.375  MRR@K  (art)=0.017  Cite F1=0.028  HCR ↓=0.000  JIR ↓=0.000  Abst Recall=0.000  Abst F1=0.000
+
+── BY LEGAL CATEGORY (compact) ───────────────────────────────────────
+  Category                      MRR(art)   R(art)   CiteF1     HCR
+  -----------------------------------------------------------------
+  administrative_law              0.0000   0.0000   0.0000  0.0000  (n=1)
+  anti_corruption                 0.0000   0.0000   0.0000  0.0000  (n=1)
+  civil_law                       0.0000   0.0000   0.0000  0.0000  (n=1)
+  commercial_law                  0.0000   0.0000   0.0000  0.0000  (n=1)
+  constitutional_law              0.0000   0.0000   0.0000  0.0000  (n=2)
+  environmental_law               0.0000   0.0000   0.0000  0.0000  (n=1)
+  family_law                      0.0000   0.0000   0.0000  0.0000  (n=1)
+  investment_law                  0.0000   0.0000   0.0000  0.0000  (n=1)
+  ip_law                          0.0000   0.0000   0.0000  0.0000  (n=1)
+  labor_law                       0.2000   1.0000   0.3333  0.0000  (n=1)
+  tax_law                         0.0000   0.0000   0.0000  0.0000  (n=1)
+
+========================================================================

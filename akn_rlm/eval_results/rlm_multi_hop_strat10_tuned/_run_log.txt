@@ -1,0 +1,10 @@
+  1/10 civ_mh_q01 lat=18.3s abstain=False
+  2/10 com_mh_q01 lat=2.5s abstain=False
+  3/10 cpp_mh_q01 lat=2.5s abstain=False
+  4/10 fam_mh_q01 lat=2.5s abstain=True
+  5/10 com_mh_q02 lat=2.7s abstain=False
+  6/10 crim_mh_q01 lat=3.4s abstain=False
+  7/10 inv_mh_q01 lat=4.6s abstain=False
+  8/10 fam_mh_q02 lat=2.6s abstain=False
+  9/10 inv_mh_q02 lat=4.8s abstain=False
+  10/10 civ_mh_q02 lat=3.9s abstain=True

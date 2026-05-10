@@ -1,0 +1,1071 @@
+{
+  "01-14_2001-08-19": {
+    "canonical_doc_id": "01-14_2001-08-19",
+    "title": "قانون يتعلق بتنظيم حركة المرور عبر الطرق وسلامتها وأمنها",
+    "doc_type": null,
+    "enactment_date": null,
+    "publication_date": null,
+    "benchmark_mentions": [
+      "traf_un_q01"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/01-14_2001-08-19.xml",
+      "txt": null,
+      "rdf": "code/Dataset/data/rdf/01-14_2001-08-19.ttl",
+      "pdf": null
+    },
+    "available_formats": [
+      "akn",
+      "rdf"
+    ],
+    "status": "partial",
+    "notes": [],
+    "source_stems": [
+      "01-14_2001-08-19"
+    ]
+  },
+  "03-05_2003-07-19": {
+    "canonical_doc_id": "03-05_2003-07-19",
+    "title": "أمر يتعلق بحقوق المؤلف والحقوق المجاورة",
+    "doc_type": null,
+    "enactment_date": null,
+    "publication_date": null,
+    "benchmark_mentions": [
+      "ip_cd_q01",
+      "ip_ea_q01",
+      "ip_ra_q01",
+      "ip_un_q02"
+    ],
+    "paths": {
+      "akn": null,
+      "txt": null,
+      "rdf": null,
+      "pdf": null
+    },
+    "available_formats": [],
+    "status": "missing",
+    "notes": [],
+    "source_stems": []
+  },
+  "03-10_2003-07-19": {
+    "canonical_doc_id": "03-10_2003-07-19",
+    "title": "قانون حماية البيئة في إطار التنمية المستدامة",
+    "doc_type": null,
+    "enactment_date": null,
+    "publication_date": null,
+    "benchmark_mentions": [
+      "env_cd_q01",
+      "env_ea_q01",
+      "env_ra_q01",
+      "env_ra_q02",
+      "env_un_q01",
+      "env_un_q02",
+      "xdom_mh_q06"
+    ],
+    "paths": {
+      "akn": null,
+      "txt": null,
+      "rdf": null,
+      "pdf": null
+    },
+    "available_formats": [],
+    "status": "missing",
+    "notes": [],
+    "source_stems": []
+  },
+  "04-18_2004-12-25": {
+    "canonical_doc_id": "04-18_2004-12-25",
+    "title": "قانون الوقاية من المخدرات والمؤثرات العقلية",
+    "doc_type": "law",
+    "enactment_date": "2004-12-25",
+    "publication_date": "2004-12-25",
+    "benchmark_mentions": [],
+    "paths": {
+      "akn": "code/Dataset/data/akn/04-18_2004-12-25.xml",
+      "txt": "code/Dataset/data/txt/04-18_2004-12-25.txt",
+      "rdf": "code/Dataset/data/rdf/04-18_2004-12-25.ttl",
+      "pdf": "code/Dataset/data/pdf/04-18_2004-12-25.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "04-18_2004-12-25"
+    ]
+  },
+  "05-01_2005-02-06": {
+    "canonical_doc_id": "05-01_2005-02-06",
+    "title": "قانون الوقاية من تبييض الأموال وتمويل الإرهاب ومكافحتهما",
+    "doc_type": "law",
+    "enactment_date": "2005-02-06",
+    "publication_date": "2005-02-06",
+    "benchmark_mentions": [
+      "acor_mh_q01",
+      "crim_ea_q03",
+      "xdom_mh_q02"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/05-01_2005-02-06.xml",
+      "txt": "code/Dataset/data/txt/05-01_2005-02-06.txt",
+      "rdf": "code/Dataset/data/rdf/05-01_2005-02-06.ttl",
+      "pdf": "code/Dataset/data/pdf/05-01_2005-02-06.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "05-01_2005-02-06"
+    ]
+  },
+  "05-17_2017-02-16": {
+    "canonical_doc_id": "05-17_2017-02-16",
+    "title": "قانون يعدل ويتمم القانون 01-14 المتعلق بتنظيم حركة المرور عبر الطرق وسلامتها وأمنها",
+    "doc_type": null,
+    "enactment_date": null,
+    "publication_date": null,
+    "benchmark_mentions": [
+      "traf_un_q01"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/05-17_2017-02-16.xml",
+      "txt": null,
+      "rdf": "code/Dataset/data/rdf/05-17_2017-02-16.ttl",
+      "pdf": null
+    },
+    "available_formats": [
+      "akn",
+      "rdf"
+    ],
+    "status": "partial",
+    "notes": [],
+    "source_stems": [
+      "05-17_2017-02-16"
+    ]
+  },
+  "05-2004_2005-02-06": {
+    "canonical_doc_id": "05-2004_2005-02-06",
+    "title": "قانون تنظيم السجون وإعادة الإدماج الاجتماعي للمحبوسين",
+    "doc_type": "law",
+    "enactment_date": "2005-02-06",
+    "publication_date": "2005-02-06",
+    "benchmark_mentions": [],
+    "paths": {
+      "akn": "code/Dataset/data/akn/05-2004_2005-02-06.xml",
+      "txt": "code/Dataset/data/txt/05-2004_2005-02-06.txt",
+      "rdf": "code/Dataset/data/rdf/05-2004_2005-02-06.ttl",
+      "pdf": "code/Dataset/data/pdf/05-2004_2005-02-06.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "05-2004_2005-02-06"
+    ]
+  },
+  "06-01_2006-02-20": {
+    "canonical_doc_id": "06-01_2006-02-20",
+    "title": "قانون الوقاية من الفساد ومكافحته",
+    "doc_type": "law",
+    "enactment_date": "2005-02-06",
+    "publication_date": "2005-02-06",
+    "benchmark_mentions": [
+      "acor_cd_q01",
+      "acor_ea_q01",
+      "acor_mh_q01",
+      "acor_ra_q01",
+      "acor_ra_q02",
+      "acor_un_q01",
+      "crim_un_q02",
+      "xdom_mh_q02"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/06-01_2006-02-20.xml",
+      "txt": "code/Dataset/data/txt/06-01_2006-02-20.txt",
+      "rdf": "code/Dataset/data/rdf/06-01_2006-02-20.ttl",
+      "pdf": "code/Dataset/data/pdf/06-01_2006-02-20.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [
+      "All on-disk files still resolve through the quarantined 06-01 surface; the session intentionally did not reactivate or merge this identity."
+    ],
+    "source_stems": [
+      "06-01_2006-02-20"
+    ]
+  },
+  "06-05_2006-01-09": {
+    "canonical_doc_id": "06-05_2006-01-09",
+    "title": "شكل الإخطار بالشبهة",
+    "doc_type": "executive-decree",
+    "enactment_date": "2006-01-09",
+    "publication_date": "2006-01-09",
+    "benchmark_mentions": [],
+    "paths": {
+      "akn": "code/Dataset/data/akn/06-05_2006-01-09.xml",
+      "txt": "code/Dataset/data/txt/06-05_2006-01-09.txt",
+      "rdf": "code/Dataset/data/rdf/06-05_2006-01-09.ttl",
+      "pdf": "code/Dataset/data/pdf/06-05_2006-01-09.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "06-05_2006-01-09"
+    ]
+  },
+  "06-15_2006-05-11": {
+    "canonical_doc_id": "06-15_2006-05-11",
+    "title": "شروط وكيفيات تطبيق أحكام المادة 7 مكرر من قانون الأسرة",
+    "doc_type": null,
+    "enactment_date": null,
+    "publication_date": null,
+    "benchmark_mentions": [],
+    "paths": {
+      "akn": null,
+      "txt": null,
+      "rdf": null,
+      "pdf": null
+    },
+    "available_formats": [],
+    "status": "missing",
+    "notes": [],
+    "source_stems": []
+  },
+  "08-09_2008-02-25": {
+    "canonical_doc_id": "08-09_2008-02-25",
+    "title": "قانون يتضمن قانون الإجراءات المدنية والإدارية",
+    "doc_type": "law",
+    "enactment_date": "2008-02-25",
+    "publication_date": "2008-02-25",
+    "benchmark_mentions": [
+      "adm_ea_q02",
+      "adm_mh_q01",
+      "adm_ra_q01",
+      "com_un_q02",
+      "cpro_ea_q01",
+      "cpro_ea_q02",
+      "cpro_ea_q03",
+      "cpro_ea_q04",
+      "cpro_ea_q05",
+      "cpro_ea_q06",
+      "cpro_ea_q07",
+      "cpro_ea_q08",
+      "cpro_ea_q09",
+      "cpro_ea_q10",
+      "cpro_lc_q01",
+      "cpro_mh_q01",
+      "cpro_ra_q01",
+      "cpro_ra_q02",
+      "cpro_ra_q03",
+      "cpro_ra_q04",
+      "cpro_ra_q05",
+      "cpro_ra_q06",
+      "cpro_ra_q07",
+      "cpro_ra_q08",
+      "cpro_ra_q09",
+      "cpro_un_q01",
+      "cpro_un_q02",
+      "crim_ra_q01",
+      "fam_mh_q02",
+      "hous_ra_q02",
+      "inv_mh_q01",
+      "xdom_ra_q02",
+      "xdom_ra_q03"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/08-09_2008-02-25.xml",
+      "txt": "code/Dataset/data/txt/08-09_2008-02-25.txt",
+      "rdf": "code/Dataset/data/rdf/08-09_2008-02-25.ttl",
+      "pdf": "code/Dataset/data/pdf/08-09_2008-02-25.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "08-09_2008-02-25"
+    ]
+  },
+  "09-03_2009-02-25": {
+    "canonical_doc_id": "09-03_2009-02-25",
+    "title": "قانون حماية المستهلك وقمع الغش",
+    "doc_type": "law",
+    "enactment_date": "2009-02-25",
+    "publication_date": "2009-02-25",
+    "benchmark_mentions": [
+      "com_lc_q02",
+      "cons_un_q01",
+      "xdom_lc_q01",
+      "xdom_mh_q05"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/09-03_2009-02-25.xml",
+      "txt": "code/Dataset/data/txt/09-03_2009-02-25.txt",
+      "rdf": "code/Dataset/data/rdf/09-03_2009-02-25.ttl",
+      "pdf": "code/Dataset/data/pdf/09-03_2009-02-25.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "09-03_2009-02-25"
+    ]
+  },
+  "11-04_2011-02-17": {
+    "canonical_doc_id": "11-04_2011-02-17",
+    "title": "قانون يحدد القواعد المتعلقة بنشاط الترقية العقارية",
+    "doc_type": null,
+    "enactment_date": null,
+    "publication_date": null,
+    "benchmark_mentions": [
+      "hous_ea_q01",
+      "hous_mh_q01",
+      "hous_ra_q01"
+    ],
+    "paths": {
+      "akn": null,
+      "txt": null,
+      "rdf": null,
+      "pdf": null
+    },
+    "available_formats": [],
+    "status": "missing",
+    "notes": [],
+    "source_stems": []
+  },
+  "11-05_2005-07-17": {
+    "canonical_doc_id": "11-05_2005-07-17",
+    "title": "دستور يتعلق بالتنظيم القضائي",
+    "doc_type": "organic-law",
+    "enactment_date": "2005-07-17",
+    "publication_date": "2005-07-17",
+    "benchmark_mentions": [],
+    "paths": {
+      "akn": "code/Dataset/data/akn/11-05_2005-07-17.xml",
+      "txt": "code/Dataset/data/txt/11-05_2005-07-17.txt",
+      "rdf": "code/Dataset/data/rdf/11-05_2005-07-17.ttl",
+      "pdf": "code/Dataset/data/pdf/11-05_2005-07-17.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [
+      "Legacy dataset aliases retained in source_stems: 05-11_2005-07-17, 11-05_2005-07-17.",
+      "Canonical registry paths now point at owner-approved canonical file stems.",
+      "Project owner overrode the Session 1 ambiguity and fixed the benchmark surface from 11-05_2005-07-17 to 11-05_2005-07-17."
+    ],
+    "source_stems": [
+      "05-11_2005-07-17",
+      "11-05_2005-07-17"
+    ]
+  },
+  "11-10_2011-06-22": {
+    "canonical_doc_id": "11-10_2011-06-22",
+    "title": "قانون يتعلق بالبلدية",
+    "doc_type": "law",
+    "enactment_date": "2011-06-22",
+    "publication_date": "2011-06-22",
+    "benchmark_mentions": [
+      "adm_cd_q01",
+      "adm_ea_q01",
+      "adm_mh_q01",
+      "adm_ra_q03",
+      "adm_un_q01"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/11-10_2011-06-22.xml",
+      "txt": "code/Dataset/data/txt/11-10_2011-06-22.txt",
+      "rdf": "code/Dataset/data/rdf/11-10_2011-06-22.ttl",
+      "pdf": "code/Dataset/data/pdf/11-10_2011-06-22.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "11-10_2011-06-22"
+    ]
+  },
+  "12-2003_2012-11-28": {
+    "canonical_doc_id": "12-2003_2012-11-28",
+    "title": "قانون الوقاية من تبييض الأموال وتمويل الإرهاب ومكافحتهما",
+    "doc_type": "law",
+    "enactment_date": "2012-11-28",
+    "publication_date": "2012-11-28",
+    "benchmark_mentions": [],
+    "paths": {
+      "akn": "code/Dataset/data/akn/12-2003_2012-11-28.xml",
+      "txt": "code/Dataset/data/txt/12-2003_2012-11-28.txt",
+      "rdf": "code/Dataset/data/rdf/12-2003_2012-11-28.ttl",
+      "pdf": "code/Dataset/data/pdf/12-2003_2012-11-28.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "12-2003_2012-11-28"
+    ]
+  },
+  "12-2015_2012-01-12": {
+    "canonical_doc_id": "12-2015_2012-01-12",
+    "title": "قانون عضوي يتعلق بالإعلام",
+    "doc_type": "organic-law",
+    "enactment_date": "2012-01-12",
+    "publication_date": "2012-01-12",
+    "benchmark_mentions": [],
+    "paths": {
+      "akn": "code/Dataset/data/akn/12-2015_2012-01-12.xml",
+      "txt": "code/Dataset/data/txt/12-2015_2012-01-12.txt",
+      "rdf": "code/Dataset/data/rdf/12-2015_2012-01-12.ttl",
+      "pdf": "code/Dataset/data/pdf/12-2015_2012-01-12.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "12-2015_2012-01-12"
+    ]
+  },
+  "13-12_1971-04-22": {
+    "canonical_doc_id": "13-12_1971-04-22",
+    "title": "أمر المتضمن قانون القضاء العسكري",
+    "doc_type": "order",
+    "enactment_date": "1971-04-22",
+    "publication_date": "1971-04-22",
+    "benchmark_mentions": [],
+    "paths": {
+      "akn": "code/Dataset/data/akn/13-12_1971-04-22.xml",
+      "txt": "code/Dataset/data/txt/13-12_1971-04-22.txt",
+      "rdf": "code/Dataset/data/rdf/13-12_1971-04-22.ttl",
+      "pdf": "code/Dataset/data/pdf/13-12_1971-04-22.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "13-12_1971-04-22"
+    ]
+  },
+  "15-247_2015-09-16": {
+    "canonical_doc_id": "15-247_2015-09-16",
+    "title": "مرسوم رئاسي يتضمن تنظيم الصفقات العمومية",
+    "doc_type": "law",
+    "enactment_date": "2015-09-16",
+    "publication_date": "2015-09-16",
+    "benchmark_mentions": [
+      "adm_ra_q02",
+      "adm_un_q02",
+      "adm_un_q03"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/15-247_2015-09-16.xml",
+      "txt": "code/Dataset/data/txt/15-247_2015-09-16.txt",
+      "rdf": "code/Dataset/data/rdf/15-247_2015-09-16.ttl",
+      "pdf": "code/Dataset/data/pdf/15-247_2015-09-16.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "15-247_2015-09-16"
+    ]
+  },
+  "18-05_2018-05-10": {
+    "canonical_doc_id": "18-05_2018-05-10",
+    "title": "قانون يتعلق بالتجارة الإلكترونية",
+    "doc_type": "law",
+    "enactment_date": "2018-05-10",
+    "publication_date": "2018-05-10",
+    "benchmark_mentions": [
+      "ecom_ra_q01",
+      "xdom_mh_q05"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/18-05_2018-05-10.xml",
+      "txt": "code/Dataset/data/txt/18-05_2018-05-10.txt",
+      "rdf": "code/Dataset/data/rdf/18-05_2018-05-10.ttl",
+      "pdf": "code/Dataset/data/pdf/18-05_2018-05-10.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "18-05_2018-05-10"
+    ]
+  },
+  "18-11_2018-07-02": {
+    "canonical_doc_id": "18-11_2018-07-02",
+    "title": "قانون يتعلق بالصحة",
+    "doc_type": "law",
+    "enactment_date": "2018-07-02",
+    "publication_date": "2018-07-02",
+    "benchmark_mentions": [],
+    "paths": {
+      "akn": "code/Dataset/data/akn/18-11_2018-07-02.xml",
+      "txt": "code/Dataset/data/txt/18-11_2018-07-02.txt",
+      "rdf": "code/Dataset/data/rdf/18-11_2018-07-02.ttl",
+      "pdf": "code/Dataset/data/pdf/18-11_2018-07-02.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "18-11_2018-07-02"
+    ]
+  },
+  "22-18_2022-07-24": {
+    "canonical_doc_id": "22-18_2022-07-24",
+    "title": "قانون يتعلق بالاستثمار",
+    "doc_type": "law",
+    "enactment_date": "2022-07-24",
+    "publication_date": "2022-07-24",
+    "benchmark_mentions": [
+      "com_un_q05",
+      "inv_cd_q01",
+      "inv_ea_q01",
+      "inv_ea_q02",
+      "inv_ea_q03",
+      "inv_ea_q04",
+      "inv_lm_q01",
+      "inv_mh_q01",
+      "inv_mh_q02",
+      "inv_ra_q01",
+      "inv_ra_q02",
+      "inv_un_q01",
+      "tax_mh_q01",
+      "tax_ra_q01",
+      "tax_ra_q02",
+      "tax_tf_q01",
+      "xdom_mh_q03"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/22-18_2022-07-24.xml",
+      "txt": "code/Dataset/data/txt/22-18_2022-07-24.txt",
+      "rdf": "code/Dataset/data/rdf/22-18_2022-07-24.ttl",
+      "pdf": "code/Dataset/data/pdf/22-18_2022-07-24.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "22-18_2022-07-24"
+    ]
+  },
+  "25-14_2025-08-03": {
+    "canonical_doc_id": "25-14_2025-08-03",
+    "title": "قانون يتضمن قانون الإجراءات الجزائية",
+    "doc_type": "law",
+    "enactment_date": "2025-08-03",
+    "publication_date": "2025-08-03",
+    "benchmark_mentions": [
+      "cpp_ea_q01",
+      "cpp_ea_q02",
+      "cpp_ea_q03",
+      "cpp_lm_q01",
+      "cpp_mh_q01",
+      "cpp_ra_q01",
+      "cpp_ra_q02",
+      "cpp_ra_q03",
+      "cpp_tf_q01",
+      "cpp_un_q01",
+      "cpp_un_q02",
+      "crim_tf_q01",
+      "crim_un_q03",
+      "xdom_mh_q02"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/25-14_2025-08-03.xml",
+      "txt": "code/Dataset/data/txt/25-14_2025-08-03.txt",
+      "rdf": "code/Dataset/data/rdf/25-14_2025-08-03.ttl",
+      "pdf": "code/Dataset/data/pdf/25-14_2025-08-03.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "25-14_2025-08-03"
+    ]
+  },
+  "66-155_1966-06-08": {
+    "canonical_doc_id": "66-155_1966-06-08",
+    "title": "أمر يتضمن قانون الإجراءات الجزائية (القديم - ملغى بقانون 25-14)",
+    "doc_type": null,
+    "enactment_date": null,
+    "publication_date": null,
+    "benchmark_mentions": [],
+    "paths": {
+      "akn": null,
+      "txt": null,
+      "rdf": null,
+      "pdf": null
+    },
+    "available_formats": [],
+    "status": "missing",
+    "notes": [
+      "Nearby corpus stem 66-156_1966-06-08 remains a different law number; no automatic merge is valid for 66-155_1966-06-08."
+    ],
+    "source_stems": []
+  },
+  "66-156_1966-06-08": {
+    "canonical_doc_id": "66-156_1966-06-08",
+    "title": "أمر يتضمن قانون العقوبات، المعدل والمتمم",
+    "doc_type": "order",
+    "enactment_date": "1966-06-08",
+    "publication_date": "1966-06-08",
+    "benchmark_mentions": [
+      "cpp_mh_q01",
+      "crim_ea_q01",
+      "crim_ea_q02",
+      "crim_lc_q01",
+      "crim_lm_q01",
+      "crim_mh_q01",
+      "crim_mh_q02",
+      "crim_ra_q01",
+      "crim_ra_q02",
+      "crim_ra_q03",
+      "crim_ra_q04",
+      "crim_ra_q05",
+      "crim_ra_q06",
+      "crim_ra_q07",
+      "crim_un_q01",
+      "crim_un_q02",
+      "crim_un_q04"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/66-156_1966-06-08.xml",
+      "txt": "code/Dataset/data/txt/66-156_1966-06-08.txt",
+      "rdf": "code/Dataset/data/rdf/66-156_1966-06-08.ttl",
+      "pdf": "code/Dataset/data/pdf/66-156_1966-06-08.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [
+      "Legacy dataset aliases retained in source_stems: 6-5_1966-06-08.",
+      "Canonical registry paths now point at owner-approved canonical file stems."
+    ],
+    "source_stems": [
+      "6-5_1966-06-08",
+      "66-156_1966-06-08"
+    ]
+  },
+  "70-86_1970-12-15": {
+    "canonical_doc_id": "70-86_1970-12-15",
+    "title": "أمر يتضمن قانون الجنسية الجزائرية",
+    "doc_type": "order",
+    "enactment_date": "1970-12-15",
+    "publication_date": "1970-12-15",
+    "benchmark_mentions": [],
+    "paths": {
+      "akn": "code/Dataset/data/akn/70-86_1970-12-15.xml",
+      "txt": "code/Dataset/data/txt/70-86_1970-12-15.txt",
+      "rdf": "code/Dataset/data/rdf/70-86_1970-12-15.ttl",
+      "pdf": "code/Dataset/data/pdf/70-86_1970-12-15.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "70-86_1970-12-15"
+    ]
+  },
+  "75-59_1975-09-26": {
+    "canonical_doc_id": "75-59_1975-09-26",
+    "title": "أمر يتضمن القانون التجاري، المعدل والمتمم",
+    "doc_type": "order",
+    "enactment_date": "1975-09-26",
+    "publication_date": "1975-09-26",
+    "benchmark_mentions": [
+      "com_cd_q01",
+      "com_ea_q01",
+      "com_ea_q02",
+      "com_ea_q03",
+      "com_ea_q04",
+      "com_ea_q05",
+      "com_ea_q06",
+      "com_ea_q07",
+      "com_ea_q08",
+      "com_ea_q09",
+      "com_lc_q01",
+      "com_lc_q03",
+      "com_lc_q04",
+      "com_lm_q01",
+      "com_lm_q02",
+      "com_lm_q03",
+      "com_mh_q01",
+      "com_mh_q02",
+      "com_ra_q01",
+      "com_ra_q02",
+      "com_ra_q03",
+      "com_ra_q04",
+      "com_ra_q05",
+      "com_tf_q01",
+      "com_un_q01",
+      "com_un_q02",
+      "com_un_q03",
+      "com_un_q04",
+      "cpro_mh_q01",
+      "crim_mh_q01",
+      "crim_mh_q02",
+      "xdom_lc_q02",
+      "xdom_mh_q01",
+      "xdom_mh_q03",
+      "xdom_mh_q04",
+      "xdom_ra_q01"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/75-59_1975-09-26.xml",
+      "txt": "code/Dataset/data/txt/75-59_1975-09-26.txt",
+      "rdf": "code/Dataset/data/rdf/75-59_1975-09-26.ttl",
+      "pdf": "code/Dataset/data/pdf/75-59_1975-09-26.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [
+      "Legacy dataset aliases retained in source_stems: 75-59_1975-09-26.",
+      "Canonical registry paths now point at owner-approved canonical file stems.",
+      "Project owner fixed the benchmark-compatible commercial code stem from 75-59_1975-09-26 to 75-59_1975-09-26."
+    ],
+    "source_stems": [
+      "75-59_1975-09-26"
+    ]
+  },
+  "75-8_1975-09-26": {
+    "canonical_doc_id": "75-8_1975-09-26",
+    "title": "أمر يتضمن القانون المدني، المعدل والمتمم",
+    "doc_type": "order",
+    "enactment_date": "1975-09-26",
+    "publication_date": "1975-09-26",
+    "benchmark_mentions": [
+      "adm_un_q03",
+      "civ_cd_q01",
+      "civ_ea_q01",
+      "civ_lc_q01",
+      "civ_lc_q02",
+      "civ_lc_q03",
+      "civ_lc_q04",
+      "civ_lm_q01",
+      "civ_mh_q01",
+      "civ_mh_q02",
+      "civ_mh_q03",
+      "civ_ra_q01",
+      "civ_ra_q02",
+      "civ_ra_q03",
+      "civ_ra_q04",
+      "civ_ra_q05",
+      "civ_ra_q06",
+      "civ_un_q01",
+      "civ_un_q02",
+      "civ_un_q03",
+      "civ_un_q04",
+      "cofl_ea_q01",
+      "cofl_ea_q02",
+      "cofl_ea_q03",
+      "cofl_mh_q01",
+      "cofl_ra_q01",
+      "cofl_ra_q02",
+      "com_lc_q04",
+      "com_mh_q01",
+      "com_mh_q02",
+      "com_mh_q03",
+      "com_un_q04",
+      "fam_lc_q05",
+      "hous_un_q03",
+      "xdom_lc_q01",
+      "xdom_mh_q07",
+      "xdom_ra_q01",
+      "xdom_ra_q02",
+      "xdom_ra_q03"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/75-8_1975-09-26.xml",
+      "txt": "code/Dataset/data/txt/75-8_1975-09-26.txt",
+      "rdf": "code/Dataset/data/rdf/75-8_1975-09-26.ttl",
+      "pdf": "code/Dataset/data/pdf/75-8_1975-09-26.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "75-8_1975-09-26"
+    ]
+  },
+  "83-11_1983-07-02": {
+    "canonical_doc_id": "83-11_1983-07-02",
+    "title": "قانون التأمينات الاجتماعية",
+    "doc_type": null,
+    "enactment_date": null,
+    "publication_date": null,
+    "benchmark_mentions": [
+      "lab_ra_q02",
+      "soc_ea_q01",
+      "soc_lm_q01",
+      "soc_ra_q01",
+      "soc_ra_q02",
+      "soc_un_q01",
+      "soc_un_q02",
+      "xdom_mh_q01",
+      "xdom_mh_q06"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/83-11_1983-07-02.xml",
+      "txt": null,
+      "rdf": "code/Dataset/data/rdf/83-11_1983-07-02.ttl",
+      "pdf": null
+    },
+    "available_formats": [
+      "akn",
+      "rdf"
+    ],
+    "status": "partial",
+    "notes": [],
+    "source_stems": [
+      "83-11_1983-07-02"
+    ]
+  },
+  "84-11_1984-06-09": {
+    "canonical_doc_id": "84-11_1984-06-09",
+    "title": "قانون يتضمن قانون الأسرة، المعدل والمتمم",
+    "doc_type": "law",
+    "enactment_date": "1984-06-09",
+    "publication_date": "1984-06-09",
+    "benchmark_mentions": [
+      "civ_mh_q01",
+      "cpro_ea_q08",
+      "fam_cd_q01",
+      "fam_ea_q01",
+      "fam_ea_q02",
+      "fam_ea_q03",
+      "fam_ea_q04",
+      "fam_ea_q05",
+      "fam_ea_q06",
+      "fam_ea_q07",
+      "fam_lc_q01",
+      "fam_lc_q02",
+      "fam_lc_q03",
+      "fam_lc_q04",
+      "fam_lc_q05",
+      "fam_lm_q01",
+      "fam_lm_q02",
+      "fam_lm_q03",
+      "fam_mh_q01",
+      "fam_mh_q02",
+      "fam_ra_q01",
+      "fam_ra_q02",
+      "fam_ra_q03",
+      "fam_ra_q04",
+      "fam_ra_q05",
+      "fam_ra_q06",
+      "fam_ra_q07",
+      "fam_ra_q08",
+      "fam_ra_q09",
+      "fam_ra_q10",
+      "fam_ra_q11",
+      "fam_tf_q01",
+      "fam_un_q01",
+      "fam_un_q02",
+      "fam_un_q03",
+      "fam_un_q04",
+      "fam_un_q05",
+      "xdom_lc_q02",
+      "xdom_mh_q04",
+      "xdom_mh_q07"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/84-11_1984-06-09.xml",
+      "txt": "code/Dataset/data/txt/84-11_1984-06-09.txt",
+      "rdf": "code/Dataset/data/rdf/84-11_1984-06-09.ttl",
+      "pdf": "code/Dataset/data/pdf/84-11_1984-06-09.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "84-11_1984-06-09"
+    ]
+  },
+  "90-11_1990-04-21": {
+    "canonical_doc_id": "90-11_1990-04-21",
+    "title": "قانون علاقات العمل",
+    "doc_type": "law",
+    "enactment_date": "1990-04-21",
+    "publication_date": "1990-04-21",
+    "benchmark_mentions": [
+      "lab_cd_q01",
+      "lab_ea_q01",
+      "lab_ea_q02",
+      "lab_lm_q01",
+      "lab_ra_q01",
+      "lab_ra_q02",
+      "lab_tf_q01",
+      "lab_un_q01",
+      "lab_un_q02",
+      "lab_un_q03",
+      "lab_un_q04",
+      "lab_un_q05",
+      "xdom_mh_q01",
+      "xdom_mh_q06"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/90-11_1990-04-21.xml",
+      "txt": null,
+      "rdf": "code/Dataset/data/rdf/90-11_1990-04-21.ttl",
+      "pdf": null
+    },
+    "available_formats": [
+      "akn",
+      "rdf"
+    ],
+    "status": "partial",
+    "notes": [
+      "Legacy dataset aliases retained in source_stems: labor_law_90-11.",
+      "Canonical registry paths now point at owner-approved canonical file stems."
+    ],
+    "source_stems": [
+      "90-11_1990-04-21",
+      "labor_law_90-11"
+    ]
+  },
+  "constitution_2020-12-30": {
+    "canonical_doc_id": "constitution_2020-12-30",
+    "title": "دستور الجمهورية الجزائرية الديمقراطية الشعبية",
+    "doc_type": "constitution",
+    "enactment_date": "2020-12-30",
+    "publication_date": "2020-12-30",
+    "benchmark_mentions": [
+      "con_cd_q01",
+      "con_cd_q02",
+      "con_ea_q01",
+      "con_ea_q02",
+      "con_ea_q03",
+      "con_lm_q01",
+      "con_ra_q01",
+      "con_tf_q01",
+      "con_un_q01",
+      "con_un_q02"
+    ],
+    "paths": {
+      "akn": "code/Dataset/data/akn/constitution_2020-12-30.xml",
+      "txt": "code/Dataset/data/txt/constitution_2020-12-30.txt",
+      "rdf": "code/Dataset/data/rdf/constitution_2020-12-30.ttl",
+      "pdf": "code/Dataset/data/pdf/constitution_2020-12-30.pdf"
+    },
+    "available_formats": [
+      "akn",
+      "txt",
+      "rdf",
+      "pdf"
+    ],
+    "status": "trusted",
+    "notes": [],
+    "source_stems": [
+      "constitution_2020-12-30"
+    ]
+  }
+}

@@ -1,0 +1,1243 @@
+{
+  "global": {
+    "dataset_name": "Algerian Legal Documents Dataset",
+    "version": "v2",
+    "generated_at": "2026-05-05T14:25:26.763455",
+    "total_files": 141,
+    "total_size_bytes": 185550680,
+    "total_size_human": "176.95 MB",
+    "categories": [
+      "pdf",
+      "txt",
+      "akn",
+      "rdf"
+    ],
+    "years_covered": [
+      "1963",
+      "1966",
+      "1970",
+      "1971",
+      "1975",
+      "1976",
+      "1979",
+      "1980",
+      "1983",
+      "1984",
+      "1988",
+      "1989",
+      "1990",
+      "1994",
+      "1996",
+      "1997",
+      "2001",
+      "2002",
+      "2003",
+      "2004",
+      "2005",
+      "2006",
+      "2008",
+      "2009",
+      "2011",
+      "2012",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2020",
+      "2022",
+      "2025"
+    ],
+    "year_range": "1963-2025",
+    "category_breakdown": {
+      "pdf": {
+        "files": 24,
+        "size": "16.37 MB"
+      },
+      "txt": {
+        "files": 24,
+        "size": "3.93 MB"
+      },
+      "akn": {
+        "files": 46,
+        "size": "8.36 MB"
+      },
+      "rdf": {
+        "files": 47,
+        "size": "148.29 MB"
+      }
+    }
+  },
+  "categories": {
+    "pdf": {
+      "category": "pdf",
+      "directory": "data/pdf",
+      "extension": ".pdf",
+      "statistics": {
+        "file_count": 24,
+        "total_size_bytes": 17168075,
+        "total_size_human": "16.37 MB",
+        "years_covered": [
+          "1966",
+          "1970",
+          "1971",
+          "1975",
+          "1984",
+          "2004",
+          "2005",
+          "2006",
+          "2008",
+          "2009",
+          "2011",
+          "2012",
+          "2015",
+          "2018",
+          "2020",
+          "2022",
+          "2025"
+        ],
+        "year_count": 17,
+        "min_size_bytes": 89482,
+        "max_size_bytes": 3028304,
+        "avg_size_bytes": 715336.4583333334,
+        "min_size_human": "87.38 KB",
+        "max_size_human": "2.89 MB",
+        "avg_size_human": "698.57 KB"
+      },
+      "files": [
+        {
+          "filename": "04-18_2004-12-25.pdf",
+          "relative_path": "pdf/04-18_2004-12-25.pdf",
+          "size_bytes": 322834,
+          "sha256": "d5bd69309c467fbef1ab5f20cbe22c41d64feeb6fc415d17eef7d3c63db58711",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "05-01_2005-02-06.pdf",
+          "relative_path": "pdf/05-01_2005-02-06.pdf",
+          "size_bytes": 174337,
+          "sha256": "49f6b867188b1723b39fd4fbfb72ecc8221759d3ba52d37690b3a75330bd027e",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "05-2004_2005-02-06.pdf",
+          "relative_path": "pdf/05-2004_2005-02-06.pdf",
+          "size_bytes": 471316,
+          "sha256": "b14df4510071e6a6349c9270a775a463fa9d874631f911e7fa7d9c537b4fc6e6",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "06-01_2006-02-20.pdf",
+          "relative_path": "pdf/06-01_2006-02-20.pdf",
+          "size_bytes": 181601,
+          "sha256": "14214fed042397242c4872c5c3cd33a8802b3bc0722b033c4e8ebb1402c18890",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "06-05_2006-01-09.pdf",
+          "relative_path": "pdf/06-05_2006-01-09.pdf",
+          "size_bytes": 91847,
+          "sha256": "c38f586037161b54ec314c8eca2bad9efd4dab326f87632e07731ec35e574010",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "08-09_2008-02-25.pdf",
+          "relative_path": "pdf/08-09_2008-02-25.pdf",
+          "size_bytes": 1323363,
+          "sha256": "7ad3093ae4d5b348d9bf86de99c0567be68e1663c8f8a61ba3b94164c720d9a6",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "09-03_2009-02-25.pdf",
+          "relative_path": "pdf/09-03_2009-02-25.pdf",
+          "size_bytes": 173538,
+          "sha256": "0f65f39983231f29a9a87c07bd67f0e0830e422aad1496d5f2fad58e00813032",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "11-05_2005-07-17.pdf",
+          "relative_path": "pdf/11-05_2005-07-17.pdf",
+          "size_bytes": 89482,
+          "sha256": "7731db2623e11440c056fa9db0a98cc1d2c7d438b88c91a7031a2ed7aa285538",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "11-10_2011-06-22.pdf",
+          "relative_path": "pdf/11-10_2011-06-22.pdf",
+          "size_bytes": 746550,
+          "sha256": "bfef74c48fbe4cf468caa09456ca4ab90d6df114b077a59aa51ffe442b8622f3",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "12-2003_2012-11-28.pdf",
+          "relative_path": "pdf/12-2003_2012-11-28.pdf",
+          "size_bytes": 111988,
+          "sha256": "37727f5d8e8e80401439cdfecee497ab27f80970e4733870748003e5a46f47af",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "12-2015_2012-01-12.pdf",
+          "relative_path": "pdf/12-2015_2012-01-12.pdf",
+          "size_bytes": 461614,
+          "sha256": "89d5e36a110b6ed36f853e2755be28404f93b76cdad7eac94c1732e1bf21f00f",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "13-12_1971-04-22.pdf",
+          "relative_path": "pdf/13-12_1971-04-22.pdf",
+          "size_bytes": 717787,
+          "sha256": "60724fcf80c39a93be9c8f5089a806584b7321657e4729dc73c08386eea702b1",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "15-247_2015-09-16.pdf",
+          "relative_path": "pdf/15-247_2015-09-16.pdf",
+          "size_bytes": 955646,
+          "sha256": "530a15306f34cf3dcb70e22d8a25234e9f9987282a538057b619fe114576de63",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "18-05_2018-05-10.pdf",
+          "relative_path": "pdf/18-05_2018-05-10.pdf",
+          "size_bytes": 374488,
+          "sha256": "36124ebc959f3bfef825ce9f2a04e892fe25bf8d6a5e8285d164c6afdb4568ff",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "18-11_2018-07-02.pdf",
+          "relative_path": "pdf/18-11_2018-07-02.pdf",
+          "size_bytes": 585052,
+          "sha256": "27549abfd095f1abb73888f43623e51ad51513bac40c17a82717bf17847cf167",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "22-18_2022-07-24.pdf",
+          "relative_path": "pdf/22-18_2022-07-24.pdf",
+          "size_bytes": 414405,
+          "sha256": "0b9ee80b8cdbc2cc600fc14b092edba8e969809f627a1bbc5bdcdbc806ec21fb",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "25-14_2025-08-03.pdf",
+          "relative_path": "pdf/25-14_2025-08-03.pdf",
+          "size_bytes": 1377908,
+          "sha256": "50e9671fe8d4377c616af3f6652126796b62eee49eb67397427b775abd7deb73",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "66-156_1966-06-08.pdf",
+          "relative_path": "pdf/66-156_1966-06-08.pdf",
+          "size_bytes": 3028304,
+          "sha256": "9c0a8d4283263149433da2f5ca1771eeef6cfad12bcb0d03774006651a07ea13",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "70-86_1970-12-15.pdf",
+          "relative_path": "pdf/70-86_1970-12-15.pdf",
+          "size_bytes": 337936,
+          "sha256": "10b49cfb2c3c6a28a21467f5cba8ca6a7ae02fc04461fc48a557d7c9a2a82754",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "75-59_1975-09-26.pdf",
+          "relative_path": "pdf/75-59_1975-09-26.pdf",
+          "size_bytes": 1557441,
+          "sha256": "49d120f804db617434a8b13571ea77c6e349492e0464bfbc4dfeeccdd7381974",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "75-8_1975-09-26.pdf",
+          "relative_path": "pdf/75-8_1975-09-26.pdf",
+          "size_bytes": 2194319,
+          "sha256": "17a555bf81d5b99bf67417f3d42c157fd5df69499d6190cffbf182bc3566b573",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "84-11_1984-06-09.pdf",
+          "relative_path": "pdf/84-11_1984-06-09.pdf",
+          "size_bytes": 428653,
+          "sha256": "219a4ad854e61ee2e7b16cad8d059876e60cd4fe8179e29f218ced2d2f1a1cad",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "constitution_2020-12-30.pdf",
+          "relative_path": "pdf/constitution_2020-12-30.pdf",
+          "size_bytes": 356228,
+          "sha256": "6b4914ae40e3f5778e392f498e5423f08863c25ce3674ac812ea1c540a2c231f",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "قانون-03-10.pdf",
+          "relative_path": "pdf/قانون-03-10.pdf",
+          "size_bytes": 691438,
+          "sha256": "3c4dd3741b33ba0901166f6ffec4ecfdf8a87f9dc608d57751c5270a59caced9",
+          "modified": "2026-05-05T15:03:58.511648"
+        }
+      ]
+    },
+    "txt": {
+      "category": "txt",
+      "directory": "data/txt",
+      "extension": ".txt",
+      "statistics": {
+        "file_count": 24,
+        "total_size_bytes": 4123131,
+        "total_size_human": "3.93 MB",
+        "years_covered": [
+          "1966",
+          "1970",
+          "1971",
+          "1975",
+          "1984",
+          "2004",
+          "2005",
+          "2006",
+          "2008",
+          "2009",
+          "2011",
+          "2012",
+          "2015",
+          "2018",
+          "2020",
+          "2022",
+          "2025"
+        ],
+        "year_count": 17,
+        "min_size_bytes": 7250,
+        "max_size_bytes": 658818,
+        "avg_size_bytes": 171797.125,
+        "min_size_human": "7.08 KB",
+        "max_size_human": "643.38 KB",
+        "avg_size_human": "167.77 KB"
+      },
+      "files": [
+        {
+          "filename": "04-18_2004-12-25.txt",
+          "relative_path": "txt/04-18_2004-12-25.txt",
+          "size_bytes": 24952,
+          "sha256": "8e6cdd1ea598afe425fe792884989961362f0e9ea41fc7c5c1e73aa3e759c6b1",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "05-01_2005-02-06.txt",
+          "relative_path": "txt/05-01_2005-02-06.txt",
+          "size_bytes": 33536,
+          "sha256": "1e916fb3026fc2fe9d5795cbe398cb5ccc80f62ac44516a3c0b05bde8db4c204",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "05-2004_2005-02-06.txt",
+          "relative_path": "txt/05-2004_2005-02-06.txt",
+          "size_bytes": 90914,
+          "sha256": "3e2a1a3acfc6aeaa053b568391993fab66afbb2954a3e359ed948400b19b9867",
+          "modified": "2026-03-14T01:31:56"
+        },
+        {
+          "filename": "06-01_2006-02-20.txt",
+          "relative_path": "txt/06-01_2006-02-20.txt",
+          "size_bytes": 33536,
+          "sha256": "1e916fb3026fc2fe9d5795cbe398cb5ccc80f62ac44516a3c0b05bde8db4c204",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "06-05_2006-01-09.txt",
+          "relative_path": "txt/06-05_2006-01-09.txt",
+          "size_bytes": 7250,
+          "sha256": "b0a8c36d6c262523a4570ac0299dce5fe498bb4ff37cf749a832b19e6fd3012b",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "08-09_2008-02-25.txt",
+          "relative_path": "txt/08-09_2008-02-25.txt",
+          "size_bytes": 475775,
+          "sha256": "9b5de898be281c6d1ea968050393c79b41e2853782b75ad5caa769c4463d3006",
+          "modified": "2026-03-14T01:31:56"
+        },
+        {
+          "filename": "09-03_2009-02-25.txt",
+          "relative_path": "txt/09-03_2009-02-25.txt",
+          "size_bytes": 56466,
+          "sha256": "17c9f5034677d4e3a1d6af70e6623685a9506966199d7bba7971bd28b4b84743",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "11-05_2005-07-17.txt",
+          "relative_path": "txt/11-05_2005-07-17.txt",
+          "size_bytes": 10048,
+          "sha256": "d01cf303ba5608ca7b3611bc3ada95b7ddf224d86730011864e864247e3fe579",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "11-10_2011-06-22.txt",
+          "relative_path": "txt/11-10_2011-06-22.txt",
+          "size_bytes": 189875,
+          "sha256": "b42f311867f09a779f98d63a2ef2d695eb1825b12a678476f66c55f901207934",
+          "modified": "2026-03-14T01:31:56"
+        },
+        {
+          "filename": "12-2003_2012-11-28.txt",
+          "relative_path": "txt/12-2003_2012-11-28.txt",
+          "size_bytes": 23350,
+          "sha256": "35f94a36ab37d007317e9bd6e88eb49b54dfa69ab962e85ed9e49f0ab0bb70d9",
+          "modified": "2026-03-14T01:31:56"
+        },
+        {
+          "filename": "12-2015_2012-01-12.txt",
+          "relative_path": "txt/12-2015_2012-01-12.txt",
+          "size_bytes": 53455,
+          "sha256": "b591beaf6cc027445e3dd96057ac5973950ce3cced5b6e34ca6098c3402da1be",
+          "modified": "2026-03-14T01:31:56"
+        },
+        {
+          "filename": "13-12_1971-04-22.txt",
+          "relative_path": "txt/13-12_1971-04-22.txt",
+          "size_bytes": 218437,
+          "sha256": "efbded78293c29eaff6b297cc7b7554fb03e7ae79423432cd411780e5ddfe251",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "15-247_2015-09-16.txt",
+          "relative_path": "txt/15-247_2015-09-16.txt",
+          "size_bytes": 248778,
+          "sha256": "4a640ac414a142f4bd6bd1ed36754a4fb0f6068e94d0f975cccf19fd97ccbb13",
+          "modified": "2026-03-14T01:31:56"
+        },
+        {
+          "filename": "18-05_2018-05-10.txt",
+          "relative_path": "txt/18-05_2018-05-10.txt",
+          "size_bytes": 31582,
+          "sha256": "e645efa1e0ef44fe898bcdac1e066f5765d3bcc07fa7940b63adeca065f7dc71",
+          "modified": "2026-03-14T01:31:56"
+        },
+        {
+          "filename": "18-11_2018-07-02.txt",
+          "relative_path": "txt/18-11_2018-07-02.txt",
+          "size_bytes": 209212,
+          "sha256": "e0f217b26f8dc8229f6882e2cd5bc624a92c3cb8ffa4bd11bcd0c2e63e2a7224",
+          "modified": "2026-03-14T01:31:56"
+        },
+        {
+          "filename": "22-18_2022-07-24.txt",
+          "relative_path": "txt/22-18_2022-07-24.txt",
+          "size_bytes": 32347,
+          "sha256": "110719c62a6dd97d012b3e8bef49a2e2ba73635a2277537284a08e3e1160a20e",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "25-14_2025-08-03.txt",
+          "relative_path": "txt/25-14_2025-08-03.txt",
+          "size_bytes": 648028,
+          "sha256": "1872784a3c8ba85319d5e3adc9cd35dc0fe8e8672fc22f9e72ed5d0cb0591fd3",
+          "modified": "2026-03-14T01:31:56"
+        },
+        {
+          "filename": "66-156_1966-06-08.txt",
+          "relative_path": "txt/66-156_1966-06-08.txt",
+          "size_bytes": 388838,
+          "sha256": "eb56304be614fb58bc916d981d37eaa588a79013484f0d71b38f46d85ec45a00",
+          "modified": "2026-03-14T01:31:56"
+        },
+        {
+          "filename": "70-86_1970-12-15.txt",
+          "relative_path": "txt/70-86_1970-12-15.txt",
+          "size_bytes": 21067,
+          "sha256": "2435145c335db68be07641fc6eab456df3adddf7ff5392f2c47341cc2ba5ce18",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "75-59_1975-09-26.txt",
+          "relative_path": "txt/75-59_1975-09-26.txt",
+          "size_bytes": 658818,
+          "sha256": "d605c2a427b3b7010b538e3286b5d5aa922bd2b6d7123e4efb52a4308a338b55",
+          "modified": "2026-05-04T16:43:36.788938"
+        },
+        {
+          "filename": "75-8_1975-09-26.txt",
+          "relative_path": "txt/75-8_1975-09-26.txt",
+          "size_bytes": 419994,
+          "sha256": "3d1f1256d61c30bc3daa92d2ff0db22513d9be30f9d4607a61040b5859e55a23",
+          "modified": "2026-03-14T01:31:56"
+        },
+        {
+          "filename": "83-11_02-07-1983.txt",
+          "relative_path": "txt/83-11_02-07-1983.txt",
+          "size_bytes": 43492,
+          "sha256": "7fde9d550aac0683eb2c8d879d546e74cd2a026541fd3038719261859e35a1cd",
+          "modified": "2026-05-05T15:14:44.126094"
+        },
+        {
+          "filename": "84-11_1984-06-09.txt",
+          "relative_path": "txt/84-11_1984-06-09.txt",
+          "size_bytes": 65678,
+          "sha256": "de53e2863e861ba2327e74292b70246fbd05849b3633c6c090fcfc0f1426e688",
+          "modified": "2026-03-14T01:31:55"
+        },
+        {
+          "filename": "constitution_2020-12-30.txt",
+          "relative_path": "txt/constitution_2020-12-30.txt",
+          "size_bytes": 137703,
+          "sha256": "b0639e6f15f2438d70f814bfd9e35e891b3a073104ae4273879ca75ab0d1472f",
+          "modified": "2026-05-04T16:46:30.769016"
+        }
+      ]
+    },
+    "akn": {
+      "category": "akn",
+      "directory": "data/akn",
+      "extension": ".xml",
+      "statistics": {
+        "file_count": 46,
+        "total_size_bytes": 8765989,
+        "total_size_human": "8.36 MB",
+        "years_covered": [
+          "1963",
+          "1966",
+          "1970",
+          "1971",
+          "1975",
+          "1976",
+          "1979",
+          "1980",
+          "1983",
+          "1984",
+          "1988",
+          "1989",
+          "1990",
+          "1994",
+          "1996",
+          "1997",
+          "2001",
+          "2002",
+          "2003",
+          "2004",
+          "2005",
+          "2006",
+          "2008",
+          "2009",
+          "2011",
+          "2012",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2020",
+          "2022",
+          "2025"
+        ],
+        "year_count": 33,
+        "min_size_bytes": 3305,
+        "max_size_bytes": 1131108,
+        "avg_size_bytes": 190564.97826086957,
+        "min_size_human": "3.23 KB",
+        "max_size_human": "1.08 MB",
+        "avg_size_human": "186.10 KB"
+      },
+      "files": [
+        {
+          "filename": "01-14_2001-08-19.xml",
+          "relative_path": "akn/01-14_2001-08-19.xml",
+          "size_bytes": 116646,
+          "sha256": "3b281ffb77f59bba6a3a4511d26d2d34725110cd584351fdfb6149cce35e7472",
+          "modified": "2026-05-04T17:29:47.000262"
+        },
+        {
+          "filename": "03-07_2003-07-19.xml",
+          "relative_path": "akn/03-07_2003-07-19.xml",
+          "size_bytes": 68688,
+          "sha256": "bea7d5c8ca94396c4339ac65fc606cae4ffd0afc3def00417b9c4380a16145fe",
+          "modified": "2026-04-28T20:28:54.894457"
+        },
+        {
+          "filename": "04-18_2004-12-25.xml",
+          "relative_path": "akn/04-18_2004-12-25.xml",
+          "size_bytes": 35951,
+          "sha256": "bd96e889802dba748dd7d4adc0ac5f99d52b915f6d5f9267f1957d2c710f5118",
+          "modified": "2026-04-28T20:28:54.889814"
+        },
+        {
+          "filename": "05-01_2005-02-06.xml",
+          "relative_path": "akn/05-01_2005-02-06.xml",
+          "size_bytes": 54555,
+          "sha256": "d5e3dceb5713d373dc186ef6a8508c49d2e0aeb1dfc93c23434ea30676cd8b1e",
+          "modified": "2026-04-28T20:28:54.889862"
+        },
+        {
+          "filename": "05-17_2017-02-16.xml",
+          "relative_path": "akn/05-17_2017-02-16.xml",
+          "size_bytes": 57113,
+          "sha256": "781fffabf0f727ab7650e2f915105d130b34f2a21ada0596975d238e0c05115c",
+          "modified": "2026-05-04T17:29:47.004391"
+        },
+        {
+          "filename": "05-2004_2005-02-06.xml",
+          "relative_path": "akn/05-2004_2005-02-06.xml",
+          "size_bytes": 163722,
+          "sha256": "7ca79a874395d83f5ca3944cc856fe1dd6bbee845a343d827d9ecc425d8adcdb",
+          "modified": "2026-05-04T17:36:40.833195"
+        },
+        {
+          "filename": "06-01_2006-02-20.xml",
+          "relative_path": "akn/06-01_2006-02-20.xml",
+          "size_bytes": 54502,
+          "sha256": "198f788d846d5692ea1c32e483807d295a4157e490f757ecc98b9f8d5ed6999c",
+          "modified": "2026-04-28T20:28:54.890017"
+        },
+        {
+          "filename": "06-05_2006-01-09.xml",
+          "relative_path": "akn/06-05_2006-01-09.xml",
+          "size_bytes": 13033,
+          "sha256": "3ef663324ca9f1eb9a8ac5bb1080d5d6754e6273898b65c1d0697d9cd0253a14",
+          "modified": "2026-04-28T20:28:54.890066"
+        },
+        {
+          "filename": "07-12_2012-02-21.xml",
+          "relative_path": "akn/07-12_2012-02-21.xml",
+          "size_bytes": 153230,
+          "sha256": "109673753284634767e96ab90ccd8fc78cb8ddc215ccb1eb7edb806bd701dd6e",
+          "modified": "2026-04-28T20:28:54.890105"
+        },
+        {
+          "filename": "08-09_2008-02-25.xml",
+          "relative_path": "akn/08-09_2008-02-25.xml",
+          "size_bytes": 899450,
+          "sha256": "ea7e82dda82613289fe4630ce0f2aa3240c6c81086b33b81e3e99f83cf3e8a70",
+          "modified": "2026-04-28T20:28:54.890197"
+        },
+        {
+          "filename": "09-03_2009-02-25.xml",
+          "relative_path": "akn/09-03_2009-02-25.xml",
+          "size_bytes": 95648,
+          "sha256": "96bf0ff403ce64174a49fdad99505c8aa14f56907067c7745beb6ff5b96561aa",
+          "modified": "2026-05-04T17:36:40.837480"
+        },
+        {
+          "filename": "11-05_2005-07-17.xml",
+          "relative_path": "akn/11-05_2005-07-17.xml",
+          "size_bytes": 22005,
+          "sha256": "42bf8645f0e3b816f901dde2e21e645dfbecc17615a0768115584a9011069967",
+          "modified": "2026-04-28T20:28:54.890654"
+        },
+        {
+          "filename": "11-10_2011-06-22.xml",
+          "relative_path": "akn/11-10_2011-06-22.xml",
+          "size_bytes": 193516,
+          "sha256": "72868f4e4076586897f79d02b7bb0556cf082985310f372a0ca7240a17535c1f",
+          "modified": "2026-04-28T20:28:54.890691"
+        },
+        {
+          "filename": "12-2003_2012-11-28.xml",
+          "relative_path": "akn/12-2003_2012-11-28.xml",
+          "size_bytes": 42393,
+          "sha256": "27ca1cf99e73fdfc95d350210171875f60b7843a1243943fd5c8b9782a2b2a9c",
+          "modified": "2026-04-28T20:28:54.890794"
+        },
+        {
+          "filename": "12-2015_2012-01-12.xml",
+          "relative_path": "akn/12-2015_2012-01-12.xml",
+          "size_bytes": 99077,
+          "sha256": "7f6e061aecec905ee014764e809281dbd5bebb2ca324c31e19d56b1b11a9847d",
+          "modified": "2026-04-28T20:28:54.890838"
+        },
+        {
+          "filename": "13-12_1971-04-22.xml",
+          "relative_path": "akn/13-12_1971-04-22.xml",
+          "size_bytes": 379587,
+          "sha256": "a6c9df27c8f675465973befc6234832766b44dc920f474e9ac34475c79bed95d",
+          "modified": "2026-04-28T20:28:54.890906"
+        },
+        {
+          "filename": "15-20_2015-12-30__partial_code_commerce_pp_5-6.xml",
+          "relative_path": "akn/15-20_2015-12-30__partial_code_commerce_pp_5-6.xml",
+          "size_bytes": 8951,
+          "sha256": "0508c4efffe0961f6c379a810104a115af2ea4b76f3d6d958dfc5c8de1818acb",
+          "modified": "2026-04-28T20:28:54.894388"
+        },
+        {
+          "filename": "15-247_2015-09-16.xml",
+          "relative_path": "akn/15-247_2015-09-16.xml",
+          "size_bytes": 406997,
+          "sha256": "93d1440c9db940c980a8147f5b66302b1ac7d755db038febcab9b2ccd9b07f33",
+          "modified": "2026-05-04T17:36:40.841196"
+        },
+        {
+          "filename": "18-05_2018-05-10.xml",
+          "relative_path": "akn/18-05_2018-05-10.xml",
+          "size_bytes": 55146,
+          "sha256": "847b095f8b84c621b7f7e2ea913f709e86e90fd0bdca557b277ee82ac25a3eeb",
+          "modified": "2026-04-28T20:28:54.891340"
+        },
+        {
+          "filename": "18-11_2018-07-02.xml",
+          "relative_path": "akn/18-11_2018-07-02.xml",
+          "size_bytes": 370737,
+          "sha256": "bd2b95b970223595ad854321dde14d8e60d851b3e4a50c6153762190c0c8feaa",
+          "modified": "2026-04-28T20:28:54.891494"
+        },
+        {
+          "filename": "22-09_2022-05-05__partial_code_commerce_pp12-13.xml",
+          "relative_path": "akn/22-09_2022-05-05__partial_code_commerce_pp12-13.xml",
+          "size_bytes": 13519,
+          "sha256": "ce93c94e9e6309b667f1ca2b602d78edaf3dd8b1b2f8e2d3bd29b507c354538a",
+          "modified": "2026-04-28T20:28:54.894422"
+        },
+        {
+          "filename": "22-18_2022-07-24.xml",
+          "relative_path": "akn/22-18_2022-07-24.xml",
+          "size_bytes": 51045,
+          "sha256": "f4d02e236a2f91971fb6e657513643b5ba8773d0845ae351464bee0e6d83d9ae",
+          "modified": "2026-04-28T20:28:54.892202"
+        },
+        {
+          "filename": "22-21_2022-07-20.xml",
+          "relative_path": "akn/22-21_2022-07-20.xml",
+          "size_bytes": 11275,
+          "sha256": "e5c2ff197d6857c28b18b22c7bea54bc69d9b85ae2ef23eeda18817808c3aa08",
+          "modified": "2026-04-28T20:28:54.892172"
+        },
+        {
+          "filename": "25-14_2025-08-03.xml",
+          "relative_path": "akn/25-14_2025-08-03.xml",
+          "size_bytes": 1054603,
+          "sha256": "f1702d5ce94e7e467e93e2cd94cf6e596c19e93c0cb217fec133de70afee61cc",
+          "modified": "2026-05-04T17:36:40.848195"
+        },
+        {
+          "filename": "66-156_1966-06-08.xml",
+          "relative_path": "akn/66-156_1966-06-08.xml",
+          "size_bytes": 664240,
+          "sha256": "da06773b217a896be21cd6ffe20e74f0429be22f95a4f9f9f60eaa1a79eafe20",
+          "modified": "2026-05-04T17:36:40.853195"
+        },
+        {
+          "filename": "70-86_1970-12-15.xml",
+          "relative_path": "akn/70-86_1970-12-15.xml",
+          "size_bytes": 38001,
+          "sha256": "bef67a1c2ed24dc47db609ac6acfbe8802d4b1b98f95a96f2456f0f48788cbb9",
+          "modified": "2026-04-28T20:28:54.892929"
+        },
+        {
+          "filename": "75-59_1975-09-26.xml",
+          "relative_path": "akn/75-59_1975-09-26.xml",
+          "size_bytes": 1131108,
+          "sha256": "c421cced534adb873639251121c6667a65081c89cc3181c099d554c3e05ff262",
+          "modified": "2026-05-05T13:43:42.398777"
+        },
+        {
+          "filename": "75-8_1975-09-26.xml",
+          "relative_path": "akn/75-8_1975-09-26.xml",
+          "size_bytes": 805727,
+          "sha256": "8527c5caa0b0cd962acebdaa67eff7ae25fda22575bab91502192d73654058b8",
+          "modified": "2026-04-28T20:28:54.893106"
+        },
+        {
+          "filename": "83-11_1983-07-02.xml",
+          "relative_path": "akn/83-11_1983-07-02.xml",
+          "size_bytes": 79092,
+          "sha256": "09f4c50323218ebffc614eb9022af7156723a06dd37039302dcc0b06af61fd77",
+          "modified": "2026-05-05T15:14:46.624090"
+        },
+        {
+          "filename": "84-11_1984-06-09.xml",
+          "relative_path": "akn/84-11_1984-06-09.xml",
+          "size_bytes": 141895,
+          "sha256": "ac78c3e88f00b00cf5879d9db6d2d00d4376058b86bdd5ae497e2f387467b71c",
+          "modified": "2026-05-04T17:36:40.861195"
+        },
+        {
+          "filename": "90-11_1990-04-21.xml",
+          "relative_path": "akn/90-11_1990-04-21.xml",
+          "size_bytes": 126933,
+          "sha256": "10f9b05164ad122dbd75b3fd2ecba1729add0bf89d7a09bffef682e8384cc325",
+          "modified": "2026-04-28T20:28:54.894300"
+        },
+        {
+          "filename": "94-03_1994-04-11.xml",
+          "relative_path": "akn/94-03_1994-04-11.xml",
+          "size_bytes": 4786,
+          "sha256": "c544af4e8dd642161cec3d0280aee020fe2996afe640662e51b12500719abd6d",
+          "modified": "2026-04-28T20:28:54.894513"
+        },
+        {
+          "filename": "96-21_1996-07-09.xml",
+          "relative_path": "akn/96-21_1996-07-09.xml",
+          "size_bytes": 28811,
+          "sha256": "f332919ac3c4dbba395f0566f6a3660aec5ae33992169e38d52e11cc3b4f63d8",
+          "modified": "2026-05-04T17:29:47.124149"
+        },
+        {
+          "filename": "97-02_1997-01-11.xml",
+          "relative_path": "akn/97-02_1997-01-11.xml",
+          "size_bytes": 10371,
+          "sha256": "bde0a18c10889e55d04b0ebef27f864425c28020f80949b24ef71581744d5bc4",
+          "modified": "2026-05-04T17:29:47.124604"
+        },
+        {
+          "filename": "constitution_1963-12-08.xml",
+          "relative_path": "akn/constitution_1963-12-08.xml",
+          "size_bytes": 48879,
+          "sha256": "c5dd2b7a061891e5a9438072ecbb12835626a99dae45d5205455da88f187bfe0",
+          "modified": "2026-04-28T20:28:54.893500"
+        },
+        {
+          "filename": "constitution_1976-11-19.xml",
+          "relative_path": "akn/constitution_1976-11-19.xml",
+          "size_bytes": 144560,
+          "sha256": "4ce0b7a7425952e811b646ccc685a3203407b6f37bbc5d24bbee9fa3d456aa3c",
+          "modified": "2026-04-28T20:28:54.893553"
+        },
+        {
+          "filename": "constitution_1979-07-01.xml",
+          "relative_path": "akn/constitution_1979-07-01.xml",
+          "size_bytes": 13784,
+          "sha256": "ce4313091cceb29ff8725efab0778f54068affa448a21b0ce8dda055e392a7ac",
+          "modified": "2026-04-28T20:28:54.893636"
+        },
+        {
+          "filename": "constitution_1980-01-12.xml",
+          "relative_path": "akn/constitution_1980-01-12.xml",
+          "size_bytes": 3305,
+          "sha256": "e3f99db2c3481b61853cd1b7e2ab93ee57fe30d5ea86d0d7ff8333e12237178f",
+          "modified": "2026-04-28T20:28:54.893669"
+        },
+        {
+          "filename": "constitution_1988-11-03.xml",
+          "relative_path": "akn/constitution_1988-11-03.xml",
+          "size_bytes": 19242,
+          "sha256": "16e5f459bbbd147dfba2d7d259dd0cbf355d4c11036a3159eea1e43d2a75afbf",
+          "modified": "2026-04-28T20:28:54.893695"
+        },
+        {
+          "filename": "constitution_1989-02-23.xml",
+          "relative_path": "akn/constitution_1989-02-23.xml",
+          "size_bytes": 121924,
+          "sha256": "17e1e691dbb808ec70e241f9040d133a9e6a0ac31292511d32e8ff634c15ac1b",
+          "modified": "2026-04-28T20:28:54.893729"
+        },
+        {
+          "filename": "constitution_1996-11-28.xml",
+          "relative_path": "akn/constitution_1996-11-28.xml",
+          "size_bytes": 147294,
+          "sha256": "d7253895793085a77fcf40272fbb3aa8d01a4bc7571412ab5f14a4618b750609",
+          "modified": "2026-04-28T20:28:54.893836"
+        },
+        {
+          "filename": "constitution_2002-04-10.xml",
+          "relative_path": "akn/constitution_2002-04-10.xml",
+          "size_bytes": 3731,
+          "sha256": "369a614d64217dccf0662794481a59695f04e390f4818e364da1a485902dfb0d",
+          "modified": "2026-04-28T20:28:54.893926"
+        },
+        {
+          "filename": "constitution_2008-11-15.xml",
+          "relative_path": "akn/constitution_2008-11-15.xml",
+          "size_bytes": 150730,
+          "sha256": "a6d0dbd7ec95618c9b8ffbe065546ec86a976699017fe5d505061eae01497b03",
+          "modified": "2026-04-28T20:28:54.893954"
+        },
+        {
+          "filename": "constitution_2016-03-06.xml",
+          "relative_path": "akn/constitution_2016-03-06.xml",
+          "size_bytes": 202429,
+          "sha256": "fb6d8d9ba247ad98fb5793d892d6e5d1116a4dad45a75ff5a6649fae4bcfa2eb",
+          "modified": "2026-04-28T20:28:54.894060"
+        },
+        {
+          "filename": "constitution_2020-11-01.xml",
+          "relative_path": "akn/constitution_2020-11-01.xml",
+          "size_bytes": 232655,
+          "sha256": "07c7812dde6136cac92f8538f5624ba505b1e85277ecff5de79fbef79ab5f898",
+          "modified": "2026-04-28T20:28:54.894201"
+        },
+        {
+          "filename": "constitution_2020-12-30.xml",
+          "relative_path": "akn/constitution_2020-12-30.xml",
+          "size_bytes": 225103,
+          "sha256": "d51d2d64353041f3d6d4eb4e738d73967b1805a8491ce40bfc3b05526dcd179b",
+          "modified": "2026-04-28T20:28:54.892051"
+        }
+      ]
+    },
+    "rdf": {
+      "category": "rdf",
+      "directory": "data/rdf",
+      "extension": ".ttl",
+      "statistics": {
+        "file_count": 47,
+        "total_size_bytes": 155493485,
+        "total_size_human": "148.29 MB",
+        "years_covered": [
+          "1963",
+          "1966",
+          "1970",
+          "1971",
+          "1975",
+          "1976",
+          "1979",
+          "1980",
+          "1983",
+          "1984",
+          "1988",
+          "1989",
+          "1990",
+          "1994",
+          "1996",
+          "1997",
+          "2001",
+          "2002",
+          "2003",
+          "2004",
+          "2005",
+          "2006",
+          "2008",
+          "2009",
+          "2011",
+          "2012",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2020",
+          "2022",
+          "2025"
+        ],
+        "year_count": 33,
+        "min_size_bytes": 14520,
+        "max_size_bytes": 77088271,
+        "avg_size_bytes": 3308372.0212765955,
+        "min_size_human": "14.18 KB",
+        "max_size_human": "73.52 MB",
+        "avg_size_human": "3.16 MB"
+      },
+      "files": [
+        {
+          "filename": "01-14_2001-08-19.ttl",
+          "relative_path": "rdf/01-14_2001-08-19.ttl",
+          "size_bytes": 1204611,
+          "sha256": "ee03e51f2bf9d757f4941bc9b7cf54d97aa23bddbf4ee98f0a20bee007136a84",
+          "modified": "2026-05-04T17:29:47.176197"
+        },
+        {
+          "filename": "03-07_2003-07-19.ttl",
+          "relative_path": "rdf/03-07_2003-07-19.ttl",
+          "size_bytes": 654388,
+          "sha256": "d7be9258e6f496990861bfc2d5eb113de0c0a3e6b727ee0724022fc2c50184e2",
+          "modified": "2026-05-04T17:29:47.195197"
+        },
+        {
+          "filename": "04-18_2004-12-25.ttl",
+          "relative_path": "rdf/04-18_2004-12-25.ttl",
+          "size_bytes": 384874,
+          "sha256": "488866859bf6a547349916ccafc13fa9653a699b761d753f4b1e036719e8e7b1",
+          "modified": "2026-04-28T20:28:54.887107"
+        },
+        {
+          "filename": "05-01_2005-02-06.ttl",
+          "relative_path": "rdf/05-01_2005-02-06.ttl",
+          "size_bytes": 566008,
+          "sha256": "9cdac2966bcc9ae1e237ad6de9cfe6584f7d8f25f081d4e533cc746a98f2301e",
+          "modified": "2026-04-28T20:28:54.887342"
+        },
+        {
+          "filename": "05-17_2017-02-16.ttl",
+          "relative_path": "rdf/05-17_2017-02-16.ttl",
+          "size_bytes": 484781,
+          "sha256": "e78068482d7ab61887c31ca9da3004ed8ef691127eaebbc23c930a5fe8925346",
+          "modified": "2026-05-04T17:29:47.226197"
+        },
+        {
+          "filename": "05-2004_2005-02-06.ttl",
+          "relative_path": "rdf/05-2004_2005-02-06.ttl",
+          "size_bytes": 1390840,
+          "sha256": "0cd0d0d57cebad4a06e840fe31f9494a6b560f12a5dafc85cffb08ec46495b93",
+          "modified": "2026-05-04T17:36:40.879195"
+        },
+        {
+          "filename": "06-01_2006-02-20.ttl",
+          "relative_path": "rdf/06-01_2006-02-20.ttl",
+          "size_bytes": 565952,
+          "sha256": "d787b086a4907444518ae5dd4d790c9b5d4298d2fb02059af6c83dcbdc1cd16e",
+          "modified": "2026-04-28T20:28:54.888198"
+        },
+        {
+          "filename": "06-05_2006-01-09.ttl",
+          "relative_path": "rdf/06-05_2006-01-09.ttl",
+          "size_bytes": 85195,
+          "sha256": "d052c7210a8fb6f32b943955afff91ce838d2a157508184c4128412742e29ba9",
+          "modified": "2026-04-28T20:28:54.888351"
+        },
+        {
+          "filename": "07-12_2012-02-21.ttl",
+          "relative_path": "rdf/07-12_2012-02-21.ttl",
+          "size_bytes": 1379440,
+          "sha256": "55d084f33632ee6e3aa94999483e0df2501c289596d343b3b059fffb427480cd",
+          "modified": "2026-05-04T17:29:47.315196"
+        },
+        {
+          "filename": "08-09_2008-02-25.ttl",
+          "relative_path": "rdf/08-09_2008-02-25.ttl",
+          "size_bytes": 8270510,
+          "sha256": "c39a58d575ceabadecf87c86548fdf0c71379fdd10f4f55eef6e77071bdad813",
+          "modified": "2026-04-28T20:28:54.891101"
+        },
+        {
+          "filename": "09-03_2009-02-25.ttl",
+          "relative_path": "rdf/09-03_2009-02-25.ttl",
+          "size_bytes": 853163,
+          "sha256": "fd95a3e4d90dffaaf4746c73e9a3d0d61c77c94116ac0725faf30453f8e18304",
+          "modified": "2026-05-04T17:36:40.911195"
+        },
+        {
+          "filename": "11-05_2005-07-17.ttl",
+          "relative_path": "rdf/11-05_2005-07-17.ttl",
+          "size_bytes": 159000,
+          "sha256": "2f263a939e9cac978c9de81881d3f9b9189bfc507517532ccf595148ce70cdc7",
+          "modified": "2026-04-28T20:28:54.891435"
+        },
+        {
+          "filename": "11-10_2011-06-22.ttl",
+          "relative_path": "rdf/11-10_2011-06-22.ttl",
+          "size_bytes": 1616552,
+          "sha256": "e297c9c0f8c72adfdf3be71ec9ebd9e24336992aa349e4c9877bb878a68d8f59",
+          "modified": "2026-04-28T20:28:54.891585"
+        },
+        {
+          "filename": "12-2003_2012-11-28.ttl",
+          "relative_path": "rdf/12-2003_2012-11-28.ttl",
+          "size_bytes": 355942,
+          "sha256": "650dde48181c23d57f6ba9e0ef4535d6e8623ff44d69f59bd9ccfbeaf5d39b9b",
+          "modified": "2026-04-28T20:28:54.891934"
+        },
+        {
+          "filename": "12-2015_2012-01-12.ttl",
+          "relative_path": "rdf/12-2015_2012-01-12.ttl",
+          "size_bytes": 1002204,
+          "sha256": "b86d6a289c5425057d68c70373798472622c4c18998765550a16a107b8b91f7b",
+          "modified": "2026-04-28T20:28:54.892248"
+        },
+        {
+          "filename": "13-12_1971-04-22.ttl",
+          "relative_path": "rdf/13-12_1971-04-22.ttl",
+          "size_bytes": 3145220,
+          "sha256": "eeb65d15337ac4ca1feff1518ea5a03858ccadae7117bcc6667aad8808b7e426",
+          "modified": "2026-04-28T20:28:54.893055"
+        },
+        {
+          "filename": "15-20_2015-12-30__partial_code_commerce_pp_5-6.ttl",
+          "relative_path": "rdf/15-20_2015-12-30__partial_code_commerce_pp_5-6.ttl",
+          "size_bytes": 71175,
+          "sha256": "8b924e38c3dc7866cdeadfd0925c5c1a5b9aec7f53def5d7f92db6f74e6cc9f5",
+          "modified": "2026-05-04T17:29:47.693288"
+        },
+        {
+          "filename": "15-247_2015-09-16.ttl",
+          "relative_path": "rdf/15-247_2015-09-16.ttl",
+          "size_bytes": 3378038,
+          "sha256": "9c7554e5e65642c7c72658c8964fd218182d4b43a48f75d46d296b854e1e52a4",
+          "modified": "2026-05-04T17:36:40.942195"
+        },
+        {
+          "filename": "18-05_2018-05-10.ttl",
+          "relative_path": "rdf/18-05_2018-05-10.ttl",
+          "size_bytes": 496192,
+          "sha256": "d0379d0013d77816a0f6909966ff54715d03eb91c2c1d9dbd4a01199dc608715",
+          "modified": "2026-04-28T20:28:54.894300"
+        },
+        {
+          "filename": "18-11_2018-07-02.ttl",
+          "relative_path": "rdf/18-11_2018-07-02.ttl",
+          "size_bytes": 3393739,
+          "sha256": "bad25cdbc1a08ca9a106bd04a4e3e91ff8dcfae8ce70feec3f6d2bbe082ce95f",
+          "modified": "2026-04-28T20:28:54.895493"
+        },
+        {
+          "filename": "22-09_2022-05-05__partial_code_commerce_pp12-13.ttl",
+          "relative_path": "rdf/22-09_2022-05-05__partial_code_commerce_pp12-13.ttl",
+          "size_bytes": 85313,
+          "sha256": "d8386a04ca487123bbcc7cde62872fa9ca2430d0a16051286ec338b9f9a74479",
+          "modified": "2026-05-04T17:29:47.869272"
+        },
+        {
+          "filename": "22-18_2022-07-24.ttl",
+          "relative_path": "rdf/22-18_2022-07-24.ttl",
+          "size_bytes": 431486,
+          "sha256": "ec9d51b679e95f3d063eb6ebca9de9fe0ad74005159c30a97d03f20bf925f225",
+          "modified": "2026-04-28T20:28:54.898659"
+        },
+        {
+          "filename": "22-21_2022-07-20.ttl",
+          "relative_path": "rdf/22-21_2022-07-20.ttl",
+          "size_bytes": 85656,
+          "sha256": "f873415f5e8c0587046f2ae46de7f2a592e7223da0baf62b76975957b583a4bc",
+          "modified": "2026-05-04T17:29:47.881169"
+        },
+        {
+          "filename": "25-14_2025-08-03.ttl",
+          "relative_path": "rdf/25-14_2025-08-03.ttl",
+          "size_bytes": 9080410,
+          "sha256": "4afd8311dae9b6f6e7ebac13f1d7e51c78d9c7439f5de0e663a4b3ec2be0ddcc",
+          "modified": "2026-05-04T17:36:41.003194"
+        },
+        {
+          "filename": "66-156_1966-06-08.ttl",
+          "relative_path": "rdf/66-156_1966-06-08.ttl",
+          "size_bytes": 5518591,
+          "sha256": "1957a513d593d5ca057afe093bbcb3df4e5c0e413e3512e626057ac379cb91d2",
+          "modified": "2026-05-04T17:36:41.034194"
+        },
+        {
+          "filename": "70-86_1970-12-15.ttl",
+          "relative_path": "rdf/70-86_1970-12-15.ttl",
+          "size_bytes": 327290,
+          "sha256": "7792d8c26f464db4b7256cf5163d86772ac170befd882aa7395579853bea3329",
+          "modified": "2026-04-28T20:28:54.902179"
+        },
+        {
+          "filename": "75-59_1975-09-26.ttl",
+          "relative_path": "rdf/75-59_1975-09-26.ttl",
+          "size_bytes": 10490521,
+          "sha256": "59ed081cfd5a97112efd9a637b62a1a9ad10295dccd234a2079de4592ad0cf65",
+          "modified": "2026-05-04T17:01:28.044209"
+        },
+        {
+          "filename": "75-8_1975-09-26.ttl",
+          "relative_path": "rdf/75-8_1975-09-26.ttl",
+          "size_bytes": 7785967,
+          "sha256": "61bd308e7460d783d46544cf891f7063fbf95952072dec80b49b290fa174a5b6",
+          "modified": "2026-04-28T20:28:54.903182"
+        },
+        {
+          "filename": "83-11_1983-07-02.ttl",
+          "relative_path": "rdf/83-11_1983-07-02.ttl",
+          "size_bytes": 633866,
+          "sha256": "7b6354ac48f62ec69aacdb30022d562956e74bce823dc38bc33c617b6ad9dc6d",
+          "modified": "2026-05-05T15:14:46.642090"
+        },
+        {
+          "filename": "84-11_1984-06-09.ttl",
+          "relative_path": "rdf/84-11_1984-06-09.ttl",
+          "size_bytes": 1351097,
+          "sha256": "a0678b562d723064ff60006ab8e50233d24fc2f45c32e26d7f1c833f0f66a866",
+          "modified": "2026-05-04T17:36:41.092193"
+        },
+        {
+          "filename": "90-11_1990-04-21.ttl",
+          "relative_path": "rdf/90-11_1990-04-21.ttl",
+          "size_bytes": 1185051,
+          "sha256": "1614c9fc879448b764658091715de7fb577b2027887b9483d5ddaeaef247e7fd",
+          "modified": "2026-05-04T17:01:29.047198"
+        },
+        {
+          "filename": "94-03_1994-04-11.ttl",
+          "relative_path": "rdf/94-03_1994-04-11.ttl",
+          "size_bytes": 24673,
+          "sha256": "e96b47e6a78a438329a5c53c3e9922b516223420aacfbb596bb08d19cb430ea3",
+          "modified": "2026-05-04T17:37:52.434900"
+        },
+        {
+          "filename": "96-21_1996-07-09.ttl",
+          "relative_path": "rdf/96-21_1996-07-09.ttl",
+          "size_bytes": 259785,
+          "sha256": "adf26afcff5b8fc62e74e9cad42e9476406ff538cd3a5bdc1bfdd4063ad18d3e",
+          "modified": "2026-05-04T17:29:48.768179"
+        },
+        {
+          "filename": "97-02_1997-01-11.ttl",
+          "relative_path": "rdf/97-02_1997-01-11.ttl",
+          "size_bytes": 59979,
+          "sha256": "0f59400abce937150cea5771e9082b9b9fb5a5f6f8d9e0ff12555257f47d171e",
+          "modified": "2026-05-04T17:29:48.770772"
+        },
+        {
+          "filename": "algerian_legal_kg.ttl",
+          "relative_path": "rdf/algerian_legal_kg.ttl",
+          "size_bytes": 77088271,
+          "sha256": "cec70664ad0357d092da23b90906fbf06e54188d27d6098ddcf1518a810268f7",
+          "modified": "2026-05-04T17:38:06.672494"
+        },
+        {
+          "filename": "constitution_1963-12-08.ttl",
+          "relative_path": "rdf/constitution_1963-12-08.ttl",
+          "size_bytes": 467099,
+          "sha256": "56a3610a0fa84ca513aed4f91406e8f51593cd81c975961d1099eabfa68808d7",
+          "modified": "2026-05-04T17:29:52.646424"
+        },
+        {
+          "filename": "constitution_1976-11-19.ttl",
+          "relative_path": "rdf/constitution_1976-11-19.ttl",
+          "size_bytes": 1308889,
+          "sha256": "c28f0a0068d73e1bb408ad681b55bb9b59d81413944def3b57449433de440f3f",
+          "modified": "2026-05-04T17:29:52.688134"
+        },
+        {
+          "filename": "constitution_1979-07-01.ttl",
+          "relative_path": "rdf/constitution_1979-07-01.ttl",
+          "size_bytes": 105054,
+          "sha256": "bd2fcea11ec812e18836ea676351555a7f400642a86922e25844ff90fe4f9d4d",
+          "modified": "2026-05-04T17:29:52.694424"
+        },
+        {
+          "filename": "constitution_1980-01-12.ttl",
+          "relative_path": "rdf/constitution_1980-01-12.ttl",
+          "size_bytes": 14520,
+          "sha256": "483e49100cbf08defa00616253dd541ef1b32157475b26a2c955b6addf192342",
+          "modified": "2026-05-04T17:29:52.695785"
+        },
+        {
+          "filename": "constitution_1988-11-03.ttl",
+          "relative_path": "rdf/constitution_1988-11-03.ttl",
+          "size_bytes": 153677,
+          "sha256": "76484a9695b5c8973e5a0aaa0627acc21df06d7726d4df1370520f13c8e6d2ab",
+          "modified": "2026-05-04T17:29:52.701372"
+        },
+        {
+          "filename": "constitution_1989-02-23.ttl",
+          "relative_path": "rdf/constitution_1989-02-23.ttl",
+          "size_bytes": 1117333,
+          "sha256": "7c6f0314399d468fa94be86cda1db70236f87ae75aff328d7df8e841c23cc583",
+          "modified": "2026-05-04T17:29:52.736134"
+        },
+        {
+          "filename": "constitution_1996-11-28.ttl",
+          "relative_path": "rdf/constitution_1996-11-28.ttl",
+          "size_bytes": 1328379,
+          "sha256": "b8ada2e3f48f5c9d0e85c3c8c553fc4c5638e014a38dbb225a57778f49ee5113",
+          "modified": "2026-05-04T17:29:52.783133"
+        },
+        {
+          "filename": "constitution_2002-04-10.ttl",
+          "relative_path": "rdf/constitution_2002-04-10.ttl",
+          "size_bytes": 21304,
+          "sha256": "582919f8fe14188c88808e626488e496e7516d7a8796e7510a5367ed887b31c7",
+          "modified": "2026-05-04T17:29:52.785457"
+        },
+        {
+          "filename": "constitution_2008-11-15.ttl",
+          "relative_path": "rdf/constitution_2008-11-15.ttl",
+          "size_bytes": 1371955,
+          "sha256": "122cd7c5a5f46bacea5a703bb0f4fcd8d95866499bc5772e7a89128bac76726a",
+          "modified": "2026-05-04T17:29:52.821133"
+        },
+        {
+          "filename": "constitution_2016-03-06.ttl",
+          "relative_path": "rdf/constitution_2016-03-06.ttl",
+          "size_bytes": 1734792,
+          "sha256": "0d2ebe8e817f7e5387390f5aa175edfa44e3b730e041d8ac58d2d5ec8dc54b08",
+          "modified": "2026-05-04T17:29:52.867132"
+        },
+        {
+          "filename": "constitution_2020-11-01.ttl",
+          "relative_path": "rdf/constitution_2020-11-01.ttl",
+          "size_bytes": 2020707,
+          "sha256": "4bb38cad6af7244eb887b63fb5730a57440b0ac16385c7921c96510b817234c9",
+          "modified": "2026-05-04T17:29:52.923132"
+        },
+        {
+          "filename": "constitution_2020-12-30.ttl",
+          "relative_path": "rdf/constitution_2020-12-30.ttl",
+          "size_bytes": 1983996,
+          "sha256": "3f29671936ba54b6f9966ed75027fb1f86d0f53234fd88f368d133691812e0d0",
+          "modified": "2026-05-04T17:29:52.980131"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <act name="presidential-decree">
+    <meta>
+      <identification source="#source">
+        <FRBRWork>
+          <FRBRthis value="/akn/dz/act/presidential-decree/2003-07-19/03-05/main"/>
+          <FRBRuri value="/akn/dz/act/presidential-decree/2003-07-19/03-05"/>
+          <FRBRdate date="2003-07-19" name="enactment"/>
+          <FRBRauthor href="#president"/>
+          <FRBRcountry value="dz"/>
+          <FRBRnumber value="03-05"/>
+        </FRBRWork>
+        <FRBRExpression>
+          <FRBRthis value="/akn/dz/act/presidential-decree/2003-07-19/03-05/ara@/main"/>
+          <FRBRuri value="/akn/dz/act/presidential-decree/2003-07-19/03-05/ara@"/>
+          <FRBRdate date="2003-07-19" name="publication"/>
+          <FRBRauthor href="#joradp"/>
+          <FRBRlanguage language="ara"/>
+        </FRBRExpression>
+        <FRBRManifestation>
+          <FRBRthis value="/akn/dz/act/presidential-decree/2003-07-19/03-05/ara@/main.xml"/>
+          <FRBRuri value="/akn/dz/act/presidential-decree/2003-07-19/03-05/ara@.xml"/>
+          <FRBRdate date="2026-05-07" name="transform"/>
+          <FRBRauthor href="#converter"/>
+        </FRBRManifestation>
+      </identification>
+      <references source="#source">
+        <TLCOrganization eId="president" href="/ontology/organization/dz/president" showAs="رئيس الجمهورية"/>
+        <TLCOrganization eId="joradp" href="/ontology/organization/dz/joradp" showAs="الجريدة الرسمية"/>
+        <TLCPerson eId="converter" href="/ontology/person/dz/converter" showAs="Markup Specialist"/>
+      </references>
+    </meta>
+    <preface>
+      <docTitle>أمر رقم 03-05 يتعلق بحقوق المؤلف والحقوق المجاورة</docTitle>
+      <docNumber>03-05</docNumber>
+      <docDate date="2003-07-19">19 يوليو سنة 2003</docDate>
+      <docAuthority>رئيس الجمهورية</docAuthority>
+    </preface>
+    <preamble>
+      <citations>
+        <citation>
+          <p>إن رئيس الجمهورية،</p>
+        </citation>
+      </citations>
+      <formula name="enactingFormula">
+        <p>يصدر الأمر الآتي نصه:</p>
+      </formula>
+    </preamble>
+    <body>
+      <article eId="art_21">
+        <num>21</num>
+        <content>
+          <paragraph>
+            <p>يتمتع المؤلف بحقوق معنوية ومادية على المصنف الذي أبدعه.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_54">
+        <num>54</num>
+        <content>
+          <paragraph>
+            <p>تحظى الحقوق المادية بالحماية لفائدة المؤلف طوال حياته ولفائدة ذوي حقوقه مدة خمسين (50) سنة ابتداء من مطلع السنة المدنية التي تلي وفاته.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_151">
+        <num>151</num>
+        <content>
+          <paragraph>
+            <p>يعد مرتكبا لجنحة التقليد كل من يقوم بالأعمال الآتية:</p>
+          </paragraph>
+          <paragraph>
+            <p>الكشف غير المشروع للمصنف أو المساس بسلامة مصنف أو أداء الفنان مؤد أو عازف.</p>
+          </paragraph>
+          <paragraph>
+            <p>استنساخ مصنف أو أداء بأي أسلوب من الأساليب في شكل نسخ مقلدة.</p>
+          </paragraph>
+          <paragraph>
+            <p>استيراد أو تصدير نسخ مقلدة من مصنف أو أداء.</p>
+          </paragraph>
+          <paragraph>
+            <p>بيع نسخ مقلدة لمصنف أو أداء.</p>
+          </paragraph>
+          <paragraph>
+            <p>تأجير أو وضع رهن التداول لنسخ مقلدة مصنف أو أداء.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_153">
+        <num>153</num>
+        <content>
+          <paragraph>
+            <p>يعاقب مرتكب جنحة تقليد مصنف أو أداء كما هو منصوص عليه في المادتين 151 و152 أعلاه، بالحبس من ستة (6) أشهر إلى ثلاث (3) سنوات وبغرامة من خمسمائة ألف دينار (500.000 دج) إلى مليون دينار (1.000.000 دج) سواء كان النشر قد حصل في الجزائر أو في الخارج.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_157">
+        <num>157</num>
+        <content>
+          <paragraph>
+            <p>تقرر الجهة القضائية المختصة مصادرة المبالغ التي تساوي مبلغ الإيرادات أو أقساط الإيرادات الناتجة عن الاستغلال غير الشرعي لمصنف أو أداء محمي.</p>
+          </paragraph>
+          <paragraph>
+            <p>كما تقرر مصادرة وإتلاف كل عتاد أنشئ خصيصا لمباشرة النشاط غير المشروع وكل النسخ المقلدة.</p>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="art_159">
+        <num>159</num>
+        <content>
+          <paragraph>
+            <p>تأمر الجهة القضائية المختصة في جميع الحالات المنصوص عليها في المادتين 151 و152 من هذا الأمر، بتسليم العتاد أو النسخ المقلدة أو قيمة ذلك كله وكذلك الإيرادات أو أقساط الإيرادات موضوع المصادرة للمؤلف أو لأي مالك حقوق آخر أو ذوي حقوقهما لتكون عند الحاجة بمثابة تعويض عن الضرر اللاحق بهم.</p>
+          </paragraph>
+        </content>
+      </article>
+    </body>
+  </act>
+</akomaNtoso>
