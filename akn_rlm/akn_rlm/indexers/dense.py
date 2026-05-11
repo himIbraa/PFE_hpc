@@ -36,15 +36,33 @@ def _is_bge_m3(model_name: str) -> bool:
     return "bge-m3" in model_name.lower()
 
 
+def _is_gte_qwen_instruct(model_name: str) -> bool:
+    # Alibaba-NLP/gte-Qwen2-7B-instruct or any "gte-*-instruct" variant.
+    n = model_name.lower()
+    return "gte" in n and "qwen" in n and "instruct" in n
+
+
+# Default instruction prefix used by gte-Qwen2-7B-instruct and gte-multilingual-
+# reranker family per the model cards. The instruction can be tuned per task;
+# for a legal-IR corpus the default works well enough as a first cut.
+GTE_QWEN_INSTRUCT_QUERY = (
+    "Instruct: Given an Arabic legal question, retrieve the article(s) that "
+    "answer it.\nQuery: "
+)
+
+
 def _doc_format(text: str, model_name: str) -> str:
     if _is_e5(model_name):
         return f"passage: {text}"
+    # gte-Qwen2-7B-instruct and BGE-m3: documents take the bare text.
     return text
 
 
 def _query_format(text: str, model_name: str) -> str:
     if _is_e5(model_name):
         return f"query: {text}"
+    if _is_gte_qwen_instruct(model_name):
+        return GTE_QWEN_INSTRUCT_QUERY + text
     return text
 
 
