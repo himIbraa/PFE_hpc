@@ -11,6 +11,7 @@ the on-disk index so loaders can sanity-check.
 from __future__ import annotations
 
 import logging
+import os
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Sequence
@@ -75,13 +76,29 @@ class DenseHit:
     text: str
 
 
+def _needs_fp16(model_name: str) -> bool:
+    """Whether to load the model in fp16 to fit on a typical GPU slice.
+
+    Triggered by:
+      - gte-Qwen2-7B-instruct (7B params, 28 GB at fp32 → won't fit on
+        a 22 GB MIG slice; fp16 is 14 GB and works)
+      - any name containing "7b" / "8b" / "13b" (size-based heuristic)
+      - explicit AKN_FORCE_FP16=1 env flag
+    """
+    if os.getenv("AKN_FORCE_FP16", "").strip().lower() in {"1", "true", "yes"}:
+        return True
+    n = model_name.lower()
+    if _is_gte_qwen_instruct(model_name):
+        return True
+    return any(tag in n for tag in ("-7b", "-8b", "-13b", "-14b", "-30b"))
+
+
 def _load_model(model_name: str = EMBED_MODEL):
     """Return a loaded SentenceTransformer (or compatible) for the requested model.
 
-    BGE-m3 also supports SentenceTransformer interface so we use one code path.
-    Device autodetect: CUDA if available else CPU. The legacy F5 build forced
-    CPU because 6 GB VRAM couldn't fit e5-small at fp16; HPC GPUs handle BGE-m3
-    fine at fp16.
+    Device: CUDA if available else CPU.
+    fp16: forced for large encoders (see :func:`_needs_fp16`); default
+    precision otherwise.
     """
     from sentence_transformers import SentenceTransformer  # type: ignore
     try:
@@ -89,12 +106,18 @@ def _load_model(model_name: str = EMBED_MODEL):
         device = "cuda" if torch.cuda.is_available() else "cpu"
     except Exception:
         device = "cpu"
-    log.info("Loading dense encoder: %s on %s", model_name, device)
-    model = SentenceTransformer(
-        model_name,
-        device=device,
-        trust_remote_code=True,
-    )
+
+    kwargs: dict = {"device": device, "trust_remote_code": True}
+    if device == "cuda" and _needs_fp16(model_name):
+        # sentence-transformers passes model_kwargs through to
+        # transformers from_pretrained; torch_dtype is the canonical key
+        # (transformers >=5.x deprecates it in favour of `dtype` but
+        # still accepts it with a FutureWarning).
+        kwargs["model_kwargs"] = {"torch_dtype": "float16"}
+        log.info("Loading dense encoder: %s on %s (fp16)", model_name, device)
+    else:
+        log.info("Loading dense encoder: %s on %s", model_name, device)
+    model = SentenceTransformer(model_name, **kwargs)
     return model
 
 
